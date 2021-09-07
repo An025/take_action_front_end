@@ -6,8 +6,8 @@
     background-image: url('../images/banner.jpg') ;
     z-index: 1;
     height: 100vh;
-    filter: blur(2px);
-    -webkit-filter: blur(2px); 
+    /* filter: blur(2px);
+    -webkit-filter: blur(2px);  */
 }
 
 .container{
