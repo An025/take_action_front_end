@@ -14,12 +14,19 @@ const options = {
 
 const GroundTransport = props => {
 
-    const [distanceTravelled, setDistanceTravelled] = useState(100);
+    const [distanceTravelled, setDistanceTravelled] = useState(0);
     const [co2InKg , setCo2InKg] = useState(0);
 
     useEffect(() => {
-        let body = JSON.stringify({"distance":{"value": { distanceTravelled },"units":"km"},"fuel_efficiency":{"value":23.5215,"units":"mpg","of":"gasoline"}});
+        let body = JSON.stringify({
+            "distance":{
+                "value" : distanceTravelled,
+                "units" : "km"},
+            "fuel_efficiency":
+                {"value":23.5215,"units":"mpg","of":"gasoline"}
+        });
         options.body = body;
+
         fetch(URL, options )
         .then(response => response.json())
         .then(resp => {
@@ -31,25 +38,19 @@ const GroundTransport = props => {
     }, [ distanceTravelled ])
 
 
-    const handleGivenDistance = event => {
-        let distance = event.target.value;
+    const handleSubmit = (event) => {
+        let distance = event.target.parentNode.firstChild.value;
         setDistanceTravelled(distance); 
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log("yippijájé");
       };
 
     return (
         <div className="ground-transport-form">
-            { distanceTravelled }
             <fieldset>
                 <legend >Ground transportation</legend>
                 <form id="ground-transport-form">
-                    <input placeholder="Give me the distance in km-s" value={ this.co2InKg } onChange={ handleGivenDistance }></input><br />
+                    <input placeholder="Give me the distance in km-s" name="distance"></input><br />
                     <input placeholder="Average consumption-not active yet(assumed 10 l/100km)"></input><br />
-                    <select name="fuel-types" id="fuel-types">
+                    <select name="fueltypes" id="fuel-types">
                         <option value="gasoline">gasoline</option>
                         <option value="diesel">diesel</option>
                     </select><br />
