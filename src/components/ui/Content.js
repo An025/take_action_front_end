@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function Content(props){
+export default function Content(){
     return(
         <div>
             
@@ -10,9 +10,7 @@ export default function Content(props){
                 This div is just here to enable scrolling.
                 Tip: Try to remove the background-attachment property to remove the scrolling effect.</p>
             </div>
-            <div>
-                {props.content}
-            </div>
+          
             
         </div>
         

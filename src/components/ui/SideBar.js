@@ -17,7 +17,7 @@ import FlightIcon from '@material-ui/icons/Flight';
 import CardTravelIcon from '@material-ui/icons/CardTravel';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
-
+import { borders} from '@material-ui/system';
 import { createTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import green from '@material-ui/core/colors/green';
@@ -37,7 +37,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#e6fff7',
+    height: '100vh',
   },
   nested: {
     paddingLeft: theme.spacing(4),
