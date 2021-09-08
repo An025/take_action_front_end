@@ -41,8 +41,8 @@ const FlightTransport = props => {
 
 
     const handleSubmit = (event) => {
-        /* let distance = event.target.parentNode.firstChild.value;
-        setAirports(airports);  */
+/*         let airportFrom = event.target.parentNode.firstChild.value;
+        setAirports(airports); */
       };
 
     return (
