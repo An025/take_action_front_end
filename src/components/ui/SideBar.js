@@ -37,8 +37,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    backgroundColor: '#e6fff7',
+    backgroundColor: '#C1EDD8',
     height: '100vh',
+    paddingTop: 80,
   },
   nested: {
     paddingLeft: theme.spacing(4),

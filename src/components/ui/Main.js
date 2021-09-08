@@ -9,11 +9,23 @@ function Main(){
             <div className={classes.banner}>
             </div> 
             <div className={classes.container}>
-                <p>Scroll Up and Down this page to see the parallax scrolling effect.
-This div is just here to enable scrolling.
-Tip: Try to remove the background-attachment property to remove the scrolling effect.</p>
+                <h1 className={classes.title}> Some title come  here</h1>    
+                <div className={classes.cardcontainer}>
+                    <div className={classes.card}>
+                        <h2>title</h2>
+                    </div>
+                    <div className={classes.card}>
+                        <h2>title</h2>
+                    </div>
+                    <div className={classes.card}>
+                        <h2>title</h2>
+                    </div>
+                </div>
+                <Button link={"/side"} title="Next to Footprint" className={classes.button}/>
+
             </div>
-            <Button link={"/side"} title="Next to Footprint"/>
+            
+            
         </div>
        
     )
