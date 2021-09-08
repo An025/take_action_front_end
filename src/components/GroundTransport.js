@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ToggleSwitch from './ui/ToggleSwitch';
 
 const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
 
@@ -21,15 +21,17 @@ const GroundTransport = props => {
     let [fuelEfficiency, setFuelEfficiency] = useState(10);
     let [chosenFuel, setChosenFuel] = useState('gasoline');
 
+
     useEffect(() => {
         let body = JSON.stringify({
             "distance":{
                 "value" : distanceTravelled,
                 "units" : "km"},
-            "fuel_efficiency":
-                {"value": fuelEfficiency * kml2mpgMultiplier,
+            "fuel_efficiency":{
+                "value": fuelEfficiency * kml2mpgMultiplier,
                 "units":"mpg",
-                "of": "gasoline"}
+                "of": (chosenFuel ? chosenFuel : "gasoline" )
+            }
         });
         options.body = body;
 
@@ -41,7 +43,7 @@ const GroundTransport = props => {
         .catch(err => {
             console.log(err);
         });
-    }, [ distanceTravelled, fuelEfficiency ])
+    }, [ distanceTravelled, fuelEfficiency, chosenFuel ])
 
 
     const handleSubmit = (event) => {
@@ -59,17 +61,14 @@ const GroundTransport = props => {
             <fieldset>
                 <legend >Ground transportation</legend>
                 <form id="ground-transport-form">
-                    <label for="distance">Distance (km): </label>
+                    <label htmlFor="distance">Distance (km): </label>
                     <input placeholder="Distance in km..." name="distance"></input><br />
                     
-                    <label for="distance">Efficiency (kml): </label>
+                    <label htmlFor="distance">Efficiency (kml): </label>
                     <input name="efficiency" placeholder="Average: 10 km/l"></input><br />
-                    
-                    <label for="fueltypes">Fuel type: </label>
-                    <select name="fueltypes" id="fuel-types">
-                        <option value="gasoline">gasoline</option>
-                        <option value="diesel">diesel</option>
-                    </select><br />
+
+                    <ToggleSwitch fuel={ chosenFuel } setFuel={ setChosenFuel }/><br />
+
                     <button type="button" onClick={ handleSubmit }>Calculate</button>
                 </form>
 
