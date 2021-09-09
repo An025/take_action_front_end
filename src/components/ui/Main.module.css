@@ -1,25 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
+.titlecontainer {
+    z-index: 1;
+    height: 95vh;
+    position: relative;
+}
 
-.flightbanner{
+.banner1{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;  
     background-attachment: fixed;
-    background-image: url('../images/banner2.jpg') ;
+    background-image: url('../images/coral.jpg') ;
     background-color: #0a0300;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     z-index: 1;
-    height: 70vh;
-    /* filter: blur(2px);
-    -webkit-filter: blur(2px);  */
+    height: 95vh;
+    -webkit-filter: blur(4px);
+    /* overflow: hidden; */
+}
+
+.sitetitle {
+    position: absolute;
+    top: 20vh;
+    margin: 0 20%;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+}
+.sitetitle h1 {
+    margin-bottom: 50px;
+}
+
+.sitetitle p {
+    margin-top: 20px;
+    font-size: x-large;
+}
+.sitetitlebuttons button {
+    margin-left:10px;
 }
 
 .line{
-    height: 25px;
-    background: linear-gradient(90deg, #fff533, #ff6633);
-
+    height: 50px;
+    background: linear-gradient(90deg, #9fe8f7,#1b7405);
+    z-index: 2;
 }
 
 .banner{

@@ -1,7 +1,8 @@
 // import React from 'react';
 import style from './NavBar.module.css';  
 // import {Link} from "react-router-dom";
-import logo from "../images/logo.gif"
+// import logo from "../images/logo.gif"
+import logo from "../images/leaf_logo.png"
 
 
 // export default function Navbar() {
