@@ -6,6 +6,12 @@ import Button from './elements/Button';
 function Main(){
     return(
         <div>
+            <div className={classes.flightbanner}>
+
+            </div>
+
+            <div className={classes.line}></div>
+
             <div className={classes.banner}>
                 <div className={classes.container}>
                     <h1 className={classes.bannertitle}> Some title come  here</h1>    

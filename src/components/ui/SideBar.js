@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    backgroundColor: '#C1EDD8',
+    backgroundColor: '#E8FBF2',
     height: '100vh',
     paddingTop: 80,
   },
