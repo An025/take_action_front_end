@@ -10,16 +10,31 @@ const FoodRecipes = props => {
 
     require('dotenv').config();
     const apiKey = process.env.REACT_APP_API_KEY_SPOONACULAR;
-    console.log(apiKey);
-    console.log("ASD");
     const url = "https://api.spoonacular.com/recipes/complexSearch";
+
+    // Available filters with possible values (later to be moved into another file)
+    const cuisine = [];
+    const excludeCuisine = [];
+    const diet = [];
+    const intolerances = [];
+    const includeIngredients = [];
+    const excludeIngredients = [];
+    const type = [];
+    const instructionsRequired = [];
+    const fillIngredients = []; // ???
+    const addRecipeInformation = [];
+    const addRecipeNutrition = [];
+    const titleMatch = [];
+    const maxReadyTime = [];
 
     useEffect(() => {
         axios.get(url, {
             params: {
                 apiKey: apiKey,
                 cuisine: "italian",
-                diet: "vegetarian"
+                diet: "vegetarian",
+                instructionsRequired: "true",
+                addRecipeInformation: "true"
             }
         })
         .then(response => {
