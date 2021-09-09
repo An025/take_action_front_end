@@ -28,6 +28,16 @@
     border-bottom: 2px solid #C1EDD8;
 }
 
+
+.bannertitle{
+    font-family: 'Parisienne', cursive;   
+    font-size: 2.5rem;
+    color: rgb(47, 61, 52);
+    width: 350px;
+    padding-top: 100px;
+    padding-left: 50px;
+}
+
 .cardcontainer{
     display: flex;
     flex-direction: row;
@@ -39,8 +49,10 @@
 .card{
     width: 350px;
     height: 300px;
-    background-color: #8DD6B3;
-    opacity: 0.5;
+    background: linear-gradient(0, #99DA8B, #4F71C0);
+
+    /* background-color: #8DD6B3; */
+    opacity: 0.6;
     /* margin-left: 50px; */
     margin-top:50px;
     border-radius: 20px;
@@ -50,7 +62,7 @@
 }
 
 .card:hover{
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .card h2{

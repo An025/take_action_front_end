@@ -7,6 +7,20 @@ function Main(){
     return(
         <div>
             <div className={classes.banner}>
+                <div className={classes.container}>
+                    <h1 className={classes.bannertitle}> Some title come  here</h1>    
+                    <div className={classes.cardcontainer}>
+                        <div className={classes.card}>
+                            <h2>title</h2>
+                        </div>
+                        <div className={classes.card}>
+                            <h2>title</h2>
+                        </div>
+                        <div className={classes.card}>
+                            <h2>title</h2>
+                        </div>
+                    </div>
+                </div>
             </div> 
             <div className={classes.container}>
                 <h1 className={classes.title}> Some title come  here</h1>    
