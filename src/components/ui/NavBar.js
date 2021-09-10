@@ -1,21 +1,7 @@
-// import React from 'react';
 import style from './NavBar.module.css';  
 // import {Link} from "react-router-dom";
 // import logo from "../images/logo.gif"
 import logo from "../images/leaf_logo.png"
-
-
-// export default function Navbar() {
-    
-//     return(
-//         <div className={classes.navbar}>
-//             <div className="menu-items">
-//                 <Link to="/">Home</Link>
-//                 <Link to="/carbon-footrpint">Footprint</Link>
-//             </div>
-//         </div>
-//     )
-// }
 
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';

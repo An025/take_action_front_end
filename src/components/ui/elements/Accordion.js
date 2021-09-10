@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  text: {
+    padding: '0 0 0 5%',
+  }
 }));
 
 
@@ -43,7 +46,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.secondaryHeading}>{ props.panel1Subheading }</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={ classes.text }>
                 { props.panel1Text }
           </Typography>
         </AccordionDetails>
@@ -60,7 +63,7 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={ classes.text }>
                 { props.panel2Text }
           </Typography>
         </AccordionDetails>
@@ -77,7 +80,7 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography className={ classes.text }>
                 { props.panel3Text }
           </Typography>
         </AccordionDetails>

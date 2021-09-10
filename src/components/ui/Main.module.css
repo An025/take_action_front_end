@@ -148,11 +148,15 @@
     padding-bottom: 20px;
     text-align: center;
 }
+
 .section3container {
     max-width: 80%;
     margin: 0 auto;
     /* height: 70vh; */
     position: relative;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 /* .title{
     font-family: 'Montserrat', sans-serif; 
