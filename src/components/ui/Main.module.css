@@ -3,20 +3,20 @@
 
 .titlecontainer {
     z-index: 1;
-    height: 95vh;
+    height: 100vh;
     position: relative;
 }
 
 .banner1{
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;  
+    background-position: center;  
     background-attachment: fixed;
     background-image: url('../images/coral.jpg') ;
     background-color: #0a0300;
     /* opacity: 0.7; */
     z-index: 1;
-    height: 95vh;
+    height: 100vh;
     -webkit-filter: blur(4px);
     /* overflow: hidden; */
 }
@@ -24,14 +24,15 @@
 .sitetitle {
     position: absolute;
     top: 20vh;
-    margin: 0 20%;
+    margin: 0 40vh;
     z-index: 2;
     color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
 }
 .sitetitle h1 {
-    margin-bottom: 50px;
+    font-size: 7vh;
+    margin-bottom: 10vh;
 }
 
 .sitetitle p {
@@ -39,7 +40,37 @@
     font-size: x-large;
 }
 .sitetitlebuttons button {
-    margin-left:10px;
+    margin-top: 15vh;
+    margin-left:5vh;
+}
+
+
+.beforeContainer{
+    z-index: 1;
+    height: 40vh;
+    display: flex;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #0a0300;
+}
+.beforeHolder {
+    height: 25vh;
+    width: 30vh;
+    margin: 5vh 10vh 5vh 20vh;
+    border: 3px solid lightseagreen;
+    box-shadow: 6px 6px 8px #777;
+}
+.compareContent {
+    margin: 5vh 10vh 5vh 5vh;
+    max-width: 100vh;
+    text-align: justify;
+}
+.compareContent h1 {
+    margin-bottom: 2vh;
+}
+.compareContent p {
+    margin-bottom: 1vh;
 }
 
 .line{
@@ -100,7 +131,7 @@
     width: 350px;
     height: 300px;
     background: linear-gradient(0, #99DA8B, #4F71C0);
-
+    text-align: center;
     /* background-color: #8DD6B3; */
     opacity: 0.6;
     /* margin-left: 50px; */
@@ -109,6 +140,9 @@
     -webkit-box-shadow: 0 10px 6px -6px #777;
     -moz-box-shadow: 0 10px 6px -6px #777;
          box-shadow: 0 10px 6px -6px #777;
+}
+.card img {
+    max-height: 200px;
 }
 
 .card:hover{
@@ -123,4 +157,15 @@
 
 .button{
     left: 50%;
+}
+
+.anchorFootprint {
+    position: fixed;
+    right: 1vh;
+    bottom: 1vh;
+}
+
+.anchorFootprint img {
+    height: 60px;
+    opacity: 0.4;
 }

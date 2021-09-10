@@ -1,6 +1,11 @@
 import React from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
+import footprint1 from '../images/tourism_footprint.png';
+import ImageSlider from "react-image-comparison-slider";
+import footprint from '../images/footprint.png'
+import earth1 from '../images/earth_clean.png';
+import earth2 from '../images/earth_polluted.png';
 
 
 function Main(){
@@ -21,7 +26,31 @@ function Main(){
                 </div>
             </div>
             
-            <div className={classes.line}></div>
+
+
+            <div className={ classes.beforeContainer }>
+                <div className={ classes.beforeHolder } >
+                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } />
+                </div>
+
+                <div className= { classes.compareContent }>
+                    <h1>What is this page about?</h1>
+                    <p>
+                        The carbon footprint is an important component of the Ecological Footprint, since it is one competing demand for biologically productive space. 
+                        <br />
+                        The carbon Footprint is currently 60 percent of humanity’s overall Ecological Footprint and its most rapidly growing component. Humanity’s carbon Footprint has 
+                        increased 11-fold since 1961. Reducing humanity’s carbon Footprint is the most essential step we can take to end overshoot and live within the means of our planet. 
+                    </p>
+                    <p>
+                        We help you to calculate your affect on the environment!
+                    </p>
+                </div>
+            </div>
+
+
+
+
+            {/* <div className={classes.line}></div> */}
 
             <div className={classes.banner}>
                 <div className={classes.container}>
@@ -29,6 +58,7 @@ function Main(){
                     <div className={classes.cardcontainer}>
                         <div className={classes.card}>
                             <h2>title</h2>
+                            <img className={classes.footprints} src={ footprint1 }></img>
                         </div>
                         <div className={classes.card}>
                             <h2>title</h2>
@@ -56,7 +86,9 @@ function Main(){
 
             </div>
             
-            
+        <div className= { classes.anchorFootprint }>
+            <a href="#"><img src={ footprint } ></img></a>
+        </div>
         </div>
        
     )
