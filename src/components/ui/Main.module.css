@@ -32,7 +32,7 @@
 }
 .sitetitle h1 {
     font-size: 7vh;
-    margin-bottom: 10vh;
+    margin-bottom: 8vh;
 }
 
 .sitetitle p {
@@ -40,14 +40,14 @@
     font-size: x-large;
 }
 .sitetitlebuttons button {
-    margin-top: 15vh;
+    margin-top: 10vh;
     margin-left:5vh;
 }
 
 
 .beforeContainer{
     z-index: 1;
-    height: 40vh;
+    min-height: 40vh;
     display: flex;
     font-size: large;
     font-family: 'Montserrat', sans-serif;
@@ -55,9 +55,9 @@
     color: #0a0300;
 }
 .beforeHolder {
-    height: 25vh;
-    width: 30vh;
-    margin: 5vh 10vh 5vh 20vh;
+    height: 30vh;
+    width: 35vh;
+    margin: auto 10vh auto 15vh;
     border: 3px solid lightseagreen;
     box-shadow: 6px 6px 8px #777;
 }
@@ -86,15 +86,13 @@
     background-attachment: fixed;
     background-image: url('../images/banner3.jpg') ;
     z-index: 1;
-    height: 100vh;
-    /* filter: blur(2px);
-    -webkit-filter: blur(2px);  */
+    min-height: 100vh;
 }
 
 .banner2container{
-    width: 70%;
+    max-width: 80%;
     margin: 0 auto;
-    height: 70vh;
+    /* height: 70vh; */
     position: relative;
 }
 .banner2content {
@@ -104,7 +102,7 @@
     color: #ffffff;
 }
 
-.banner2title{
+.sectionTitle{
     font-family: 'Montserrat', sans-serif;  
     font-weight: bold;
     font-size: 2.5rem;
@@ -112,7 +110,7 @@
     padding-top: 100px;
     margin-bottom: 3vh;
 }
-.banner2text p{
+.sectionText p{
     margin-bottom: 1vh;
 }
 
@@ -120,12 +118,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 50px;
+    padding-bottom: 3vh;
 }
 
 .card{
-    width: 350px;
-    height: 300px;
+    width: 40vh;
+    height: 40vh;
     background: linear-gradient(0, #99DA8B, #4F71C0);
     text-align: center;
     /* background-color: #8DD6B3; */
@@ -138,7 +136,7 @@
          box-shadow: 0 10px 6px -6px #777;
 }
 .card img {
-    max-height: 200px;
+    max-height: 25vh;
 }
 
 .card:hover{
@@ -150,8 +148,13 @@
     padding-bottom: 20px;
     text-align: center;
 }
-
-.title{
+.section3container {
+    max-width: 80%;
+    margin: 0 auto;
+    /* height: 70vh; */
+    position: relative;
+}
+/* .title{
     font-family: 'Montserrat', sans-serif; 
     letter-spacing: 5px;  
     color: #5B81B8;
@@ -159,7 +162,7 @@
     padding-top: 50px;
     padding-left: 50px;
     border-bottom: 2px solid #C1EDD8;
-}
+} */
 
 .button{
     left: 50%;

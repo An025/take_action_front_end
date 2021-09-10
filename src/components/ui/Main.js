@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
+import Accordion from './elements/Accordion';
 import footprint1 from '../images/tourism_footprint.png';
 import footprint2 from '../images/eating_footprint.png';
 import footprint3 from '../images/videoGames_footprint.jpeg';
@@ -50,16 +51,13 @@ function Main(){
                 </div>
             </div>
 
-
-
-
             {/* <div className={classes.line}></div> */}
 
             <div className={classes.banner2}>
                 <div className={classes.banner2container}>
                     <div className={classes.banner2content}>
-                        <h1 className={classes.banner2title}>Lets take the fist steps</h1> 
-                        <div className={ classes.banner2text }>
+                        <h1 className={classes.sectionTitle}>Lets take the fist steps</h1> 
+                        <div className={ classes.sectionText }>
                             <p>
                                 When calculating a carbon footprint, a lot of factors are taken into consideration. For example, driving to the grocery store burns a certain amount of fuel, 
                                 and fossil fuels are the primary sources of greenhouses gases. But that grocery store is powered by electricity, and its employees probably drove to work, 
@@ -77,35 +75,41 @@ function Main(){
                     </div>  
                     <div className={classes.cardcontainer}>
                         <div className={classes.card}>
-                            <h2>Travel</h2>
+                            <h2>Travel habits</h2>
                             <img className={classes.footprints} src={ footprint1 }></img>
                         </div>
                         <div className={classes.card}>
-                            <h2>Eating</h2>
+                            <h2>Eating habits</h2>
                             <img className={classes.footprints} src={ footprint2 }></img>
                         </div>
                         <div className={classes.card}>
-                            <h2>Electricity</h2>
+                            <h2>Energy consumption</h2>
                             <img className={classes.footprints} src={ footprint3 }></img>
                         </div>
                     </div>
                 </div>
             </div> 
-            <div className={classes.container}>
-                <h1 className={classes.title}> Some title come  here</h1>    
-                <div className={classes.cardcontainer}>
-                    <div className={classes.card}>
-                        <h2>title</h2>
-                    </div>
-                    <div className={classes.card}>
-                        <h2>title</h2>
-                    </div>
-                    <div className={classes.card}>
-                        <h2>title</h2>
-                    </div>
+            <div className={classes.section3}>
+                <div className={ classes.section3container }>
+                    <h1 className={classes.sectionTitle}>Our motivations</h1>
+                    <Accordion
+                    panel1Heading="Global climate change"
+                    panel2Heading="Greenhouse gases" 
+                    panel3Heading="Carbon offseting"
+                    panel1Subheading="It's hard to be an iceberg these days." 
+                    panel2Subheading="Beyond the cow fart..."
+                    panel3Subheading="Earth is not alone. Do you back her up?"
+                    panel1Text="The effects of human-caused global warming are happening now, are irreversible on the 
+                    timescale of people alive today, and will worsen in the decades to come. Glaciers have shrunk, 
+                    ice on rivers and lakes is breaking up earlier, plant and animal ranges have shifted and trees are 
+                    flowering sooner."
+                    panel2Text="Greenhouse gases are gases in Earth’s atmosphere that trap heat. They let sunlight pass 
+                    through the atmosphere, but they prevent the heat that the sunlight brings from leaving the atmosphere."
+                    panel3Text="You can make a difference! You can plant trees, or support environmentally friendly movements
+                    like a family business focusing on recycling or eating vegan food once or twice. Its your choice."
+                    />   
+                    <Button link={"/side"} title="Next to Footprint" className={classes.button}/>
                 </div>
-                <Button link={"/side"} title="Next to Footprint" className={classes.button}/>
-
             </div>
             
         <div className= { classes.anchorFootprint }>
