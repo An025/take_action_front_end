@@ -8,27 +8,25 @@ import Content from './components/ui/Content';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <NavBar/>
-        
-       
-      </div>
+      <NavBar />
 
       <Switch>
+
         <Route exact path="/side">
           <div className="container">
              <SideBar/>
              <Content/>
           </div>
         </Route>
-        <Route exact path="/food">
 
+        <Route exact path="/food">
         </Route>
 
 
         <Route exact path="/">
-          <Main/>
+          <Main />
         </Route>
+
       </Switch>
     </BrowserRouter>
     

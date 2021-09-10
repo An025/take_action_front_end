@@ -23,7 +23,7 @@
 
 .sitetitle {
     position: absolute;
-    top: 20vh;
+    top: 12vh;
     margin: 0 40vh;
     z-index: 2;
     color: rgb(255, 255, 255);
@@ -100,6 +100,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #ffffff;
+    padding-top: 100px;
 }
 
 .sectionTitle{
@@ -107,7 +108,6 @@
     font-weight: bold;
     font-size: 2.5rem;
     letter-spacing: 5px;
-    padding-top: 100px;
     margin-bottom: 3vh;
 }
 .sectionText p{
@@ -123,7 +123,7 @@
 
 .card{
     width: 40vh;
-    height: 40vh;
+    height: 45vh;
     background: linear-gradient(0, #99DA8B, #4F71C0);
     text-align: center;
     /* background-color: #8DD6B3; */
@@ -149,6 +149,10 @@
     text-align: center;
 }
 
+.section3{
+    padding: 50px 0;
+}
+
 .section3container {
     max-width: 80%;
     margin: 0 auto;
@@ -158,6 +162,8 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
+
 /* .title{
     font-family: 'Montserrat', sans-serif; 
     letter-spacing: 5px;  

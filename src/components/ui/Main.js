@@ -92,7 +92,7 @@ function Main(){
             </div> 
             <div className={classes.section3}>
                 <div className={ classes.section3container }>
-                    <h1 className={classes.sectionTitle}>Our motivations</h1>
+                    <h1 className={classes.section3Title}>Our motivations</h1>
                     <Accordion
                     panel1Heading="Global climate change"
                     panel2Heading="Greenhouse gases" 
