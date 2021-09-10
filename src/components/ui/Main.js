@@ -2,6 +2,8 @@ import React from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
 import footprint1 from '../images/tourism_footprint.png';
+import footprint2 from '../images/eating_footprint.png';
+import footprint3 from '../images/videoGames_footprint.jpeg';
 import ImageSlider from "react-image-comparison-slider";
 import footprint from '../images/footprint.png'
 import earth1 from '../images/earth_clean.png';
@@ -37,7 +39,8 @@ function Main(){
                     <h1>What is this page about?</h1>
                     <p>
                         The carbon footprint is an important component of the Ecological Footprint, since it is one competing demand for biologically productive space. 
-                        <br />
+                    </p>
+                    <p>
                         The carbon Footprint is currently 60 percent of humanity’s overall Ecological Footprint and its most rapidly growing component. Humanity’s carbon Footprint has 
                         increased 11-fold since 1961. Reducing humanity’s carbon Footprint is the most essential step we can take to end overshoot and live within the means of our planet. 
                     </p>
@@ -52,19 +55,38 @@ function Main(){
 
             {/* <div className={classes.line}></div> */}
 
-            <div className={classes.banner}>
-                <div className={classes.container}>
-                    <h1 className={classes.bannertitle}> Some title come  here</h1>    
+            <div className={classes.banner2}>
+                <div className={classes.banner2container}>
+                    <div className={classes.banner2content}>
+                        <h1 className={classes.banner2title}>Lets take the fist steps</h1> 
+                        <div className={ classes.banner2text }>
+                            <p>
+                                When calculating a carbon footprint, a lot of factors are taken into consideration. For example, driving to the grocery store burns a certain amount of fuel, 
+                                and fossil fuels are the primary sources of greenhouses gases. But that grocery store is powered by electricity, and its employees probably drove to work, 
+                                so the store has its own carbon footprint.In addition, the products that the store sells were all shipped there, so that must also be factored into the total 
+                                carbon footprint.
+                            </p>
+                            <p>Beyond that, the fruits, vegetables, and meats that the store sells were all grown or raised on farms, a process that produces methane,
+                                which has a greenhouse effect 25 times greater than CO2.
+                            </p>
+                            <p>All of those elements must be combined to understand the full carbon footprint of a given activity.</p>
+                            <p> Although adding up one’s individual carbon footprint can be difficult, online calculators can do some of the work for you, giving a rough estimate of your carbon 
+                                footprint based on the size of your household, the efficiency of your appliances, how much you drive or fly, what you eat, and how much you recycle.
+                            </p>
+                        </div>
+                    </div>  
                     <div className={classes.cardcontainer}>
                         <div className={classes.card}>
-                            <h2>title</h2>
+                            <h2>Travel</h2>
                             <img className={classes.footprints} src={ footprint1 }></img>
                         </div>
                         <div className={classes.card}>
-                            <h2>title</h2>
+                            <h2>Eating</h2>
+                            <img className={classes.footprints} src={ footprint2 }></img>
                         </div>
                         <div className={classes.card}>
-                            <h2>title</h2>
+                            <h2>Electricity</h2>
+                            <img className={classes.footprints} src={ footprint3 }></img>
                         </div>
                     </div>
                 </div>
