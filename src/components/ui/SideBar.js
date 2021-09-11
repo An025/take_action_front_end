@@ -82,6 +82,14 @@ export default function SideBar() {
         </ListItem>
       </Link>
 
+      <Link to="/EV">
+        <ListItem button>
+          <ListItemIcon>
+            <EmojiObjectsIcon />
+          </ListItemIcon>
+          <ListItemText primary="EV Station" />
+        </ListItem>
+      </Link>
 
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
