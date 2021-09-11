@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ToggleSwitch from './ui/ToggleSwitch';
+import axios from 'axios';
 
 const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
 
 const kml2mpgMultiplier = 2.35214583;
 
-const options = {
-    method: 'post',
-    body: '',
+const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
         "Authorization" : "Bearer public_key:47800ea0ee541b4c"
@@ -21,9 +20,8 @@ const GroundTransport = props => {
     let [fuelEfficiency, setFuelEfficiency] = useState(10);
     let [chosenFuel, setChosenFuel] = useState('gasoline');
 
-
     useEffect(() => {
-        let body = JSON.stringify({
+        let body = {
             "distance":{
                 "value" : distanceTravelled,
                 "units" : "km"},
@@ -32,13 +30,11 @@ const GroundTransport = props => {
                 "units":"mpg",
                 "of": (chosenFuel ? chosenFuel : "gasoline" )
             }
-        });
-        options.body = body;
+        };
 
-        fetch(URL, options )
-        .then(response => response.json())
+        axios.post(URL, body, axiosHeader )
         .then(resp => {
-            setCo2InKg(resp.equivalent_carbon_in_kg);
+            setCo2InKg(resp.data.equivalent_carbon_in_kg);
         })
         .catch(err => {
             console.log(err);
