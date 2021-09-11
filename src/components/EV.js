@@ -57,7 +57,21 @@ export default function EV(){
             </button>
           </Marker>
         ))}
-     
+           {selectedStation ?(
+        <Popup
+        latitude={selectedStation.AddressInfo.Latitude}
+        longitude={selectedStation.AddressInfo.Longitude}
+        onClose={()=>{
+          setSelectedStation(null);
+        }}>
+        
+          <div>
+            <h2>{selectedStation.AddressInfo.Title}</h2>
+            <p>{selectedStation.AddressInfo.Town}</p>
+            <p>{selectedStation.AddressInfo.Connections}</p>
+          </div>
+        </Popup>
+      ) : null }
     </ReactMapGl>
   </div>
   )
