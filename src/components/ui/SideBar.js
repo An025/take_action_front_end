@@ -36,14 +36,15 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 300,
     backgroundColor: '#E8FBF2',
     height: '100vh',
-    paddingTop: 80,
+    paddingTop: 20,
   },
   nested: {
     paddingLeft: theme.spacing(4),
   },
+
 }));
 
 export default function SideBar() {

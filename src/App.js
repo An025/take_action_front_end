@@ -13,7 +13,7 @@ function App() {
       <Switch>
 
         <Route exact path="/side">
-          <div className="container">
+          <div className="cont">
              <SideBar/>
              <Content/>
           </div>
