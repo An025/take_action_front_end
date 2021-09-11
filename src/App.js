@@ -36,9 +36,6 @@ function App() {
 
       </Switch>
     </BrowserRouter>
-    
-    
->>>>>>> design_and_structure
   );
 }
 
