@@ -9,7 +9,7 @@ import Collapse from '@material-ui/core/Collapse';
 
 //icons
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import EvStationIcon from '@material-ui/icons/EvStation';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -85,7 +85,7 @@ export default function SideBar() {
       <Link to="/EV">
         <ListItem button>
           <ListItemIcon>
-            <EmojiObjectsIcon />
+            <EvStationIcon />
           </ListItemIcon>
           <ListItemText primary="EV Station" />
         </ListItem>
