@@ -20,7 +20,7 @@ const card = {
     justifyContent: 'center'
 }
 
-const InfoDiv = () => {
+const TopInfo = () => {
     return(
         <div style={cardStyle}>
             <div style={card}>Chicken: ... kg CO2 / kg</div>
@@ -30,4 +30,4 @@ const InfoDiv = () => {
     )
 }
 
-export default InfoDiv
+export default TopInfo

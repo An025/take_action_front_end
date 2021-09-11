@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/ui/NavBar';
 import Main from './components/ui/Main';
 import CarbonEstimates from './components/CarbonEstimates';
-import FoodRecipes from './components/Food/FoodRecipes';
+import FoodMainPage from './components/Food/FoodMainPage';
 
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
         </Route>
 
         <Route exact path="/food">
-          <FoodRecipes/>
+          <FoodMainPage/>
         </Route>
 
         <Route exact path="/EV">

@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import InfoDiv from './InfoDiv';
 
 // Can I change 'props' to '()'?
-const FoodRecipes = props => {
+const RecipeeFetch = props => {
     
+    console.log("asd");
+    console.log(props.vegan);
+
     const [state, setRecipeData] = useState({
         recipeData: []
     })
@@ -45,19 +47,14 @@ const FoodRecipes = props => {
         .catch(error => console.log(error))
     }, [])
 
-    const headerStyle = {
-        textAlign: 'center'
-    };
+
 
     return(
         <div>
-            <h1 style={headerStyle}>Meat production is burdensome</h1>
-            <p style={headerStyle}>The carbon footprint of the most often consumed types is:</p>
-            <InfoDiv/>
-            { console.log(state.recipeData) }
+            Hello from RecipeeFetch
         </div>
     )
 
 }
 
-export default FoodRecipes
+export default RecipeeFetch
