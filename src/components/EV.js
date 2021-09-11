@@ -60,7 +60,7 @@ export default function EV(){
             latitude={station.AddressInfo.Latitude}
             longitude={station.AddressInfo.Longitude}
           >
-            <button className="marker-btn" onClick={(e) =>{
+            <button className="markerBtn" onClick={(e) =>{
             e.preventDefault();
             setSelectedStation(station);
           }}>
