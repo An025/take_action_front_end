@@ -2,14 +2,21 @@ import React, { useEffect, useState } from 'react';
 import ToggleSwitch from './ui/ToggleSwitch';
 import axios from 'axios';
 
-const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
 
+require('dotenv').config();
+const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
+const AuthStr = "Bearer " + apiKey;
+
+
+const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
 const kml2mpgMultiplier = 2.35214583;
+
+
 
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
-        "Authorization" : "Bearer public_key:47800ea0ee541b4c"
+        "Authorization" : AuthStr
     }
 };
 
