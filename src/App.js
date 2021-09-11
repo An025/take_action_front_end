@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/ui/NavBar';
 import Main from './components/ui/Main';
 import CarbonEstimates from './components/CarbonEstimates';
-import FoodRecipes from './components/FoodRecipes';
+import FoodRecipes from './components/Food/FoodRecipes';
 
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";

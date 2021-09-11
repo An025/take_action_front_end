@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import InfoDiv from './InfoDiv';
 
 // Can I change 'props' to '()'?
 const FoodRecipes = props => {
@@ -44,9 +45,15 @@ const FoodRecipes = props => {
         .catch(error => console.log(error))
     }, [])
 
+    const headerStyle = {
+        textAlign: 'center'
+    };
+
     return(
         <div>
-            Hi from FoodRecipes
+            <h1 style={headerStyle}>Meat production is burdensome</h1>
+            <p style={headerStyle}>The carbon footprint of the most often consumed types is:</p>
+            <InfoDiv/>
             { console.log(state.recipeData) }
         </div>
     )
