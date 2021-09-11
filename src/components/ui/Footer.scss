@@ -1,0 +1,26 @@
+$myBlack : rgb(0,0,0);
+$footerTextColor: rgb(228, 85, 19);
+
+
+.footer {
+    margin: 0;
+    min-height: 40vh;
+    max-height: 60vh;
+    width: 100%;
+    background-color: $myBlack;
+    color: $footerTextColor;
+
+    .copyright{
+        margin: 0 auto;
+        padding-top: 10vh;
+        display: block;
+        text-align: center
+    };
+    .copyrightText {
+        min-width: 70vh;
+    }
+
+    .logo {
+        max-height: 20vh;
+    }
+}
