@@ -19,20 +19,32 @@ export default function EV(){
   useEffect(()=>{
 
   
-  fetch('https://api.openchargemap.io/v3/poi/', {
-      mode: 'cors', 
-      headers: {
-        'x-api-key': '1ef9e57e-d6a4-4b3a-80b5-1719b8c7b5db',
-        'User-Agent' : 'My-App',
-        'Accept': '*/*',
-      },
-    })
-    .then(response => response.json())
-    .then(data => setEV(data))
-    .catch(error => console.log('Error while fetching:', error))
-  
-  }, [])
- 
+    fetch('https://api.openchargemap.io/v3/poi/', {
+        mode: 'cors', 
+        headers: {
+            'x-api-key': '1ef9e57e-d6a4-4b3a-80b5-1719b8c7b5db',
+            'User-Agent' : 'My-App',
+            'Accept': '*/*',
+        },
+        })
+        .then(response => response.json())
+        .then(data => setEV(data))
+        .catch(error => console.log('Error while fetching:', error))
+    
+    }, [])
+
+  useEffect(() => {
+    // if pressed escape close the popup window
+    const listener= (e) =>{
+        if(e.key==="Escape"){
+          setSelectedStation(null);
+        }
+      };
+      window.addEventListener("keydown", listener);
+      return() =>{
+        window.removeEventListener("keydown", listener);
+      };
+    }, []);
 
   
   return (<div>
