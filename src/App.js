@@ -5,6 +5,7 @@ import CarbonEstimates from './components/CarbonEstimates';
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
 import Content from './components/ui/Content';
+import EV from './components/EV';
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,9 @@ function App() {
         <Route exact path="/food">
         </Route>
 
+        <Route exact path="/EV">
+          <EV/>
+        </Route>
 
         <Route exact path="/">
           <Main />
