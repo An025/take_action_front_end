@@ -64,37 +64,30 @@ const GroundTransport = props => {
 
     return (
         <div>
-            <div id="ground-transport-title">
-                <StaticStepper 
-                    state1="Calculate your footprint!" 
-                    state2="Learn your options!" 
-                    state3="Act!"
-                />
-            </div>
+        
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
                     <legend>Ground Transport CO2 Calculator</legend>
                     <form className="ground-transport-form">
                         <label htmlFor="distance">Distance (km): </label>
                         <input type="text" placeholder="Distance in km..." name="distance"></input><br />
-                        
                         <label htmlFor="distance">Efficiency (kml): </label>
                         <input type="text" name="efficiency" placeholder="Average: 10 km/l"></input><br />
-    
                         <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/><br />
-
                         <button type="button" onClick={ handleSubmit }>Calculate</button>
                     </form>
-
                     <p>Your carbon consumption with this travel:</p>
                     <p id="finalCO2"> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>
-
-                    
-
                 </fieldset>
             </div>
 
-
+            <div id="ground-transport-title">
+                <StaticStepper 
+                    state1="Calculate your footprint!" 
+                    state2="Learn your options!" 
+                    state3="Travel better!"
+                />
+            </div>
 
             <div className="accordion-holder">
                 <Accordion 
