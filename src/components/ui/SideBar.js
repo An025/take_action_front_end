@@ -36,14 +36,19 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 300,
-    backgroundColor: '#E8FBF2',
+    maxWidth: 240,
+    backgroundColor: '#426785',
     height: '100vh',
     paddingTop: 20,
+    color: '#fff'
   },
   nested: {
     paddingLeft: theme.spacing(4),
+    color: '#fff'
   },
+  color: {
+    color: '#fff'
+  }
 
 }));
 
@@ -65,9 +70,9 @@ export default function SideBar() {
     >
       {/* Food */}
       <Link to="/food" content="Food">
-        <ListItem button >
+        <ListItem button className={classes.color}>
           <ListItemIcon>
-            <FastfoodIcon />
+            <FastfoodIcon className={classes.color}/>
           </ListItemIcon>
           <ListItemText primary="Food" />
         </ListItem>
@@ -76,24 +81,24 @@ export default function SideBar() {
       <Link to="/electricity">
         <ListItem button>
           <ListItemIcon>
-            <EmojiObjectsIcon />
+            <EmojiObjectsIcon className={classes.color} />
           </ListItemIcon>
-          <ListItemText primary="Electricity" />
+          <ListItemText primary="Electricity" className={classes.color}/>
         </ListItem>
       </Link>
 
       <Link to="/EV">
         <ListItem button>
           <ListItemIcon>
-            <EvStationIcon />
+            <EvStationIcon className={classes.color}/>
           </ListItemIcon>
-          <ListItemText primary="EV Station" />
+          <ListItemText primary="EV Station" className={classes.color}/>
         </ListItem>
       </Link>
 
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-          <CardTravelIcon />
+          <CardTravelIcon className={classes.color}/>
         </ListItemIcon>
         <ListItemText primary="Travel" />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -104,7 +109,7 @@ export default function SideBar() {
           <Link to="/vehicle">
             <ListItem button className={classes.nested}>
               <ListItemIcon>
-                <DriveEtaIcon />
+                <DriveEtaIcon className={classes.color} />
               </ListItemIcon>
               <ListItemText primary="Vehicle" />
             </ListItem>
@@ -113,7 +118,7 @@ export default function SideBar() {
           <Link to="/flight">
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <FlightIcon />
+              <FlightIcon className={classes.color}/>
             </ListItemIcon>
             <ListItemText primary="Flight" />
           </ListItem>
@@ -122,7 +127,7 @@ export default function SideBar() {
           <Link to="/shipping">
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <LocalShippingIcon />
+              <LocalShippingIcon className={classes.color}/>
             </ListItemIcon>
             <ListItemText primary="Shipping" />
           </ListItem>
