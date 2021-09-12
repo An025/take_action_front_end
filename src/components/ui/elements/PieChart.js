@@ -3,17 +3,16 @@ import { Pie } from "@visx/shape";
 import { Group } from "@visx/group";
 import { Text } from "@visx/text";
 import "./PieChart.scss"
-// import { GradientPinkBlue } from '@visx/gradient';
 
-const coins = [
-  { name: "railway", percent: 0.5, color: "#0033ad" },
-  { name: "water navigation", percent: 13.6, color: "#00ffbd" },
+const transportCO2 = [
+  { name: "railway", percent: 0.5, color: "#C00EC2" },
+  { name: "water navigation", percent: 13.6, color: "#00ffbd"},
   { name: "other", percent: 0.5, color: "#F7931A"},
-  { name: "cars", percent: 60.7, color: "#33ACFF"},
+  { name: "cars", percent: 60.7, color: "#0E0646"},
   { name: "motorcycles", percent: 1.2, color: "#4AD608"},
-  { name: "civil aviation", percent: 13.4, color: "#D39C14"},
-  { name: "heavy duty trucks", percent: 26.2, color: "#C00EC2"},
-  { name: "light duty trucks", percent: 26.2, color: "#11089D"},
+  { name: "civil aviation", percent: 13.4, color: "#B5D5F0"},
+  { name: "heavy duty trucks", percent: 26.2, color: "#33ACFF"},
+  { name: "light duty trucks", percent: 11.9, color: "#11089D"},
 ];
 
 
@@ -32,11 +31,10 @@ const Piechart = props => {
 
   return (
     <div className="piechart-main">
-      {/* <GradientPinkBlue id="visx-pie-gradient" /> */}
       <svg width={width} height={width}>
         <Group top={half} left={half}>
           <Pie
-            data={ coins }
+            data={ transportCO2 }
             pieValue={(data) => data.percent}
             outerRadius={half}
             innerRadius={({ data }) => {
@@ -62,29 +60,18 @@ const Piechart = props => {
 
           {active ? (
             <>
-              <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
-                {`${active.percent}`}
+              <Text textAnchor="middle" fontSize={40} dy={-20}>
+                {`${active.percent}%`}
               </Text>
 
-              <Text
-                textAnchor="middle"
-                fill={active.color}
-                fontSize={20}
-                dy={20}
-              >
+              <Text textAnchor="middle" fontSize={20} dy={20}>
                 {`${active.name}`}
               </Text>
             </>
           ) : (
             <>
-              <Text textAnchor="middle" fill="#fff" fontSize={40} dy={-20}>
-                {`$${Math.floor(
-                  coins.reduce((acc, coin) => acc + coin.percent, 0)
-                )}`}
-              </Text>
-
-              <Text textAnchor="middle" fill="#aaa" fontSize={20} dy={20}>
-                {`Drag over!`}
+              <Text textAnchor="middle" fill="#aaa" fontSize={24} dy={-20}>
+                {`Hover over!`}
               </Text>
             </>
           )}

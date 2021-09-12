@@ -1,11 +1,13 @@
+@import './ui/elements/TemplateColors.scss';
 $black : rgb(0,0,0);
 $travelButtonGreenHover : #45a049;
 $travelButtonGreen : #4CAF50;
 $white : #fff;
-$finalCO2_bg: rgb(240, 209, 209);
+
+
 
 .ground-transport-container {
-    margin:10% 10%;
+    margin:5% 10%;
     text-align: center;
 
 
@@ -62,13 +64,24 @@ $finalCO2_bg: rgb(240, 209, 209);
 
         #finalCO2 {
             max-width: 130px;
-            border: 1px solid #000000;
-            background-color: $finalCO2_bg;
+            color: $black;
+            font-weight: bold;
         }
 
     }
+}
 
-    
+.accordion-holder {
+    background-image: url('./images/swiss_alps.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto 5vh auto;
+    padding: 10vh 20vh;
+}
 
 
+#ground-transport-title {
+    margin: 5vh 20vh 2vh 20vh;
+    text-align: center;
 }
