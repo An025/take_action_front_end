@@ -3,7 +3,8 @@ import ToggleSwitch from './ui/elements/ToggleSwitch';
 import axios from 'axios';
 import "./GroundTransport.scss"
 import PieChart from './ui/elements/PieChart';
-import Accordion from "./ui/elements/Accordion"
+import Accordion from "./ui/elements/Accordion";
+import Stepper from './ui/elements/Stepper';
 
 
 require('dotenv').config();
@@ -63,11 +64,9 @@ const GroundTransport = props => {
 
     return (
         <div>
-            <p id="ground-transport-title">
-                <blockquote>Progress is impossible without change, and those 
-                who cannot change their minds cannot change anything.</blockquote>
-                <span>George Bernard Shaw</span>
-            </p>
+            <div id="ground-transport-title">
+                <Stepper />
+            </div>
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
                     <legend>Ground Transport CO2 Calculator</legend>
