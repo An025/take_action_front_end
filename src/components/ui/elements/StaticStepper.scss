@@ -1,7 +1,8 @@
 @import './TemplateColors.scss';
 
-.container {
+.st-stepper-container {
     width:100%;
+    // display:block;
 }
 .progressbar {
     counter-reset: step;
@@ -9,6 +10,7 @@
 .progressbar li{
     list-style-type: none;
     float: left;
+    line-height: 10vh;
     width: 33.33%;
     position:relative;
     text-align: center;

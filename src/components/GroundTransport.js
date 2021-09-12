@@ -65,7 +65,11 @@ const GroundTransport = props => {
     return (
         <div>
             <div id="ground-transport-title">
-                <StaticStepper />
+                <StaticStepper 
+                    state1="Calculate your footprint!" 
+                    state2="Learn your options!" 
+                    state3="Act!"
+                />
             </div>
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
@@ -119,9 +123,9 @@ const GroundTransport = props => {
             </div>
 
 
-            <div className="charts-holder">
+            {/* <div className="charts-holder">
                 <PieChart />
-            </div>
+            </div> */}
 
 
         </div>
