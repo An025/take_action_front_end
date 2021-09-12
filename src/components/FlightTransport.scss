@@ -3,12 +3,12 @@
 
 
 
-/* .ground-transport-container {
+.flight-transport-container {
     margin:6vh 10%;
     text-align: center;
 
 
-    .ground-transport-fieldset {
+    .flight-transport-fieldset {
         border: 1px solid $black;
         text-align: center;
         padding: 1vh;
@@ -19,7 +19,7 @@
             text-transform: uppercase;
         }
 
-        .ground-transport-form {
+        .flight-transport-form {
             padding: 0 20%;
             label {
                 text-align: left;
@@ -68,17 +68,8 @@
     }
 }
 
-.accordion-holder {
-    background-image: url('./images/swiss_alps.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0 auto 5vh auto;
-    padding: 10vh 20vh;
-}
 
-
-#ground-transport-title {
+/* #ground-transport-title {
     margin-top: 5vh;
     text-align: center;
     display:block;
