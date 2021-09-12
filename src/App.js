@@ -26,7 +26,7 @@ function App() {
         </Route>
 
         <Route exact path="/travel">
-          <SideBar/>
+          {/* <SideBar/> */}
           <GroundTransport />
         </Route>
         

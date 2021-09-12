@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ToggleSwitch from './ui/elements/ToggleSwitch';
 import axios from 'axios';
+import "./GroundTransport.scss"
+import PieChart from './ui/elements/PieChart';
 
 
 require('dotenv').config();
@@ -24,7 +26,7 @@ const GroundTransport = props => {
     let [distanceTravelled, setDistanceTravelled] = useState(0);
     let [co2InKg , setCo2InKg] = useState(null);
     let [fuelEfficiency, setFuelEfficiency] = useState(10);
-    let [chosenFuel, setChosenFuel] = useState('gasoline');
+    let [chosenFuel, setChosenFuel] = useState('diesel');
 
     useEffect(() => {
         let body = {
@@ -59,15 +61,15 @@ const GroundTransport = props => {
 
 
     return (
-        <div className="ground-transport-form">
-            <fieldset>
-                <legend >Ground transportation</legend>
-                <form id="ground-transport-form">
+        <div className="ground-transport-container">
+            <fieldset className="ground-transport-fieldset">
+                <legend>Ground Transport</legend>
+                <form className="ground-transport-form">
                     <label htmlFor="distance">Distance (km): </label>
-                    <input placeholder="Distance in km..." name="distance"></input><br />
+                    <input type="text" placeholder="Distance in km..." name="distance"></input><br />
                     
                     <label htmlFor="distance">Efficiency (kml): </label>
-                    <input name="efficiency" placeholder="Average: 10 km/l"></input><br />
+                    <input type="text" name="efficiency" placeholder="Average: 10 km/l"></input><br />
  
                     <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/><br />
 
@@ -75,7 +77,10 @@ const GroundTransport = props => {
                 </form>
 
                 <p>Your carbon consumption with this travel:</p>
-                <p> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>
+                <p id="finalCO2"> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>
+
+                <PieChart />
+
             </fieldset>
         </div>
     )
