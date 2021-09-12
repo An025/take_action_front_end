@@ -6,6 +6,7 @@ import GroundTransport from './components/GroundTransport';
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
 import Content from './components/ui/Content';
+import EV from './components/EV';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Switch>
 
         <Route exact path="/side">
-          <div className="container">
+          <div className="cont">
              <SideBar/>
              <Content/>
           </div>
@@ -30,6 +31,10 @@ function App() {
           <GroundTransport />
         </Route>
         
+        <Route exact path="/EV">
+          <EV/>
+        </Route>
+
         <Route exact path="/">
           <Main />
         </Route>

@@ -2,8 +2,16 @@
   text-align: center;
 } */
 
-/* .container{
+*{
+  margin: 0;
+  padding: 0;
+}
+.cont{
   display: flex;
   flex-direction: row;
   margin: 0;
-} */
+}
+ a{
+  text-decoration: none !important;
+  color: black !important;
+} 
