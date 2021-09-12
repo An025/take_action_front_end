@@ -1,9 +1,9 @@
-
+import {Link} from "react-router-dom";
 
 const Recipee = props => {
 
     const recipeeCardStyle = {
-        color: 'white',
+        
         backgroundColor: '#212529',
         // display: 'flex',
         textAlign: 'center',
@@ -23,6 +23,7 @@ const Recipee = props => {
     };
 
     const paragraphStyle = {
+        color: 'white',
         display: 'flex',
         textAlign: 'center',
         flexDirection: 'column',
@@ -30,13 +31,17 @@ const Recipee = props => {
         width: '90%',
         height: '17%',
         margin: '8px',
-        fontSize: '0.85rem'
-
+        fontSize: '0.85rem',
+        textDecoration: 'none'
     };
+
+    const linkTo = "/food/recipee-details"
 
     return(
         <div style={recipeeCardStyle}>
-            <p style={paragraphStyle}>{props.recipee.title}</p>
+            {/* <p style={paragraphStyle}>{props.recipee.title}</p> */}
+            {/* <Link style={paragraphStyle} to={linkTo} state={{ from: 'occupation' }}> {props.recipee.title} </Link> */}
+            <Link style={paragraphStyle} to={{ pathname: linkTo, state: {recipeeData: props} }}> {props.recipee.title} </Link>
             <img style={imageStyle} src={props.recipee.image}></img>
         </div>
     )

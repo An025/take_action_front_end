@@ -3,11 +3,12 @@ import NavBar from './components/ui/NavBar';
 import Main from './components/ui/Main';
 import CarbonEstimates from './components/CarbonEstimates';
 import FoodMainPage from './components/Food/FoodMainPage';
-
+import RecipeeDetails from './components/Food/RecipeeDetails';
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
 import Content from './components/ui/Content';
 import EV from './components/EV';
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,13 @@ function App() {
 
         <Route exact path="/food">
           <FoodMainPage/>
+        </Route>
+
+        <Route exact path="/food/recipee-details">
+          <div>
+            <RecipeeDetails/>
+          </div>
+          
         </Route>
 
         <Route exact path="/EV">

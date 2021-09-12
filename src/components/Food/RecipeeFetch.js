@@ -14,9 +14,7 @@ const RecipeeFetch = props => {
     const url = "https://api.spoonacular.com/recipes/complexSearch";
 
     // Available filters with possible values (later to be moved into another file)
-    const cuisine = [];
     const excludeCuisine = [];
-    const diet = [];
     const intolerances = [];
     const includeIngredients = [];
     const excludeIngredients = [];

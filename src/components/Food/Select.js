@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleSelect() {
   const classes = useStyles();
-  const [diet, setDiet] = React.useState('');
-  const [cuisine, setCuisine] = React.useState('');
+  const [diet, setDiet] = React.useState('vegetarian');
+  const [cuisine, setCuisine] = React.useState('mediterranean');
 
   const handleDietChange = (event) => {
     setDiet(event.target.value);
