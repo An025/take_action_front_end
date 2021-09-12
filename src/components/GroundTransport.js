@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ToggleSwitch from './ui/ToggleSwitch';
+import ToggleSwitch from './ui/elements/ToggleSwitch';
 import axios from 'axios';
 
 
 require('dotenv').config();
 const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
 const AuthStr = "Bearer " + apiKey;
-
-
-const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
-const kml2mpgMultiplier = 2.35214583;
-
-
-
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
@@ -20,10 +13,16 @@ const axiosHeader = {
     }
 };
 
+const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
+const kml2mpgMultiplier = 2.35214583;
+
+
+
+
 const GroundTransport = props => {
 
     let [distanceTravelled, setDistanceTravelled] = useState(0);
-    let [co2InKg , setCo2InKg] = useState(0);
+    let [co2InKg , setCo2InKg] = useState(null);
     let [fuelEfficiency, setFuelEfficiency] = useState(10);
     let [chosenFuel, setChosenFuel] = useState('gasoline');
 
@@ -35,7 +34,7 @@ const GroundTransport = props => {
             "fuel_efficiency":{
                 "value": fuelEfficiency * kml2mpgMultiplier,
                 "units":"mpg",
-                "of": (chosenFuel ? chosenFuel : "gasoline" )
+                "of": (chosenFuel ? chosenFuel : "diesel" )
             }
         };
 
@@ -69,8 +68,8 @@ const GroundTransport = props => {
                     
                     <label htmlFor="distance">Efficiency (kml): </label>
                     <input name="efficiency" placeholder="Average: 10 km/l"></input><br />
-
-                    <ToggleSwitch fuel={ chosenFuel } setFuel={ setChosenFuel }/><br />
+ 
+                    <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/><br />
 
                     <button type="button" onClick={ handleSubmit }>Calculate</button>
                 </form>
