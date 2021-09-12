@@ -4,7 +4,7 @@ import axios from 'axios';
 import "./GroundTransport.scss"
 import PieChart from './ui/elements/PieChart';
 import Accordion from "./ui/elements/Accordion";
-import Stepper from './ui/elements/Stepper';
+import StaticStepper from './ui/elements/StaticStepper';
 
 
 require('dotenv').config();
@@ -65,7 +65,7 @@ const GroundTransport = props => {
     return (
         <div>
             <div id="ground-transport-title">
-                <Stepper />
+                <StaticStepper />
             </div>
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
