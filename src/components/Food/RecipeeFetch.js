@@ -50,7 +50,7 @@ const RecipeeFetch = props => {
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'left',
+        // justifyContent: 'left',
         flexWrap: 'wrap',
         gap: '10px 20px',
         justifyContent: 'center'    
