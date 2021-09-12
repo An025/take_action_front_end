@@ -4,17 +4,25 @@
 
 
 .flight-transport-container {
-    margin:6vh 10%;
+    margin-bottom:10vh;
+    padding: 5vh 0;
     text-align: center;
+    background-image: url('./images/plane.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 
     .flight-transport-fieldset {
         border: 1px solid $black;
         text-align: center;
         padding: 1vh;
+        margin:0 20vh;
+        color: $white;
+        background: $black_bg_w_opacity;
     
         legend {
-            float: none;
+            float: left;
             width: fit-content;
             text-transform: uppercase;
         }
@@ -58,7 +66,7 @@
         }
 
         #finalCO2 {
-            color: $black;
+            color: $white;
             font-weight: bold;
         }
 
