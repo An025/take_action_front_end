@@ -1,19 +1,190 @@
-.banner{
-    position: relative;
-    min-height: 75%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    z-index: 1;
-    
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+.titlecontainer {
+    z-index: 1;
+    height: 100vh;
+    position: relative;
 }
 
-.container{
-    /* position:  relative; */
+.banner1{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-attachment: fixed;
+    background-image: url('../images/coral.jpg') ;
+    background-color: #0a0300;
+    /* opacity: 0.7; */
+    z-index: 1;
+    height: 100vh;
+    -webkit-filter: blur(4px);
+    /* overflow: hidden; */
+}
+
+.sitetitle {
+    position: absolute;
+    top: 12vh;
+    margin: 0 40vh;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+}
+.sitetitle h1 {
+    font-size: 7vh;
+    margin-bottom: 8vh;
+}
+
+.sitetitle p {
+    margin-top: 20px;
     font-size: x-large;
-    z-index: 100;
-    /* height:100px;background-color:red;font-size:36px; */
+}
+.sitetitlebuttons button {
+    margin-top: 10vh;
+    margin-left:5vh;
+}
+
+
+.beforeContainer{
+    z-index: 1;
+    min-height: 40vh;
+    display: flex;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #0a0300;
+}
+.beforeHolder {
+    height: 30vh;
+    width: 35vh;
+    margin: auto 10vh auto 15vh;
+    border: 3px solid lightseagreen;
+    box-shadow: 6px 6px 8px #777;
+}
+.compareContent {
+    margin: 5vh 10vh 5vh 5vh;
+    max-width: 100vh;
+    text-align: justify;
+}
+.compareContent h1 {
+    margin-bottom: 2vh;
+}
+.compareContent p {
+    margin-bottom: 1vh;
+}
+
+.line{
+    height: 50px;
+    background: linear-gradient(90deg, #9fe8f7,#1b7405);
+    z-index: 2;
+}
+
+.banner2{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+    background-attachment: fixed;
+    background-image: url('../images/banner3.jpg') ;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.banner2container{
+    max-width: 80%;
+    margin: 0 auto;
+    /* height: 70vh; */
+    position: relative;
+}
+.banner2content {
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    padding-top: 100px;
+}
+
+.sectionTitle{
+    font-family: 'Montserrat', sans-serif;  
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 3vh;
+}
+.sectionText p{
+    margin-bottom: 1vh;
+}
+
+.cardcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 3vh;
+}
+
+.card{
+    width: 40vh;
+    height: 45vh;
+    background: linear-gradient(0, #99DA8B, #4F71C0);
+    text-align: center;
+    /* background-color: #8DD6B3; */
+    opacity: 0.6;
+    /* margin-left: 50px; */
+    margin-top:50px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+         box-shadow: 0 10px 6px -6px #777;
+}
+.card img {
+    max-height: 25vh;
+}
+
+.card:hover{
+    opacity: 0.9;
+}
+
+.card h2{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.section3{
+    padding: 50px 0;
+}
+
+.section3container {
+    max-width: 80%;
+    margin: 0 auto;
+    /* height: 70vh; */
+    position: relative;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+
+/* .title{
+    font-family: 'Montserrat', sans-serif; 
+    letter-spacing: 5px;  
+    color: #5B81B8;
+    width: 500px;
+    padding-top: 50px;
+    padding-left: 50px;
+    border-bottom: 2px solid #C1EDD8;
+} */
+
+.button{
+    left: 50%;
+}
+
+.anchorFootprint {
+    position: fixed;
+    right: 1vh;
+    bottom: 1vh;
+}
+
+.anchorFootprint img {
+    height: 60px;
+    opacity: 0.4;
 }

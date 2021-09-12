@@ -4,14 +4,43 @@ import Main from './components/ui/Main';
 import CarbonEstimates from './components/CarbonEstimates';
 import FlightTransport from './components/FlightTransport';
 
+import SideBar from './components/ui/SideBar';
+import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
+import Content from './components/ui/Content';
+import EV from './components/EV';
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      {/* <Main/> */}
-      {/* <CarbonEstimates/> */}
-      <FlightTransport />
-    </div>
+    <BrowserRouter>
+      <NavBar />
+
+      <Switch>
+
+        <Route exact path="/side">
+          <div className="cont">
+             <SideBar/>
+             <Content/>
+          </div>
+        </Route>
+
+        <Route exact path="/food">
+        </Route>
+
+        <Route exact path="/EV">
+          <EV/>
+        </Route>
+
+        <Route exact path="/flight">
+          <FlightTransport />
+        </Route>
+
+        <Route exact path="/">
+          <Main />
+        </Route>
+
+      </Switch>
+    </BrowserRouter>
+    
+    
   );
 }
 

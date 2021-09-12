@@ -1,0 +1,19 @@
+.markerBtn img{ 
+    width: 40px;
+  }
+
+
+  .popup p {
+    text-align: center;
+    font-style: italic;
+  }
+  .mapboxgl-popup-content{
+      background-color: #75c8a4e1 !important;
+      border-radius: 10px !important;
+  }
+  
+
+  .mapboxgl-popup-close-button{
+    padding-left: 100px;
+  }
+  
