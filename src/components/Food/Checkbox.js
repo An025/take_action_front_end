@@ -7,13 +7,23 @@ import RecipeeFetch from './RecipeeFetch';
 
 export default function CheckboxLabels() {
   const [state, setState] = React.useState({
-    vegan: true,
-    vegetarian: true
+    filters: {
+      diet: {vegan: true,
+            vegetarian: true},
+      cuisine: {}
+          }
+    
   });
 
   const handleChange = (event) => {
-    console.log(state.vegan);
-    setState({ ...state, [event.target.name]: event.target.checked });
+    // console.log(state.vegan);
+    console.log("asdgasg");
+    let stateCopy = JSON.parse(JSON.stringify(state.filters))
+    let field = event.target.name;
+    stateCopy.diet.
+    console.log(stateCopy);
+    // setState({ ...state, [event.target.name]: event.target.checked });
+    setState({ ...state, filters: stateCopy });
   };
 
   return (
@@ -30,7 +40,8 @@ export default function CheckboxLabels() {
         label="Vegetarian"
       />
     </FormGroup>
-    <RecipeeFetch vegan={state.vegan}/>
+    {console.log(state.filters)}
+    <RecipeeFetch vegan={state.filters}/>
     </div>
   );
 }

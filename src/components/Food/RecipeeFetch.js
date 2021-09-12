@@ -1,11 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Recipee from "./Recipee";
 
 // Can I change 'props' to '()'?
 const RecipeeFetch = props => {
-    
-    console.log("asd");
-    console.log(props.vegan);
 
     const [state, setRecipeData] = useState({
         recipeData: []
@@ -34,24 +32,34 @@ const RecipeeFetch = props => {
         axios.get(url, {
             params: {
                 apiKey: apiKey,
-                cuisine: "italian",
-                diet: "vegetarian",
+                cuisine: props.cuisine,
+                diet: props.diet,
                 instructionsRequired: "true",
                 addRecipeInformation: "true"
             }
         })
         .then(response => {
-            console.log(response);
-            setRecipeData({recipeData: response});
+            
+            console.log(response.data.results);
+            setRecipeData({recipeData: response.data.results});
         })
         .catch(error => console.log(error))
-    }, [])
+    }, [props])
 
-
+    const cardContainerStyle = {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'left',
+        flexWrap: 'wrap',
+        gap: '10px 20px',
+        justifyContent: 'center'    
+    };
 
     return(
-        <div>
-            Hello from RecipeeFetch
+        <div style={cardContainerStyle}>
+            {state.recipeData.map((recipee) => (<Recipee key={recipee.id} recipee={recipee}/>))}
+
         </div>
     )
 
