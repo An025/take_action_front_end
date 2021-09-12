@@ -4,7 +4,8 @@ const Recipee = props => {
 
     const recipeeCardStyle = {
         
-        backgroundColor: '#212529',
+        // backgroundColor: '#212529',
+        backgroundColor: '#05324F',
         // display: 'flex',
         textAlign: 'center',
         height: '200px',
@@ -19,7 +20,11 @@ const Recipee = props => {
         // width: '110px',
         //height: '110px',
         padding: '4px',
-        display: 'inline-block'
+        display: 'inline-block',
+
+        objectFit: 'cover',
+        opacity: '0.5'
+
     };
 
     const paragraphStyle = {

@@ -11,7 +11,8 @@ const cardStyle = {
 
 const card = {
     height: '60px',
-    backgroundColor: '#212529',
+    // backgroundColor: '#212529',
+    backgroundColor: '#05324F',
     color: '#fff',
     flexBasis: '250px',
     textAlign: 'center',
