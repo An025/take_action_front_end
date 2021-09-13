@@ -17,7 +17,7 @@ const axiosHeader = {
 };
 
 
-const URL = 'https://api.cloverly.com/2019-03-beta/estimates/flight';
+const apiURL = 'https://api.cloverly.com/2019-03-beta/estimates/flight';
 const listOfBiggestAirports = [
     '','CAN','ATL','CTU','DFW','SZX','CKG','PEK','DEN','KMG','SHA','XIY','HND','ORD','PVG','LAX',
     'DEL','HGH','CLT','DXB','IST','CDG','LHR','MEX','PHX','SGN','MCO','CGO','CJU','AMS','GRU',
@@ -25,10 +25,10 @@ const listOfBiggestAirports = [
     'FLL','SFO','DME','PKX','EWR',
 ];
 
-const myFlights = [
+const const_flights = [
     {
       name: 'V131',
-      origin: { city: 'Paris', latitude: 48.8567, longitude: 2.3510 },
+      origin: { city: 'Zadoi', latitude: 32.74647437694143, longitude: 94.81066352656649 },
       destination: { city: 'Toronto', latitude: 43.8163, longitude: -79.4287 },
       state: 1,
       color: '#F60000'
@@ -52,7 +52,11 @@ const FlightTransport = props => {
     const [distanceFlew, setDistanceFlew] = useState(0);
     const [co2InKg , setCo2InKg] = useState(0);
     const [airports,setAirports] = useState([]);
-    const [flights, setFlights] = useState([]);
+    const [myflights, setMyFlights] = useState([]);
+
+    useEffect(()=>{
+        
+    }, URL)
 
     useEffect(() => {
         let body = {
@@ -62,7 +66,7 @@ const FlightTransport = props => {
                 airports[2]
             ]};
         
-        axios.post(URL, body, axiosHeader )
+        axios.post(apiURL, body, axiosHeader )
         .then(resp => {
             setDistanceFlew(resp.data.distance_in_miles * 1.6)
             setCo2InKg(resp.data.equivalent_carbon_in_kg)
@@ -79,7 +83,7 @@ const FlightTransport = props => {
         let airportTo = event.target.parentNode.children[5].value.toLowerCase();
         setAirports([ airportFrom, airportThrough, airportTo]);
 
-        setFlights(myFlights);
+        setMyFlights(const_flights);
       };
 
 
@@ -115,8 +119,7 @@ const FlightTransport = props => {
                     <p>You flew { distanceFlew } km-s.</p>
                     <p id="finalCO2">Your carbon consumption with this travel was { co2InKg } kg-s.</p>
                     <div className="flight-map-container">
-                        {/* <flights-map ref={(el) => { el.flights = flights }} /> */}
-                        <FlightMap flights={ myFlights }/>
+                        <FlightMap myFlights={ myflights }/>
                     </div>
                 </fieldset>
             </div>
