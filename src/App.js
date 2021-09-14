@@ -3,13 +3,13 @@ import NavBar from './components/ui/NavBar';
 import Footer from './components/ui/Footer';
 import Main from './components/ui/Main';
 import CarbonEstimates from './components/CarbonEstimates';
+import FoodMainPage from './components/Food/FoodMainPage';
+import RecipeeDetails from './components/Food/RecipeeDetails';
 import GroundTransport from './components/GroundTransport';
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
 import Content from './components/ui/Content';
 import EV from './components/EV';
-
-
 
 function App() {
   return (
@@ -26,6 +26,14 @@ function App() {
         </Route>
 
         <Route exact path="/food">
+          <FoodMainPage/>
+        </Route>
+
+        <Route exact path="/food/recipee-details">
+          <div>
+            <RecipeeDetails/>
+          </div>
+          
         </Route>
 
         <Route exact path="/vehicle">
