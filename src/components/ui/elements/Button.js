@@ -8,7 +8,7 @@ export default function Button(props){
 
 const useStyles= makeStyles({
     root:{
-      background: 'linear-gradient(45deg, #99DA8B, #4F71C0)',
+      background: 'linear-gradient(45deg, #255B80, #5BB2C0)',
       border: 0,
       marginTop: 50,
       marginBottom: 15,

@@ -1,0 +1,47 @@
+@import './TemplateColors.scss';
+
+.st-stepper-container {
+    display:block;
+    min-height: 20vh;
+    width:70%;
+    margin: 0 auto;
+}
+.progressbar {
+    counter-reset: step;
+}
+.progressbar li{
+    list-style-type: none;
+    float: left;
+    line-height: 10vh;
+    width: 33.33%;
+    position:relative;
+    text-align: center;
+    font-weight: 600;
+}
+.progressbar li:before {
+    content:counter(step);
+    counter-increment: step;
+    height:10vh;
+    width:10vh;
+    line-height: 10vh;
+    border: 2px solid #ddd;
+    display:block;
+    color: $white;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(90deg, $headerDarkBlue, $headerLightBlue);
+}
+.progressbar li:after {
+    content:' ';
+    position: absolute;
+    width:100%;
+    height:2px;
+    background-color: $black;
+    top: 5vh;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar li:first-child:after {
+    content:none;
+}

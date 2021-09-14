@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
 import Accordion from './elements/Accordion';
-import Footer from './Footer';
 import footprint1 from '../images/tourism_footprint.png';
 import footprint2 from '../images/eating_footprint.png';
 import footprint3 from '../images/videoGames_footprint.jpeg';
@@ -115,9 +114,6 @@ function Main(){
             
             <div className= { classes.anchorFootprint }>
                 <a href="#"><img src={ footprint } ></img></a>
-            </div>
-            <div className={ classes.footer }>
-                <Footer />
             </div>
 
         </div>
