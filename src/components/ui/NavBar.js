@@ -4,22 +4,7 @@ import logo from "../images/leaf_logo.png"
 import React from 'react';
 // import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom";
-import styled from 'styled-components';
 
-
-const DimContainer = styled.div`
-  display: none;
-  position:fixed;
-  left:0;
-  top:10vh;
-  z-index: 5;
-  height: 100%;
-  width: 100%;
-  background: rgb(0,0,0,0.6);
-  &:hover {function(e) {
-    display: block;
-  }}
-`;
 
 
 export default function NavBar() {
@@ -31,7 +16,7 @@ export default function NavBar() {
         <div className="leftContainer">
           <img className="logo" src={ logo } alt="logo"/>
           <Link to="/">
-            <h4 className="title">Enviroso</h4>
+            <h4 className="title">TakeAction</h4>
           </Link>
           <Link to="/side">
             <h4 className="title"> Footprint</h4>

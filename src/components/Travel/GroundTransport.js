@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import ToggleSwitch from './ui/elements/ToggleSwitch';
+import ToggleSwitch from '../ui/elements/ToggleSwitch';
 import axios from 'axios';
 import "./GroundTransport.scss"
-import PieChart from './ui/elements/PieChart';
-import Accordion from "./ui/elements/Accordion";
-import StaticStepper from './ui/elements/StaticStepper';
+import PieChart from '../ui/elements/PieChart';
+import Accordion from "../ui/elements/Accordion";
+import StaticStepper from '../ui/elements/StaticStepper';
 
 
 require('dotenv').config();

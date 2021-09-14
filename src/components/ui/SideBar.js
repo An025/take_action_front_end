@@ -21,6 +21,8 @@ import { borders} from '@material-ui/system';
 import { createTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import green from '@material-ui/core/colors/green';
+import "./SidePage.module.css";
+import { Block } from '@material-ui/icons';
 
 
 
@@ -36,9 +38,9 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 240,
+    maxWidth: '33vh',
+    height: "100vh",
     backgroundColor: '#426785',
-    height: '90vh',
     paddingTop: 20,
     color: '#fff'
   },
@@ -48,9 +50,15 @@ const useStyles = makeStyles((theme) => ({
   },
   color: {
     color: '#fff'
-  }
-
+  },
+  sidebarContainer: {
+    position: 'sticky',
+    height: '100%',
+    zIndex: '4',
+  },
 }));
+
+
 
 export default function SideBar() {
   const classes = useStyles();
@@ -63,78 +71,80 @@ export default function SideBar() {
 
 
   return (
-    <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      className={classes.root}
-    >
-      {/* Food */}
-      <Link to="/food" content="Food">
-        <ListItem button className={classes.color}>
-          <ListItemIcon>
-            <FastfoodIcon className={classes.color}/>
-          </ListItemIcon>
-          <ListItemText primary="Food" />
-        </ListItem>
-      </Link>
-
-      <Link to="/electricity">
-        <ListItem button>
-          <ListItemIcon>
-            <EmojiObjectsIcon className={classes.color} />
-          </ListItemIcon>
-          <ListItemText primary="Electricity" className={classes.color}/>
-        </ListItem>
-      </Link>
-
-      <Link to="/EV">
-        <ListItem button>
-          <ListItemIcon>
-            <EvStationIcon className={classes.color}/>
-          </ListItemIcon>
-          <ListItemText primary="EV Station" className={classes.color}/>
-        </ListItem>
-      </Link>
-
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <CardTravelIcon className={classes.color}/>
-        </ListItemIcon>
-        <ListItemText primary="Travel" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-
-          <Link to="/vehicle">
-            <ListItem button className={classes.nested}>
+    <div className={ classes.sidebarContainer }>
+         <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          className={classes.root}
+        >
+          {/* Food */}
+          <Link to="/food" content="Food">
+            <ListItem button className={classes.color}>
               <ListItemIcon>
-                <DriveEtaIcon className={classes.color} />
+                <FastfoodIcon className={classes.color}/>
               </ListItemIcon>
-              <ListItemText primary="Vehicle" />
+              <ListItemText primary="Food" />
             </ListItem>
           </Link>
 
-          <Link to="/flight">
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <FlightIcon className={classes.color}/>
-            </ListItemIcon>
-            <ListItemText primary="Flight" />
-          </ListItem>
+          <Link to="/electricity">
+            <ListItem button>
+              <ListItemIcon>
+                <EmojiObjectsIcon className={classes.color} />
+              </ListItemIcon>
+              <ListItemText primary="Electricity" className={classes.color}/>
+            </ListItem>
           </Link>
 
-          <Link to="/shipping">
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <LocalShippingIcon className={classes.color}/>
-            </ListItemIcon>
-            <ListItemText primary="Shipping" />
-          </ListItem>
+          <Link to="/EV">
+            <ListItem button>
+              <ListItemIcon>
+                <EvStationIcon className={classes.color}/>
+              </ListItemIcon>
+              <ListItemText primary="EV Station" className={classes.color}/>
+            </ListItem>
           </Link>
 
+          <ListItem button onClick={handleClick}>
+            <ListItemIcon>
+              <CardTravelIcon className={classes.color}/>
+            </ListItemIcon>
+            <ListItemText primary="Travel" />
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+
+              <Link to="/vehicle">
+                <ListItem button className={classes.nested}>
+                  <ListItemIcon>
+                    <DriveEtaIcon className={classes.color} />
+                  </ListItemIcon>
+                  <ListItemText primary="Vehicle" />
+                </ListItem>
+              </Link>
+
+              <Link to="/flight">
+              <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                  <FlightIcon className={classes.color}/>
+                </ListItemIcon>
+                <ListItemText primary="Flight" />
+              </ListItem>
+              </Link>
+
+              <Link to="/shipping">
+              <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                  <LocalShippingIcon className={classes.color}/>
+                </ListItemIcon>
+                <ListItemText primary="Shipping" />
+              </ListItem>
+              </Link>
+
+            </List>
+          </Collapse>
         </List>
-      </Collapse>
-    </List>
+    </div>
   );
 }

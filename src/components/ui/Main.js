@@ -74,18 +74,18 @@ function Main(){
                         </div>
                     </div>  
                     <div className={classes.cardcontainer}>
-                        <div className={classes.card}>
+                        <a className={classes.card} href="/vehicle">
                             <h2>Travel habits</h2>
                             <img className={classes.footprints} src={ footprint1 }></img>
-                        </div>
-                        <div className={classes.card}>
+                        </a>
+                        <a className={classes.card} href="/food">
                             <h2>Eating habits</h2>
                             <img className={classes.footprints} src={ footprint2 }></img>
-                        </div>
-                        <div className={classes.card}>
+                        </a>
+                        <a className={classes.card} href="/ev">
                             <h2>Energy consumption</h2>
                             <img className={classes.footprints} src={ footprint3 }></img>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div> 
