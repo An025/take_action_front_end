@@ -1,6 +1,13 @@
 $black : rgb(0,0,0);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+.main-container {
+  display:block;
+  width: 100%;
+}
+
 .navbar {
+  display:block;
   position: fixed;
   top: 0;
   margin:unset;
@@ -17,6 +24,10 @@ $black : rgb(0,0,0);
   // justify-content: flex-end;
   color: $black;
   align-items: center;
+
+  &:hover + .dim-container {
+      display: block;
+  }
   
  
   // .menuItems{
@@ -44,6 +55,9 @@ $black : rgb(0,0,0);
   }
   .rightContainer{
     width: 50%;
+    position: absolute;
+    top:0;
+    right:0;
     display: flex;
     justify-content: flex-end;
     height: 10vh;
@@ -54,24 +68,17 @@ $black : rgb(0,0,0);
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
     }
-
   }
 
-/*     .dropdown_main *{
-        color: red;
-        right:0;
-    } */
-  // }
+}
 
-  // .logo {
-  //   position: absolute;
-  //   left:20px;
-  //   width: 50px;
-  // }
-
-  // .title {
-  //   position: absolute;
-  //   left:70px; 
-  // }
-
+.dim-container {
+  display: none;
+  position:fixed;
+  left:0;
+  top:10vh;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background: rgb(0,0,0,0.6);
 }
