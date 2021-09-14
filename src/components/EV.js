@@ -4,10 +4,10 @@ import './EV.css';
 
 export default function EV(){
   const [viewport, setViewport] = useState({
-    latitude: 51.545581,
-    longitude: -0.077301,
-    // latitude: 47.497913,
-    // longitude: 19.040236,
+    // latitude: 51.545581,
+    // longitude: -0.077301,
+    latitude: 47.497913,
+    longitude: 19.040236,
     width: '100vw',
     height: '89vh',
     zoom: 10,
@@ -16,13 +16,14 @@ export default function EV(){
 
   const [EV, setEV] = useState([]);
   const [selectedStation, setSelectedStation] = useState(null);
+  const api_key = "REACT_APP_OPENCHARGERMAP";
   useEffect(()=>{
 
   
-    fetch('https://api.openchargemap.io/v3/poi/', {
+    fetch('https://api.openchargemap.io/v3/poi/?output=json&countrycode=HU&maxresults=100', {
         mode: 'cors', 
         headers: {
-            'x-api-key': '1ef9e57e-d6a4-4b3a-80b5-1719b8c7b5db',
+            'x-api-key': api_key,
             'User-Agent' : 'My-App',
             'Accept': '*/*',
         },
@@ -77,7 +78,7 @@ export default function EV(){
           setSelectedStation(null);
         }}>
         
-          <div>
+          <div className="popup">
             <h2>{selectedStation.AddressInfo.Title}</h2>
             <p>{selectedStation.AddressInfo.Town}</p>
             <p>{selectedStation.AddressInfo.Connections}</p>

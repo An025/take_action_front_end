@@ -1,5 +1,5 @@
-$myBlack : rgb(0,0,0);
-$footerTextColor: rgb(228, 85, 19);
+@import "./elements/TemplateColors.scss";
+$footerTextColor: $white;
 
 
 .footer {
@@ -7,7 +7,7 @@ $footerTextColor: rgb(228, 85, 19);
     min-height: 40vh;
     max-height: 60vh;
     width: 100%;
-    background-color: $myBlack;
+    background-color: $headerDarkBlue;
     color: $footerTextColor;
 
     .copyright{
