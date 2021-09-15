@@ -15,25 +15,13 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import FlightIcon from '@material-ui/icons/Flight';
 import CardTravelIcon from '@material-ui/icons/CardTravel';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
-import { borders} from '@material-ui/system';
-import { createTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue';
-import green from '@material-ui/core/colors/green';
+
+
 import "./SidePage.module.css";
-import { Block } from '@material-ui/icons';
 
 
 
-const theme = createTheme({
-    
-    palette: {
-        primary: blue,
-        secondary: green,
-    },
-      
-});
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -87,14 +75,14 @@ export default function SideBar() {
             </ListItem>
           </Link>
 
-          <Link to="/electricity">
+          {/* <Link to="/electricity">
             <ListItem button>
               <ListItemIcon>
                 <EmojiObjectsIcon className={classes.color} />
               </ListItemIcon>
               <ListItemText primary="Electricity" className={classes.color}/>
             </ListItem>
-          </Link>
+          </Link> */}
 
           <Link to="/EV">
             <ListItem button>
@@ -133,14 +121,14 @@ export default function SideBar() {
               </ListItem>
               </Link>
 
-              <Link to="/shipping">
+              {/* <Link to="/shipping">
               <ListItem button className={classes.nested}>
                 <ListItemIcon>
                   <LocalShippingIcon className={classes.color}/>
                 </ListItemIcon>
                 <ListItemText primary="Shipping" />
               </ListItem>
-              </Link>
+              </Link> */}
 
             </List>
           </Collapse>

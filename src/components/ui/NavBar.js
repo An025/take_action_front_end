@@ -18,7 +18,7 @@ export default function NavBar() {
           <Link to="/">
             <h4 className="title">TakeAction</h4>
           </Link>
-          <Link to="/side">
+          <Link to="/video">
             <h4 className="title"> Footprint</h4>
           </Link>
           <Link to="/side">

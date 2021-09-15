@@ -6,7 +6,7 @@ import FoodMainPage from './components/Food/FoodMainPage';
 import RecipeeDetails from './components/Food/RecipeeDetails';
 import GroundTransport from './components/Travel/GroundTransport';
 import SideBar from './components/ui/SideBar';
-import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
+import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
 import EV from './components/Energy/EV';
 import React from 'react';
@@ -18,7 +18,7 @@ function App() {
 
       <Switch>
 
-        <Route exact path="/side">
+        <Route exact path="/video">
           <div className="cont">
              <SideBar/>
              <Video/>

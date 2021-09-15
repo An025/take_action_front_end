@@ -33,7 +33,7 @@ function Main(){
 
             <div className={ classes.beforeContainer }>
                 <div className={ classes.beforeHolder } >
-                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } />
+                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } alt="earth" />
                 </div>
 
                 <div className= { classes.compareContent }>
@@ -76,15 +76,15 @@ function Main(){
                     <div className={classes.cardcontainer}>
                         <a className={classes.card} href="/vehicle">
                             <h2>Travel habits</h2>
-                            <img className={classes.footprints} src={ footprint1 }></img>
+                            <img className={classes.footprints} src={ footprint1 } alt="footprint"></img>
                         </a>
                         <a className={classes.card} href="/food">
                             <h2>Eating habits</h2>
-                            <img className={classes.footprints} src={ footprint2 }></img>
+                            <img className={classes.footprints} src={ footprint2 } alt="footprint"></img>
                         </a>
                         <a className={classes.card} href="/ev">
                             <h2>Energy consumption</h2>
-                            <img className={classes.footprints} src={ footprint3 }></img>
+                            <img className={classes.footprints} src={ footprint3 } alt="footprint"></img>
                         </a>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ function Main(){
             </div>
             
             <div className= { classes.anchorFootprint }>
-                <a href="#"><img src={ footprint } ></img></a>
+                <a href="/"><img src={ footprint } alt="footprint" ></img></a>
             </div>
 
         </div>

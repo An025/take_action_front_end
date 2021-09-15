@@ -47,7 +47,7 @@ const Recipee = props => {
             {/* <p style={paragraphStyle}>{props.recipee.title}</p> */}
             {/* <Link style={paragraphStyle} to={linkTo} state={{ from: 'occupation' }}> {props.recipee.title} </Link> */}
             <Link style={paragraphStyle} to={{ pathname: linkTo, state: {recipeeData: props} }}> {props.recipee.title} </Link>
-            <img style={imageStyle} src={props.recipee.image}></img>
+            <img style={imageStyle} src={props.recipee.image} alt={props.recipee.title}></img>
         </div>
     )
 }

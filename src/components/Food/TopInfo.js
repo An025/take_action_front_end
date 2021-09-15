@@ -2,10 +2,10 @@ const cardStyle = {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'left',
+    justifyContent: 'center',
     flexWrap: 'wrap',
     gap: '10px 20px',
-    justifyContent: 'center'
+    // justifyContent: 'center'
     
 }
 

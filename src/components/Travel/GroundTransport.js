@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ToggleSwitch from '../ui/elements/ToggleSwitch';
 import axios from 'axios';
 import "./GroundTransport.scss"
-import PieChart from '../ui/elements/PieChart';
+// import PieChart from '../ui/elements/PieChart';
 import Accordion from "../ui/elements/Accordion";
 import StaticStepper from '../ui/elements/StaticStepper';
 
