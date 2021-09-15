@@ -3,7 +3,8 @@ import axios from 'axios';
 import "./FlightTransport.scss"
 import "@immfly/flights-map";
 import FlightMap from "./FlightMap";
-import { FlightLandSharp } from '@material-ui/icons';
+// import { FlightLandSharp } from '@material-ui/icons';
+import Airports from "../ourResources/airports.json"
 
 
 require('dotenv').config();
@@ -18,12 +19,12 @@ const axiosHeader = {
 
 
 const apiURL = 'https://api.cloverly.com/2019-03-beta/estimates/flight';
-const listOfBiggestAirports = [
+/* const listOfBiggestAirports = [
     '','CAN','ATL','CTU','DFW','SZX','CKG','PEK','DEN','KMG','SHA','XIY','HND','ORD','PVG','LAX',
     'DEL','HGH','CLT','DXB','IST','CDG','LHR','MEX','PHX','SGN','MCO','CGO','CJU','AMS','GRU',
     'SEA','NKG','SVO','CSX','FRA','MIA','IAH','GMP','MAD','SAW','XMN','BKK','JFK','KWE','HAK',
     'FLL','SFO','DME','PKX','EWR',
-];
+]; */
 
 const const_flights = [
     {
@@ -65,7 +66,7 @@ const FlightTransport = props => {
                 airports[1],
                 airports[2]
             ]};
-        
+        console.log(body)
         axios.post(apiURL, body, axiosHeader )
         .then(resp => {
             setDistanceFlew(resp.data.distance_in_miles * 1.6)
@@ -96,22 +97,22 @@ const FlightTransport = props => {
                     <form className="flight-transport-form">
                         <label for="airportsFrom">Airport from:</label>
                         <select name="airportsFrom" id="airportsFrom">
-                            { listOfBiggestAirports.map((airport) => 
-                                <option value={ airport }> { airport } </option>
+                            { Airports.map((airport) => 
+                                <option value={ airport.iata_code } lat={ airport.latitude_deg } lon={ airport.longitude_deg }> { airport.name } </option>
                             )}
                         </select>
 
                         <label for="airportsThrough">Airport through:</label>
                         <select name="airportsThrough" id="airportsThrough">
-                            { listOfBiggestAirports.map((airport) => 
-                                <option value={ airport }> { airport } </option>
+                            { Airports.map((airport) => 
+                                <option value={ airport.iata_code }> { airport.name } </option>
                             )}
                         </select>
 
                         <label for="airportsTo">Airport to:</label>
                         <select name="airportsTo" id="airportsTo">
-                            { listOfBiggestAirports.map((airport) => 
-                                <option value={ airport }> { airport } </option>
+                            { Airports.map((airport) => 
+                                <option value={ airport.iata_code }> { airport.name } </option>
                             )}
                         </select>
                         <button type="button" onClick={ handleSubmit }>Calculate</button>
