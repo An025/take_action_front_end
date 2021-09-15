@@ -50,6 +50,7 @@ function App() {
         
         <Route exact path="/EV">
           <div className="cont">
+            <SideBar/>
             <EV/>
           </div>
         </Route>
