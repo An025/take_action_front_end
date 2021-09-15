@@ -10,6 +10,8 @@ import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
 import EV from './components/Energy/EV';
 import React from 'react';
+import Upload from './components/ui/Upload';
+
 
 function App() {
   return (
@@ -52,6 +54,12 @@ function App() {
           </div>
         </Route>
 
+        <Route exact path="/about">
+          <div className="cont">
+            <SideBar/>
+            <Upload/>
+          </div>
+        </Route>
         <Route exact path="/">
           <Main />
         </Route>

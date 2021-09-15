@@ -21,7 +21,7 @@ export default function NavBar() {
           <Link to="/video">
             <h4 className="title"> Footprint</h4>
           </Link>
-          <Link to="/side">
+          <Link to="/about">
             <h4 className="title">About Us</h4>
           </Link>
         </div>
