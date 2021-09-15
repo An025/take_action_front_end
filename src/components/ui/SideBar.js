@@ -15,32 +15,23 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import FlightIcon from '@material-ui/icons/Flight';
 import CardTravelIcon from '@material-ui/icons/CardTravel';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
-import { borders} from '@material-ui/system';
-import { createTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue';
-import green from '@material-ui/core/colors/green';
+// import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+
+
+import "./SidePage.module.css";
 
 
 
-const theme = createTheme({
-    
-    palette: {
-        primary: blue,
-        secondary: green,
-    },
-      
-});
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 240,
+    minHeight: '90vh',
+    maxWidth: '33vh',
     backgroundColor: '#426785',
-    height: '100vh',
     paddingTop: 20,
-    color: '#fff'
+    color: '#fff',
   },
   nested: {
     paddingLeft: theme.spacing(4),
@@ -48,9 +39,26 @@ const useStyles = makeStyles((theme) => ({
   },
   color: {
     color: '#fff'
-  }
-
+  },
+  sidebarContainer: {
+    position: 'sticky',
+    top: '10vh',
+    zIndex: '4',
+    alignItems: 'center',
+    backgroundColor: '#426785',
+  },
+/*   sideBarHider: {
+    fill: '#05324f',
+    position: 'relative',
+    float:'right',
+  } */
 }));
+
+
+/* const handleHiding = () => {
+  return true;
+} */
+
 
 export default function SideBar() {
   const classes = useStyles();
@@ -63,78 +71,81 @@ export default function SideBar() {
 
 
   return (
-    <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      className={classes.root}
-    >
-      {/* Food */}
-      <Link to="/food" content="Food">
-        <ListItem button className={classes.color}>
-          <ListItemIcon>
-            <FastfoodIcon className={classes.color}/>
-          </ListItemIcon>
-          <ListItemText primary="Food" />
-        </ListItem>
-      </Link>
-
-      <Link to="/electricity">
-        <ListItem button>
-          <ListItemIcon>
-            <EmojiObjectsIcon className={classes.color} />
-          </ListItemIcon>
-          <ListItemText primary="Electricity" className={classes.color}/>
-        </ListItem>
-      </Link>
-
-      <Link to="/EV">
-        <ListItem button>
-          <ListItemIcon>
-            <EvStationIcon className={classes.color}/>
-          </ListItemIcon>
-          <ListItemText primary="EV Station" className={classes.color}/>
-        </ListItem>
-      </Link>
-
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <CardTravelIcon className={classes.color}/>
-        </ListItemIcon>
-        <ListItemText primary="Travel" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-
-          <Link to="/vehicle">
-            <ListItem button className={classes.nested}>
+    <div className={ classes.sidebarContainer }>
+         <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          className={classes.root}
+        >
+          {/* Food */}
+          <Link to="/food" content="Food">
+            <ListItem button className={classes.color}>
               <ListItemIcon>
-                <DriveEtaIcon className={classes.color} />
+                <FastfoodIcon className={classes.color}/>
               </ListItemIcon>
-              <ListItemText primary="Vehicle" />
+              <ListItemText primary="Food" />
             </ListItem>
           </Link>
 
-          <Link to="/flight">
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <FlightIcon className={classes.color}/>
-            </ListItemIcon>
-            <ListItemText primary="Flight" />
-          </ListItem>
+          {/* <Link to="/electricity">
+            <ListItem button>
+              <ListItemIcon>
+                <EmojiObjectsIcon className={classes.color} />
+              </ListItemIcon>
+              <ListItemText primary="Electricity" className={classes.color}/>
+            </ListItem>
+          </Link> */}
+
+          <Link to="/EV">
+            <ListItem button>
+              <ListItemIcon>
+                <EvStationIcon className={classes.color}/>
+              </ListItemIcon>
+              <ListItemText primary="EV Station" className={classes.color}/>
+            </ListItem>
           </Link>
 
-          <Link to="/shipping">
-          <ListItem button className={classes.nested}>
+          <ListItem button onClick={handleClick}>
             <ListItemIcon>
-              <LocalShippingIcon className={classes.color}/>
+              <CardTravelIcon className={classes.color}/>
             </ListItemIcon>
-            <ListItemText primary="Shipping" />
+            <ListItemText primary="Travel" />
+            {open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          </Link>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
 
+              <Link to="/vehicle">
+                <ListItem button className={classes.nested}>
+                  <ListItemIcon>
+                    <DriveEtaIcon className={classes.color} />
+                  </ListItemIcon>
+                  <ListItemText primary="Vehicle" />
+                </ListItem>
+              </Link>
+
+              <Link to="/flight">
+              <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                  <FlightIcon className={classes.color}/>
+                </ListItemIcon>
+                <ListItemText primary="Flight" />
+              </ListItem>
+              </Link>
+
+              {/* <Link to="/shipping">
+              <ListItem button className={classes.nested}>
+                <ListItemIcon>
+                  <LocalShippingIcon className={classes.color}/>
+                </ListItemIcon>
+                <ListItemText primary="Shipping" />
+              </ListItem>
+              </Link> */}
+
+            </List>
+          </Collapse>
         </List>
-      </Collapse>
-    </List>
+        {/* <PlayCircleFilledIcon className={ classes.sideBarHider } onClick={ handleHiding }/> */}
+    </div>
   );
 }

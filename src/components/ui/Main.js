@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
 import Accordion from './elements/Accordion';
-import Footer from './Footer';
 import footprint1 from '../images/tourism_footprint.png';
 import footprint2 from '../images/eating_footprint.png';
 import footprint3 from '../images/videoGames_footprint.jpeg';
@@ -34,7 +33,7 @@ function Main(){
 
             <div className={ classes.beforeContainer }>
                 <div className={ classes.beforeHolder } >
-                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } />
+                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } alt="earth" />
                 </div>
 
                 <div className= { classes.compareContent }>
@@ -75,18 +74,18 @@ function Main(){
                         </div>
                     </div>  
                     <div className={classes.cardcontainer}>
-                        <div className={classes.card}>
+                        <a className={classes.card} href="/vehicle">
                             <h2>Travel habits</h2>
-                            <img className={classes.footprints} src={ footprint1 }></img>
-                        </div>
-                        <div className={classes.card}>
+                            <img className={classes.footprints} src={ footprint1 } alt="footprint"></img>
+                        </a>
+                        <a className={classes.card} href="/food">
                             <h2>Eating habits</h2>
-                            <img className={classes.footprints} src={ footprint2 }></img>
-                        </div>
-                        <div className={classes.card}>
+                            <img className={classes.footprints} src={ footprint2 } alt="footprint"></img>
+                        </a>
+                        <a className={classes.card} href="/ev">
                             <h2>Energy consumption</h2>
-                            <img className={classes.footprints} src={ footprint3 }></img>
-                        </div>
+                            <img className={classes.footprints} src={ footprint3 } alt="footprint"></img>
+                        </a>
                     </div>
                 </div>
             </div> 
@@ -114,10 +113,7 @@ function Main(){
             </div>
             
             <div className= { classes.anchorFootprint }>
-                <a href="#"><img src={ footprint } ></img></a>
-            </div>
-            <div className={ classes.footer }>
-                <Footer />
+                <a href="/"><img src={ footprint } alt="footprint" ></img></a>
             </div>
 
         </div>

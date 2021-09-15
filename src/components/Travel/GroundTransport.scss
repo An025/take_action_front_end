@@ -1,0 +1,95 @@
+@import '../ui/elements/TemplateColors.scss';
+
+
+
+
+.ground-transport-container {
+    margin-bottom:10vh;
+    padding: 5vh 0;
+    text-align: center;
+    background-image: url('../images/swiss_alps.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+
+
+    .ground-transport-fieldset {
+        border: 1px solid $black;
+        text-align: center;
+        padding: 1vh;
+        margin:0 20vh;
+        color: $white;
+        background-color: $black_bg_w_opacity;
+    
+        legend {
+            float:left;
+            left: 50%;
+            width: fit-content;
+            text-transform: uppercase;
+        }
+
+        .ground-transport-form {
+            padding: 0 20%;
+            label {
+                text-align: left;
+            }
+            input[type=text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
+              Toggleswitch input {
+                  display: none;
+              }
+        }
+    
+        button {
+            width: 100%;
+            background-color: $travelButtonGreen;
+            color: $white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+    
+            &:hover {
+                background-color: $travelButtonGreenHover;
+              }
+        }
+
+        p {
+            border: unset;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #finalCO2 {
+            max-width: 130px;
+            color: $white;
+            font-weight: bold;
+        }
+
+    }
+}
+
+.accordion-holder {
+/*     background-image: url('./images/swiss_alps.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    margin: 0 auto 5vh auto;
+    padding: 10vh 20vh;
+}
+
+
+#ground-transport-title {
+    margin-top: 5vh;
+    text-align: center;
+    display:block;
+}

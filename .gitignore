@@ -22,3 +22,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+<<<<<<< HEAD
+=======
+# This contains secrets, don't store in source control
+>>>>>>> bb91f2878b396039cd0281f07a748b3bfa99e7df
+.env
+/.env

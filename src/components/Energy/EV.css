@@ -2,7 +2,9 @@
     width: 40px;
   }
 
-
+.markerBtn{
+  background-color: transparent;
+}
   .popup p {
     text-align: center;
     font-style: italic;
