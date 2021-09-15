@@ -1,6 +1,7 @@
 $black : rgb(0,0,0);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
+
 .main-container {
   margin:unset;
   width: 100%;
@@ -50,7 +51,8 @@ $black : rgb(0,0,0);
     }
     .title{
       padding-right: 50px;
-      padding-top: 12px;
+      text-align: center;
+      padding-top: 4vh;
       color: white;
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
@@ -63,6 +65,7 @@ $black : rgb(0,0,0);
     right:0;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     height: 10vh;
     .title{
       padding-right: 50px;

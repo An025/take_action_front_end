@@ -15,6 +15,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import FlightIcon from '@material-ui/icons/Flight';
 import CardTravelIcon from '@material-ui/icons/CardTravel';
+// import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 
 
 import "./SidePage.module.css";
@@ -26,11 +27,11 @@ import "./SidePage.module.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    minHeight: '90vh',
     maxWidth: '33vh',
-    height: "89vh",
     backgroundColor: '#426785',
     paddingTop: 20,
-    color: '#fff'
+    color: '#fff',
   },
   nested: {
     paddingLeft: theme.spacing(4),
@@ -41,11 +42,22 @@ const useStyles = makeStyles((theme) => ({
   },
   sidebarContainer: {
     position: 'sticky',
-    height: '100%',
+    top: '10vh',
     zIndex: '4',
+    alignItems: 'center',
+    backgroundColor: '#426785',
   },
+/*   sideBarHider: {
+    fill: '#05324f',
+    position: 'relative',
+    float:'right',
+  } */
 }));
 
+
+/* const handleHiding = () => {
+  return true;
+} */
 
 
 export default function SideBar() {
@@ -133,6 +145,7 @@ export default function SideBar() {
             </List>
           </Collapse>
         </List>
+        {/* <PlayCircleFilledIcon className={ classes.sideBarHider } onClick={ handleHiding }/> */}
     </div>
   );
 }

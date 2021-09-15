@@ -35,7 +35,8 @@ function App() {
         </Route>
 
         <Route exact path="/food/recipee-details">
-          <div>
+          <div className="cont">
+            <SideBar/>
             <RecipeeDetails/>
           </div>
           

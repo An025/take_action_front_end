@@ -32,8 +32,8 @@ export default function NavBar() {
         </div>
       </div>
 
-      <div className="dim-container">
-      </div>
+  {/*     <div className="dim-container">
+      </div> */}
 
     </div>
   );
