@@ -7,7 +7,7 @@ import RecipeeDetails from './components/Food/RecipeeDetails';
 import GroundTransport from './components/Travel/GroundTransport';
 import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
-import Content from './components/ui/Content';
+import Video from './components/ui/elements/Video';
 import EV from './components/Energy/EV';
 import React from 'react';
 
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/side">
           <div className="cont">
              <SideBar/>
-             <Content/>
+             <Video/>
           </div>
         </Route>
 
@@ -48,7 +48,6 @@ function App() {
         
         <Route exact path="/EV">
           <div className="cont">
-            <SideBar />
             <EV/>
           </div>
         </Route>

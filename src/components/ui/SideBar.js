@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: '33vh',
-    height: "100vh",
+    height: "89vh",
     backgroundColor: '#426785',
     paddingTop: 20,
     color: '#fff'
