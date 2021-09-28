@@ -2,22 +2,21 @@ import React, { useEffect, useState } from 'react';
 import ToggleSwitch from '../ui/elements/ToggleSwitch';
 import axios from 'axios';
 import "./GroundTransport.scss"
-// import PieChart from '../ui/elements/PieChart';
 import Accordion from "../ui/elements/Accordion";
 import StaticStepper from '../ui/elements/StaticStepper';
 
 
-require('dotenv').config();
-const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
-const AuthStr = "Bearer " + apiKey;
+// require('dotenv').config();
+// const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
+// const AuthStr = "Bearer " + apiKey;
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
-        "Authorization" : AuthStr
+        // "Authorization" : AuthStr
     }
 };
 
-const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
+// const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
 const kml2mpgMultiplier = 2.35214583;
 
 
@@ -42,9 +41,9 @@ const GroundTransport = props => {
             }
         };
 
-        axios.post(URL, body, axiosHeader )
+        axios.post("api/v1/ground-transport", body, axiosHeader )
         .then(resp => {
-            setCo2InKg(resp.data.equivalent_carbon_in_kg);
+            setCo2InKg(resp.data);
         })
         .catch(err => {
             console.log(err);
@@ -114,11 +113,6 @@ const GroundTransport = props => {
                     panel3Text="Not only you spare money on fuel but you decrease your footprint significantly."
                 />
             </div>
-
-
-            {/* <div className="charts-holder">
-                <PieChart />
-            </div> */}
 
 
         </div>
