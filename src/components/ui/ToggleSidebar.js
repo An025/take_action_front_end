@@ -7,12 +7,12 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import FlightIcon from '@material-ui/icons/Flight';
 import CardTravelIcon from '@material-ui/icons/CardTravel';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
-
+import HomeIcon from '@material-ui/icons/Home';
 export const ToggleSidebar =[
     {
         title: 'Home',
         path: '/',
-        icon : <AiIcons.AiFillHome />,
+        icon : <HomeIcon />,
         cName: 'nav-text'
     },
     {
