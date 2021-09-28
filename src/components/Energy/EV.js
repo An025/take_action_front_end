@@ -20,7 +20,7 @@ export default function EV(){
   useEffect(()=>{
 
   
-    fetch('api/ev', {
+    fetch('api/v1/ev', {
       mode: 'no-cors',
       method: 'get',
       headers: {

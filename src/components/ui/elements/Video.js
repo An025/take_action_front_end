@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player/youtube';
 
 export default function Video(){
-    return <div style={{width: '100%'}}>
+    return <div style={{width: '100%', height: '90vh'}}>
         <ReactPlayer 
         url="https://www.youtube.com/watch?v=kZIrIQDf1nQ"
         width= '100%'
