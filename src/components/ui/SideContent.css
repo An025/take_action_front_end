@@ -28,7 +28,10 @@
     background-color: transparent;
     padding-left: 200px;
     transition: 350ms;
+}
 
+.menu-bars:hover{
+    transform: scale(1.2);
 }
 
 .nav-menu{
