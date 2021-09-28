@@ -11,7 +11,7 @@ import Video from './components/ui/elements/Video';
 import EV from './components/Energy/EV';
 import React from 'react';
 import Upload from './components/ui/Upload';
-
+import Content from './components/ui/SideContent';
 
 function App() {
   return (
@@ -22,21 +22,21 @@ function App() {
 
         <Route exact path="/video">
           <div className="cont">
-             <SideBar/>
+             <Content/>
              <Video/>
           </div>
         </Route>
 
         <Route exact path="/food">
           <div className="cont">
-            <SideBar />
+          <Content/>
             <FoodMainPage/>
           </div>
         </Route>
 
         <Route exact path="/food/recipee-details">
           <div className="cont">
-            <SideBar/>
+          <Content/>
             <RecipeeDetails/>
           </div>
           
@@ -44,14 +44,15 @@ function App() {
 
         <Route exact path="/vehicle">
           <div className="cont">
-            <SideBar />
+            <Content />
             <GroundTransport />
           </div>
         </Route>
         
         <Route exact path="/EV">
           <div className="cont">
-            <SideBar/>
+            <Content/>
+            {/* <SideBar/> */}
             <EV/>
           </div>
         </Route>
