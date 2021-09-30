@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import ReactMapGl, {Marker, Popup} from 'react-map-gl'
 import './EV.css';
+import axios from 'axios';
 
 export default function EV(){
   const [viewport, setViewport] = useState({
@@ -14,32 +15,25 @@ export default function EV(){
     scrollZoom:true,
   });
 
+ 
   const [EV, setEV] = useState([]);
   const [selectedStation, setSelectedStation] = useState(null);
-  const api_key = "REACT_APP_OPENCHARGERMAP";
+  const axiosHeader = {
+    headers: {
+        'Content-type' : 'application/json',
+      }
+  };
   useEffect(()=>{
+    axios.get("api/v1/ev", axiosHeader )
+    .then(resp => {
+        setEV(resp.data);
+        
+    })
+    .catch(err => {
+        console.log(err);
+    });
+  }, [])
 
-  
-    fetch('api/v1/ev', {
-      mode: 'no-cors',
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-        // mode: 'cors', 
-        // headers: {
-        //     'x-api-key': api_key,
-        //     'User-Agent' : 'My-App',
-        //     'Accept': '*/*',
-        // },
-        })
-        .then(response => response.json())
-        // .then(data=> console.log(data))
-        .then(data => setEV(data))
-        .catch(error => console.log('Error while fetching:', error))
-    
-    }, [])
 
   useEffect(() => {
     // if pressed escape close the popup window
@@ -96,4 +90,3 @@ export default function EV(){
   </div>
   )
 }
-
