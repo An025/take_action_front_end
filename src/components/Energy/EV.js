@@ -6,28 +6,40 @@ import FavoriteBorderIcon from '@material-ui/icons//FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 export default function EV(){
+  const [latitude, setLatitude] = useState(47.497913);
+  const [longitude, setLongitude] = useState(19.040236);
+  // const [latitude, setLatitude] = useState(51.509865);
+  // const [longitude, setLongitude] = useState(-0.118092);
   const [viewport, setViewport] = useState({
-    // latitude: 51.545581,
-    // longitude: -0.077301,
-    latitude: 47.497913,
-    longitude: 19.040236,
+    latitude: latitude,
+    longitude: longitude,
     width: '100vw',
     height: '89vh',
-    zoom: 13,
+    zoom: 14,
     scrollZoom:true,
   });
 
   const [favorite, setFavorite] = useState()
-  const toggleHeart = () => setFavorite(!favorite)
-  const [EV, setEV] = useState([]);
+  const toggleHeart = () => {
+    // console.log(favorite)
+    setFavorite(!favorite)
+    // .then(()=>{console.log(favorite)})
+   
+
+  }
+  const [ev, setEV] = useState([]);
   const [selectedStation, setSelectedStation] = useState(null);
   const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
       }
   };
+
+
   useEffect(()=>{
-    axios.get("api/v1/ev", axiosHeader )
+    axios.get("api/v1/ev", {headers: {
+      'Content-type' : 'application/json'}
+    } )
     .then(resp => {
         setEV(resp.data);
         
@@ -35,8 +47,44 @@ export default function EV(){
     .catch(err => {
         console.log(err);
     });
-  }, [])
+  }, [favorite])
+// }, [favorite, latitude, longitude])
 
+  // useEffect(()=>{
+  //   axios.post("api/v1/ev/coordinate",
+  //   {headers: {
+  //     'Content-type' : 'application/json'}
+  //   }, { params: {
+  //     longitude,
+  //     latitude
+  //   }})
+  //   .then(resp => {
+  //       console.log(resp.status);
+        
+  //   })
+  //   .catch(err => {
+  //       console.log(err);
+  //   });
+  // }, [latitude, longitude])
+  
+ 
+   
+    const postChangeFavorite =() => {
+      let body = {
+
+          "evId" : selectedStation.evId,
+          "favorite" : favorite
+      };
+
+      axios.post("api/v1/ev", body, axiosHeader )
+      .then(resp => {
+          console.log(resp.data);
+      })
+      .catch(err => {
+          console.log(err);
+      });
+    
+    }
 
   useEffect(() => {
     // if pressed escape close the popup window
@@ -56,42 +104,47 @@ export default function EV(){
     <ReactMapGl {...viewport}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       mapStyle="mapbox://styles/enviroso/cktd9xlyz00t417pdy461b3mx"
-      onViewportChange={viewport =>{
+      onViewportChange={(viewport) =>{
         setViewport(viewport);
+        setLatitude(viewport.latitude);
+        setLongitude(viewport.longitude);
       }}>
-           {EV.map((station)=>(
+           {ev.map((station)=>(
           <Marker
             key={station.evId + station.latitude}
             latitude={station.latitude}
             longitude={station.longitude}
-            favorite={station.favorite}
+            
           >
             <button className="markerBtn" onClick={(e) =>{
             e.preventDefault();
             setSelectedStation(station);
+            setFavorite(station.favorite)
           }}>
             
             <img src="/charger.svg" alt="charger"/>
             </button>
           </Marker>
         ))}
-           {selectedStation ?(
-        <Popup
-        latitude={selectedStation.latitude}
-        longitude={selectedStation.longitude}
-        
-        onClose={()=>{
-          setSelectedStation(null);
-        }}>
-        
+        {selectedStation ?(
+          <Popup
+            latitude={selectedStation.latitude}
+            longitude={selectedStation.longitude}
+            onClose={()=>{
+              setSelectedStation(null);
+            }}>
+    
           <div className="popup">
             <h2>{selectedStation.title}</h2>
             <p>{selectedStation.town}</p>
             <p>{selectedStation.address}</p>
-            <p>{selectedStation.favorite}</p>
-            <p onClick={toggleHeart} className="favorite"> 
-            {favorite?  <FavoriteIcon/>: <FavoriteBorderIcon/>}
-               </p>
+            <p onClick={()=>{
+              toggleHeart();
+              postChangeFavorite(); 
+              }} 
+              className="favorite"> 
+              {favorite?  <FavoriteIcon/>: <FavoriteBorderIcon/>}
+            </p>
           </div>
         </Popup>
       ) : null }
