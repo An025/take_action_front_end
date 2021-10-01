@@ -23,8 +23,8 @@ function Main(){
                         To have the best chance of avoiding a 2℃ rise in global temperatures, the average global carbon footprint per year needs to drop under 2 tons by 2050.</p>
                     <p>Lowering individual carbon footprints doesn’t happen overnight! By making small changes to our actions, we can start making a big difference.</p> 
                     <div className={ classes.sitetitlebuttons }>
-                        <Button link={"/side"} title="Next to Footprint" className={classes.button}/>
-                        <Button link={"/side"} title="Next to Footprint" className={classes.button}/>
+                        <Button link={"/video"} title="Next to Footprint" className={classes.button}/>
+                        <Button link={"/video"} title="Next to Footprint" className={classes.button}/>
                     </div> 
                 </div>
             </div>
@@ -33,7 +33,7 @@ function Main(){
 
             <div className={ classes.beforeContainer }>
                 <div className={ classes.beforeHolder } >
-                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } />
+                    <ImageSlider image1= { earth1 } image2= { earth2 } sliderInitialPosition={ 0.4 } alt="earth" />
                 </div>
 
                 <div className= { classes.compareContent }>
@@ -74,18 +74,18 @@ function Main(){
                         </div>
                     </div>  
                     <div className={classes.cardcontainer}>
-                        <div className={classes.card}>
+                        <a className={classes.card} href="/vehicle">
                             <h2>Travel habits</h2>
-                            <img className={classes.footprints} src={ footprint1 }></img>
-                        </div>
-                        <div className={classes.card}>
+                            <img className={classes.footprints} src={ footprint1 } alt="footprint"></img>
+                        </a>
+                        <a className={classes.card} href="/food">
                             <h2>Eating habits</h2>
-                            <img className={classes.footprints} src={ footprint2 }></img>
-                        </div>
-                        <div className={classes.card}>
+                            <img className={classes.footprints} src={ footprint2 } alt="footprint"></img>
+                        </a>
+                        <a className={classes.card} href="/ev">
                             <h2>Energy consumption</h2>
-                            <img className={classes.footprints} src={ footprint3 }></img>
-                        </div>
+                            <img className={classes.footprints} src={ footprint3 } alt="footprint"></img>
+                        </a>
                     </div>
                 </div>
             </div> 
@@ -108,12 +108,12 @@ function Main(){
                     panel3Text="You can make a difference! You can plant trees, or support environmentally friendly movements
                     like a family business focusing on recycling or eating vegan food once or twice. Its your choice."
                     />   
-                    <Button link={"/side"} title="Next to Footprint" className={classes.button}/>
+                    <Button link={"/video"} title="Next to Footprint" className={classes.button}/>
                 </div>
             </div>
             
             <div className= { classes.anchorFootprint }>
-                <a href="#"><img src={ footprint } ></img></a>
+                <a href="/"><img src={ footprint } alt="footprint" ></img></a>
             </div>
 
         </div>

@@ -5,8 +5,8 @@ const ToggleSwitch = ({ id, name, checked, onChange, optionLabels}) => {
 
     return (
 
-      console.log(optionLabels),
-        console.log(checked),
+      // console.log(optionLabels),
+      //   console.log(checked),
       <div className="toggle-switch">
         <input
           type="checkbox"

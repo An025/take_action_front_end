@@ -2,14 +2,14 @@ import './App.css';
 import NavBar from './components/ui/NavBar';
 import Footer from './components/ui/Footer';
 import Main from './components/ui/Main';
-import CarbonEstimates from './components/CarbonEstimates';
 import FoodMainPage from './components/Food/FoodMainPage';
 import RecipeeDetails from './components/Food/RecipeeDetails';
-import GroundTransport from './components/GroundTransport';
-import SideBar from './components/ui/SideBar';
-import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
-import Content from './components/ui/Content';
-import EV from './components/EV';
+import GroundTransport from './components/Travel/GroundTransport';
+import {BrowserRouter,Switch,Route} from "react-router-dom";
+import Video from './components/ui/elements/Video';
+import EV from './components/Energy/EV';
+import React from 'react';
+import Upload from './components/ui/Upload';
 
 function App() {
   return (
@@ -18,33 +18,43 @@ function App() {
 
       <Switch>
 
-        <Route exact path="/side">
+        <Route exact path="/video">
           <div className="cont">
-             <SideBar/>
-             <Content/>
+             <Video/>
           </div>
         </Route>
 
         <Route exact path="/food">
-          <FoodMainPage/>
+          <div className="cont">
+            <FoodMainPage/>
+          </div>
         </Route>
 
         <Route exact path="/food/recipee-details">
-          <div>
+          <div className="cont">
             <RecipeeDetails/>
           </div>
           
         </Route>
 
         <Route exact path="/vehicle">
-          {/* <SideBar/> */}
-          <GroundTransport />
+          <div className="cont">
+            <GroundTransport />
+          </div>
         </Route>
         
-        <Route exact path="/EV">
-          <EV/>
+        <Route exact path="/ev">
+          <div className="cont">
+            {/* <SideBar/> */}
+            <EV/>
+          </div>
         </Route>
 
+        <Route exact path="/about">
+          <div className="cont">
+            <Upload/>
+          </div>
+        </Route>
         <Route exact path="/">
           <Main />
         </Route>

@@ -1,11 +1,11 @@
-import CheckboxLabels from './Checkbox'
+// import CheckboxLabels from './Checkbox'
 import Select from './Select'
 
 const Recipee = () => {
 
-    const cardContainer = {
+    // const cardContainer = {
 
-    };
+    // };
 
     return(
         <div>

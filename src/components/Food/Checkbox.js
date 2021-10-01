@@ -19,9 +19,8 @@ export default function CheckboxLabels() {
     // console.log(state.vegan);
     console.log("asdgasg");
     let stateCopy = JSON.parse(JSON.stringify(state.filters))
-    let field = event.target.name;
-    stateCopy.diet.
-    console.log(stateCopy);
+    // let field = event.target.name;
+    stateCopy.diet.console.log(stateCopy);
     // setState({ ...state, [event.target.name]: event.target.checked });
     setState({ ...state, filters: stateCopy });
   };

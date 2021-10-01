@@ -14,17 +14,17 @@ const RecipeeFetch = props => {
     const url = "https://api.spoonacular.com/recipes/complexSearch";
 
     // Available filters with possible values (later to be moved into another file)
-    const excludeCuisine = [];
-    const intolerances = [];
-    const includeIngredients = [];
-    const excludeIngredients = [];
-    const type = [];
-    const instructionsRequired = [];
-    const fillIngredients = []; // ???
-    const addRecipeInformation = [];
-    const addRecipeNutrition = [];
-    const titleMatch = [];
-    const maxReadyTime = [];
+    // const excludeCuisine = [];
+    // const intolerances = [];
+    // const includeIngredients = [];
+    // const excludeIngredients = [];
+    // const type = [];
+    // const instructionsRequired = [];
+    // const fillIngredients = []; // ???
+    // const addRecipeInformation = [];
+    // const addRecipeNutrition = [];
+    // const titleMatch = [];
+    // const maxReadyTime = [];
 
     useEffect(() => {
         axios.get(url, {
