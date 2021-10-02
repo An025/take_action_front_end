@@ -31,13 +31,13 @@ export const ToggleSidebar =[
     {
         title: 'Vehicle',
         path: '/vehicle',
-        icon : <FlightIcon />,
+        icon :  <CardTravelIcon />,
         cName: 'nav-text'
     },
     {
         title: 'Flight',
         path: '/flight',
-        icon : <CardTravelIcon />,
+        icon : <FlightIcon />,
         cName: 'nav-text'
     },
     {
