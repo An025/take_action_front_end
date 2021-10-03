@@ -9,14 +9,14 @@
 .cont{
   display: flex;
   flex-direction: row;
-  margin: 0;
+  margin-left: 0px;
 }
  a{
   text-decoration: none !important;
   color: black !important;
 } 
 
-.fragment-content {
+/* .fragment-content {
   display: block;
 margin: 200px;
-}
+} */

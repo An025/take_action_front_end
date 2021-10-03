@@ -7,14 +7,11 @@ import FlightTransport from './components/Travel/FlightTransport';
 import FoodMainPage from './components/Food/FoodMainPage';
 import RecipeeDetails from './components/Food/RecipeeDetails';
 import GroundTransport from './components/Travel/GroundTransport';
-
-import SideBar from './components/ui/SideBar';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
 import EV from './components/Energy/EV';
 import React from 'react';
 import Upload from './components/ui/Upload';
-
 
 function App() {
   return (
@@ -25,21 +22,18 @@ function App() {
 
         <Route exact path="/video">
           <div className="cont">
-             <SideBar/>
              <Video/>
           </div>
         </Route>
 
         <Route exact path="/food">
           <div className="cont">
-            <SideBar />
             <FoodMainPage/>
           </div>
         </Route>
 
         <Route exact path="/food/recipee-details">
           <div className="cont">
-            <SideBar/>
             <RecipeeDetails/>
           </div>
           
@@ -47,21 +41,19 @@ function App() {
 
         <Route exact path="/vehicle">
           <div className="cont">
-            <SideBar />
             <GroundTransport />
           </div>
         </Route>
         
-        <Route exact path="/EV">
+        <Route exact path="/ev">
           <div className="cont">
-            <SideBar/>
+            {/* <SideBar/> */}
             <EV/>
           </div>
         </Route>
 
         <Route exact path="/flight">
           <div className="cont">
-            <SideBar/>
             <FlightTransport />
           </div>
         </Route>
@@ -69,7 +61,6 @@ function App() {
 
         <Route exact path="/about">
           <div className="cont">
-            <SideBar/>
             <Upload/>
           </div>
         </Route>

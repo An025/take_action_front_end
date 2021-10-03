@@ -20,15 +20,22 @@ export default function EV(){
   useEffect(()=>{
 
   
-    fetch('https://api.openchargemap.io/v3/poi/?output=json&countrycode=HU&maxresults=100', {
-        mode: 'cors', 
-        headers: {
-            'x-api-key': api_key,
-            'User-Agent' : 'My-App',
-            'Accept': '*/*',
-        },
+    fetch('api/v1/ev', {
+      mode: 'no-cors',
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+        // mode: 'cors', 
+        // headers: {
+        //     'x-api-key': api_key,
+        //     'User-Agent' : 'My-App',
+        //     'Accept': '*/*',
+        // },
         })
         .then(response => response.json())
+        // .then(data=> console.log(data))
         .then(data => setEV(data))
         .catch(error => console.log('Error while fetching:', error))
     
