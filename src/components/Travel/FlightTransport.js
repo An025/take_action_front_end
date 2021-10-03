@@ -4,38 +4,32 @@ import "./FlightTransport.scss"
 import "@immfly/flights-map";
 import FlightMap from "./FlightMap";
 // import { FlightLandSharp } from '@material-ui/icons';
-import Airports from "../ourResources/airports.json"
 
 
-require('dotenv').config();
+/* require('dotenv').config();
 const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
-const AuthStr = "Bearer " + apiKey;
+const AuthStr = "Bearer " + apiKey; */
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
-        "Authorization" : AuthStr
     }
 };
 
 
-const apiURL = 'https://api.cloverly.com/2019-03-beta/estimates/flight';
-/* const listOfBiggestAirports = [
-    '','CAN','ATL','CTU','DFW','SZX','CKG','PEK','DEN','KMG','SHA','XIY','HND','ORD','PVG','LAX',
-    'DEL','HGH','CLT','DXB','IST','CDG','LHR','MEX','PHX','SGN','MCO','CGO','CJU','AMS','GRU',
-    'SEA','NKG','SVO','CSX','FRA','MIA','IAH','GMP','MAD','SAW','XMN','BKK','JFK','KWE','HAK',
-    'FLL','SFO','DME','PKX','EWR',
-]; */
+// const apiURL = 'https://api.cloverly.com/2019-03-beta/estimates/flight';
+const airportsURL = "api/v1/airports";
+const apiURL = "api/v1/flight-transport";
 
-const const_flights = [
+const flightsTemplate = [
     {
-      name: 'V131',
+      name: 'first',
       origin: { city: 'Zadoi', latitude: 32.74647437694143, longitude: 94.81066352656649 },
       destination: { city: 'Toronto', latitude: 43.8163, longitude: -79.4287 },
       state: 1,
       color: '#F60000'
     },
     {
-      name: 'N39',
+      name: 'second',
       origin: { city: 'N39', latitude: -7.138793513804092, longitude: 22.37131768752556 },
       destination: { city: 'Zadoi', latitude: 32.74647437694143, longitude: 94.81066352656649 },
       state: 1,
@@ -50,23 +44,26 @@ const const_flights = [
 
 const FlightTransport = props => {
 
-    const [distanceFlew, setDistanceFlew] = useState(0);
-    const [co2InKg , setCo2InKg] = useState(0);
-    const [airports,setAirports] = useState([]);
-    const [myflights, setMyFlights] = useState([]);
+    let [distanceFlew, setDistanceFlew] = useState(0);
+    let [co2InKg , setCo2InKg] = useState(0);
+    let [airports,setAirports] = useState([]);
+    let [visitedAirports, setVisitedAirports] = useState([]);
+    let [myflights, setMyFlights] = useState([]);
 
     useEffect(()=>{
-        
-    }, URL)
+        axios.post(airportsURL,"", axiosHeader)
+        .then(response => {
+            setAirports(response.data)
+        })
+    }, [ airportsURL ])
 
     useEffect(() => {
         let body = {
             "airports":[
-                airports[0],
-                airports[1],
-                airports[2]
+                visitedAirports[0],
+                visitedAirports[1],
+                visitedAirports[2]
             ]};
-        console.log(body)
         axios.post(apiURL, body, axiosHeader )
         .then(resp => {
             setDistanceFlew(resp.data.distance_in_miles * 1.6)
@@ -75,7 +72,7 @@ const FlightTransport = props => {
         .catch(err => {
             console.log(err);
         });
-    }, [ airports ])
+    }, [ visitedAirports ])
 
 
     const handleSubmit = (event) => {
@@ -84,7 +81,7 @@ const FlightTransport = props => {
         let airportTo = event.target.parentNode.children[5].value.toLowerCase();
         setAirports([ airportFrom, airportThrough, airportTo]);
 
-        setMyFlights(const_flights);
+        setMyFlights(flightsTemplate);
       };
 
 
@@ -97,21 +94,21 @@ const FlightTransport = props => {
                     <form className="flight-transport-form">
                         <label for="airportsFrom">Airport from:</label>
                         <select name="airportsFrom" id="airportsFrom">
-                            { Airports.map((airport) => 
+                            { airports.map((airport) => 
                                 <option value={ airport.iata_code } lat={ airport.latitude_deg } lon={ airport.longitude_deg }> { airport.name } </option>
                             )}
                         </select>
 
                         <label for="airportsThrough">Airport through:</label>
                         <select name="airportsThrough" id="airportsThrough">
-                            { Airports.map((airport) => 
+                            { airports.map((airport) => 
                                 <option value={ airport.iata_code }> { airport.name } </option>
                             )}
                         </select>
 
                         <label for="airportsTo">Airport to:</label>
                         <select name="airportsTo" id="airportsTo">
-                            { Airports.map((airport) => 
+                            { airports.map((airport) => 
                                 <option value={ airport.iata_code }> { airport.name } </option>
                             )}
                         </select>
