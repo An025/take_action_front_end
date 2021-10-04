@@ -21,11 +21,7 @@ export default function EV(){
 
   const [favorite, setFavorite] = useState()
   const toggleHeart = () => {
-    // console.log(favorite)
     setFavorite(!favorite)
-    // .then(()=>{console.log(favorite)})
-   
-
   }
   const [ev, setEV] = useState([]);
   const [selectedStation, setSelectedStation] = useState(null);
@@ -47,25 +43,24 @@ export default function EV(){
     .catch(err => {
         console.log(err);
     });
-  }, [favorite])
-// }, [favorite, latitude, longitude])
+}, [favorite, latitude, longitude])
 
-  // useEffect(()=>{
-  //   axios.post("api/v1/ev/coordinate",
-  //   {headers: {
-  //     'Content-type' : 'application/json'}
-  //   }, { params: {
-  //     longitude,
-  //     latitude
-  //   }})
-  //   .then(resp => {
-  //       console.log(resp.status);
+  useEffect(()=>{
+    axios.post("api/v1/ev/coordinate",
+    {headers: {
+      'Content-type' : 'application/json'}
+    }, { params: {
+      longitude,
+      latitude
+    }})
+    .then(resp => {
+        console.log(resp.status);
         
-  //   })
-  //   .catch(err => {
-  //       console.log(err);
-  //   });
-  // }, [latitude, longitude])
+    })
+    .catch(err => {
+        console.log(err);
+    });
+  }, [latitude, longitude])
   
  
    
@@ -122,7 +117,7 @@ export default function EV(){
             setFavorite(station.favorite)
           }}>
             
-            <img src="/charger.svg" alt="charger"/>
+            <img src="/ev.jpg" alt="charger"/>
             </button>
           </Marker>
         ))}
