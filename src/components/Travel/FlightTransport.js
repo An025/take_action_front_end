@@ -3,12 +3,8 @@ import axios from 'axios';
 import "./FlightTransport.scss"
 import "@immfly/flights-map";
 import FlightMap from "./FlightMap";
-// import { FlightLandSharp } from '@material-ui/icons';
 
 
-/* require('dotenv').config();
-const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
-const AuthStr = "Bearer " + apiKey; */
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
@@ -16,7 +12,6 @@ const axiosHeader = {
 };
 
 
-// const apiURL = 'https://api.cloverly.com/2019-03-beta/estimates/flight';
 const airportsURL = "api/v1/airports";
 const apiURL = "api/v1/flight-transport";
 
@@ -44,7 +39,7 @@ const flightsTemplate = [
 
 const FlightTransport = props => {
 
-    let [distanceFlew, setDistanceFlew] = useState(0);
+    // let [distanceFlew, setDistanceFlew] = useState(0);
     let [co2InKg , setCo2InKg] = useState(0);
     let [airports,setAirports] = useState([]);
     let [visitedAirports, setVisitedAirports] = useState([]);
@@ -66,8 +61,8 @@ const FlightTransport = props => {
             ]};
         axios.post(apiURL, body, axiosHeader )
         .then(resp => {
-            setDistanceFlew(resp.data.distance_in_miles * 1.6)
-            setCo2InKg(resp.data.equivalent_carbon_in_kg)
+            // setDistanceFlew(resp.data.distance_in_miles * 1.6)
+            setCo2InKg(resp.data)
         })
         .catch(err => {
             console.log(err);
@@ -75,15 +70,17 @@ const FlightTransport = props => {
     }, [ visitedAirports ])
 
 
-    const handleSubmit = (event) => {
-        let airportFrom = event.target.parentNode.children[1].value.toLowerCase();
-        let airportThrough = event.target.parentNode.children[3].value.toLowerCase();
-        let airportTo = event.target.parentNode.children[5].value.toLowerCase();
-        setAirports([ airportFrom, airportThrough, airportTo]);
-
+    const handleChangeOfAirport = (event) => {
+        let selection = event.target.selectedIndex;
+        let currentAirport = event.target.options[selection].getAttribute("data-iata").toLowerCase();
+        if (visitedAirports.length === 0) {
+            setVisitedAirports([currentAirport]);
+        } else {
+            let newList = visitedAirports.concat(currentAirport);
+            setVisitedAirports(newList);
+        }
         setMyFlights(flightsTemplate);
       };
-
 
 
     return (
@@ -93,28 +90,27 @@ const FlightTransport = props => {
                     <legend >Flight transport co2 calculator</legend>
                     <form className="flight-transport-form">
                         <label for="airportsFrom">Airport from:</label>
-                        <select name="airportsFrom" id="airportsFrom">
+                        <select name="airportsFrom" id="airportsFrom" onChange={ handleChangeOfAirport }>
                             { airports.map((airport) => 
-                                <option value={ airport.iata_code } lat={ airport.latitude_deg } lon={ airport.longitude_deg }> { airport.name } </option>
+                                <option key={ airport.id } data-iata={ airport.iataCode } data-lat={ airport.latitude } data-lon={ airport.longitude }> { airport.name} </option>
                             )}
                         </select>
 
                         <label for="airportsThrough">Airport through:</label>
-                        <select name="airportsThrough" id="airportsThrough">
+                        <select name="airportsThrough" id="airportsThrough" onChange={ handleChangeOfAirport }>
                             { airports.map((airport) => 
-                                <option value={ airport.iata_code }> { airport.name } </option>
+                                <option key={ airport.id } data-iata={ airport.iataCode } data-lat={ airport.latitude } data-lon={ airport.longitude }> { airport.name } </option>
                             )}
                         </select>
 
                         <label for="airportsTo">Airport to:</label>
-                        <select name="airportsTo" id="airportsTo">
+                        <select name="airportsTo" id="airportsTo" onChange={ handleChangeOfAirport }>
                             { airports.map((airport) => 
-                                <option value={ airport.iata_code }> { airport.name } </option>
+                                <option key={ airport.id } data-iata={ airport.iataCode } data-lat={ airport.latitude } data-lon={ airport.longitude }> { airport.name } </option>
                             )}
                         </select>
-                        <button type="button" onClick={ handleSubmit }>Calculate</button>
                     </form>
-                    <p>You flew { distanceFlew } km-s.</p>
+                    {/* <p>You flew { distanceFlew } km-s.</p> */}
                     <p id="finalCO2">Your carbon consumption with this travel was { co2InKg } kg-s.</p>
                     <div className="flight-map-container">
                         <FlightMap myFlights={ myflights }/>
