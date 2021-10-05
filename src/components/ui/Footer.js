@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="copyright">
             <img className="logo" src={ logo } alt="logo"/>
             <div className="copyrightText">
-                <Typography variant="p" className='team'>Team Enviroso,</Typography>
+                <Typography variant="p" className='team'>Team TakeAction,</Typography>
                 <Typography variant="p"> All rights reserved - { <Date /> }</Typography>
             </div>
         </div>
