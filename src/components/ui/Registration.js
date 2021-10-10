@@ -1,10 +1,6 @@
 
 import React, { useState } from 'react';
-// import { person } from '@jsonforms/examples';
-// import {
-//   materialRenderers,
-//   materialCells,
-// } from '@jsonforms/material-renderers';
+import { useHistory } from "react-router-dom";
 
 const Registration = props => {
 
@@ -39,9 +35,15 @@ const Registration = props => {
         color: 'red'
     };
 
+    let history = useHistory();
+
+    const handleSubmit = (event) => {
+        history.push("/");
+    }
+
     return (
         <div>
-            <form action="api/v1/registration" method="post" id="registration" style={formStyle}>
+            <form action="api/v1/registration" method="post" id="registration" style={formStyle} onSubmit={handleSubmit}>
                 <label for="username">Enter your username: </label>
                 <input type="text" name="name" id="name" required></input>
 
