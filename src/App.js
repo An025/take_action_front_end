@@ -12,6 +12,8 @@ import Video from './components/ui/elements/Video';
 import EV from './components/Energy/EV';
 import React from 'react';
 import Upload from './components/ui/Upload';
+import Login from './components/ui/Login';
+import Registration from './components/ui/Registration';
 
 function App() {
   return (
@@ -67,6 +69,14 @@ function App() {
 
         <Route exact path="/">
           <Main />
+        </Route>
+
+        <Route path="/login">
+          <Login/>
+        </Route>
+
+        <Route path="/registration">
+          <Registration/>
         </Route>
 
       </Switch>

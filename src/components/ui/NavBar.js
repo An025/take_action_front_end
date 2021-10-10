@@ -63,6 +63,9 @@ export default function NavBar() {
           <Link to="/login">
             <h4 className="title">Login</h4>
           </Link>
+          <Link to="/registration">
+            <h4 className="title">Registration</h4>
+          </Link>
         </div>
       </div>
 
