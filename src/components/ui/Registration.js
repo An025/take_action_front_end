@@ -15,13 +15,13 @@ const Registration = props => {
     const confirmPassword = (event) => {
         let password1 = event.target.parentNode.children[5].value;
         let password2 = event.target.value;
-        
-        console.log(password1);
 
         if (password1 === password2) {
             setbuttonType("submit");
+            event.target.parentNode.children[8].style.display = "none";
         } else {
-
+            setbuttonType("button");
+            event.target.parentNode.children[8].style.display = "block";
         }
     };
 
@@ -32,6 +32,11 @@ const Registration = props => {
         width: '50vh',
         margin: 'auto',
         padding: '15px'
+    };
+
+    let hiddenConfirmation = {
+        display: 'none',
+        color: 'red'
     };
 
     return (
@@ -48,6 +53,7 @@ const Registration = props => {
 
                 <label for="password_again">Enter your password again: </label>
                 <input onChange={confirmPassword} type="password" name="password_again" id="password_again" required></input>
+                <p style={hiddenConfirmation}>The passwords have to match!</p>
 
                 <button type={buttonType}>Submit</button>
             </form>
