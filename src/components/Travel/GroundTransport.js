@@ -51,10 +51,10 @@ const GroundTransport = props => {
     }, [ distanceTravelled, fuelEfficiency, chosenFuel ])
 
 
-    const handleSubmit = (event) => {
+    const handleChange = (event) => {
         let distance = event.target.parentNode.children[1].value;
         setDistanceTravelled(distance);
-
+        console.log("here i am")
         let fuel_efficiency = event.target.parentNode.children[4].value;
         fuel_efficiency = fuel_efficiency === "" ? 10 : fuel_efficiency;
         setFuelEfficiency(fuel_efficiency);
@@ -69,11 +69,10 @@ const GroundTransport = props => {
                     <legend>Ground Transport CO2 Calculator</legend>
                     <form className="ground-transport-form">
                         <label htmlFor="distance">Distance (km): </label>
-                        <input type="text" placeholder="Distance in km..." name="distance"></input><br />
+                        <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input><br />
                         <label htmlFor="distance">Efficiency (kml): </label>
-                        <input type="text" name="efficiency" placeholder="Average: 10 km/l"></input><br />
-                        <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/><br />
-                        <button type="button" onClick={ handleSubmit }>Calculate</button>
+                        <input type="text" name="efficiency" placeholder="Average: 10 km/l" onChange={ handleChange }></input><br />
+                        <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/>
                     </form>
                     <p>Your carbon consumption with this travel:</p>
                     <p id="finalCO2"> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>
