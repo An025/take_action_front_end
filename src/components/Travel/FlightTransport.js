@@ -9,6 +9,7 @@ import MyFlightsVisual from './MyFlightsVisual';
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
+        'Authorization' : "Bearer " + localStorage.getItem("token")
     }
 };
 

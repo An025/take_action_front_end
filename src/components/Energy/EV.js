@@ -28,14 +28,12 @@ export default function EV(){
   const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
+        'Authorization' : "Bearer " + localStorage.getItem("token")
       }
   };
 
-
   useEffect(()=>{
-    axios.get("api/v1/ev", {headers: {
-      'Content-type' : 'application/json'}
-    } )
+    axios.get("api/v1/ev", axiosHeader)
     .then(resp => {
         setEV(resp.data);
         
@@ -47,9 +45,7 @@ export default function EV(){
 
   useEffect(()=>{
     axios.post("api/v1/ev/coordinate",
-    {headers: {
-      'Content-type' : 'application/json'}
-    }, { params: {
+    axiosHeader, { params: {
       longitude,
       latitude
     }})
