@@ -14,6 +14,16 @@ import {TiArrowLeftOutline} from 'react-icons/ti';
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
 
+  const token = localStorage.getItem("token");
+
+  let menuTitle;
+
+  if (token === null) {
+    menuTitle = "Login";
+  } else {
+    menuTitle = "Logout";
+  };
+
   const showSidebar = () => setSidebar(!sidebar)
    return (
     <IconContext.Provider value={{color:'#6094be'}}>
@@ -61,11 +71,12 @@ export default function NavBar() {
         </div>
         <div className="rightContainer">
           <Link to="/login">
-            <h4 className="title">Login</h4>
+            <h4 className="title">{ menuTitle }</h4>
           </Link>
-          <Link to="/registration">
+          {token === null ? <Link to="/registration">
             <h4 className="title">Registration</h4>
-          </Link>
+          </Link> : <></>}
+          
         </div>
       </div>
 
