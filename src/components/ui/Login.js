@@ -30,13 +30,14 @@ const Login = props => {
         axios.post("api/v1/signin", body)
             .then(function (response) {
                 console.log(response);
-                // TODO: store token in localstorage
+                localStorage.setItem("username", response.data.username);
+                localStorage.setItem("token", response.data.token);
             })
             .catch(function (error) {
                 console.log(error);
             });
 
-        // history.push("/");
+        history.push("/");
     }
     
     return (
