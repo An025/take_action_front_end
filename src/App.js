@@ -13,6 +13,7 @@ import EV from './components/Energy/EV';
 import React from 'react';
 import Upload from './components/ui/Upload';
 import Login from './components/ui/Login';
+import Logout from './components/ui/Logout';
 import Registration from './components/ui/Registration';
 
 function App() {
@@ -73,6 +74,10 @@ function App() {
 
         <Route path="/login">
           <Login/>
+        </Route>
+
+        <Route path="/logout">
+          <Logout/>
         </Route>
 
         <Route path="/registration">

@@ -16,14 +16,6 @@ export default function NavBar() {
 
   const token = localStorage.getItem("token");
 
-  let menuTitle;
-
-  if (token === null) {
-    menuTitle = "Login";
-  } else {
-    menuTitle = "Logout";
-  };
-
   const showSidebar = () => setSidebar(!sidebar)
    return (
     <IconContext.Provider value={{color:'#6094be'}}>
@@ -70,13 +62,9 @@ export default function NavBar() {
           </div>
         </div>
         <div className="rightContainer">
-          <Link to="/login">
-            <h4 className="title">{ menuTitle }</h4>
-          </Link>
-          {token === null ? <Link to="/registration">
-            <h4 className="title">Registration</h4>
-          </Link> : <></>}
-          
+          {token === null ? <Link to="/login"><h4 className="title">Login</h4></Link> : 
+          <Link to="/logout"><h4 className="title">Logout</h4></Link>}
+          {token === null ? <Link to="/registration"><h4 className="title">Registration</h4></Link> : <></>}
         </div>
       </div>
 
