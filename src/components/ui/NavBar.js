@@ -1,7 +1,7 @@
 import './NavBar.scss';  
 // import logo from "../images/logo.gif"
 import logo from "../images/leaf_logo.png"
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 // import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom";
 import { ToggleSidebar } from './ToggleSidebar';
@@ -9,11 +9,12 @@ import './SideContent.css';
 import {IconContext} from 'react-icons';
 import {TiArrowRightOutline} from 'react-icons/ti';
 import {TiArrowLeftOutline} from 'react-icons/ti';
+import AuthContext from '../../context/AuthContext';
 
 
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
-
+  const context = useContext(AuthContext)
   const token = localStorage.getItem("token");
 
   const showSidebar = () => setSidebar(!sidebar)
@@ -25,7 +26,7 @@ export default function NavBar() {
       <div className="navbar">
         <div className="leftContainer">
         <div className={sidebar ? 'nav-bar active': 'nav-bar'}>
-        {token !== null ?  
+        {context.isLoggedIn === true ?  
             <Link to="#" className={sidebar ? 'menu-bars': 'menu-bars active'}>
                 {sidebar? <TiArrowLeftOutline onClick={showSidebar}/> : <TiArrowRightOutline onClick={showSidebar}/> }
             </Link>
@@ -62,9 +63,9 @@ export default function NavBar() {
           </div>
         </div>
         <div className="rightContainer">
-          {token === null ? <Link to="/login"><h4 className="title">Login</h4></Link> : 
-          <Link to="/logout"><h4 className="title">Logout</h4></Link>}
-          {token === null ? <Link to="/registration"><h4 className="title">Registration</h4></Link> : <></>}
+          {context.isLoggedIn === false ? <Link to="/login"><h4 className="title">Login</h4></Link> : 
+          <h4 className="title" onClick={context.onLogout}>Logout</h4>}
+          {context.isLoggedIn === false ? <Link to="/registration"><h4 className="title">Registration</h4></Link> : <></>}
         </div>
       </div>
 

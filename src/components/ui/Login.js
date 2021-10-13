@@ -1,7 +1,8 @@
 
 import axios from 'axios';
-import React from 'react';
+import React , {useContext} from 'react';
 import { useHistory } from "react-router-dom";
+import AuthContext from '../../context/AuthContext';
 import Card from './elements/Card';
 import  './SignInAndUp.scss'
 
@@ -18,6 +19,7 @@ const Login = props => {
 
 
     let history = useHistory();
+    const context = useContext(AuthContext)
 
     const handleClick = (event) => {
         
@@ -28,12 +30,10 @@ const Login = props => {
             name: username,
             password: password
         }
-
         axios.post("api/v1/signin", body)
             .then(function (response) {
                 console.log(response);
-                localStorage.setItem("username", response.data.username);
-                localStorage.setItem("token", response.data.token);
+                context.onLogin(response.data.username,response.data.token)
             })
             .catch(function (error) {
                 console.log(error);
@@ -41,6 +41,7 @@ const Login = props => {
 
         history.push("/");
     }
+
     
     return (
         <div className="bgImg">

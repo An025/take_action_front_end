@@ -4,8 +4,8 @@ import { Redirect } from "react-router-dom";
 
 const Logout = props => {
     
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("username");
 
     return (
         <div>
