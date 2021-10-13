@@ -29,6 +29,7 @@ export default function EV(){
     headers: {
         'Content-type' : 'application/json',
         'Authorization' : "Bearer " + localStorage.getItem("token")
+
       }
   };
 
@@ -90,10 +91,10 @@ export default function EV(){
       };
     }, []);
 
-  
+  localStorage.setItem('mapboxApiAccessToken', process.env.REACT_APP_MAPBOX_TOKEN)
   return (<div>
     <ReactMapGl {...viewport}
-      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+      mapboxApiAccessToken={localStorage.getItem('mapboxApiAccessToken')}
       mapStyle="mapbox://styles/enviroso/cktd9xlyz00t417pdy461b3mx"
       onViewportChange={(viewport) =>{
         setViewport(viewport);
