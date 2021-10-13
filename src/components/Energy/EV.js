@@ -42,22 +42,24 @@ export default function EV(){
     .catch(err => {
         console.log(err);
     });
-}, [favorite, latitude, longitude])
+  }, [favorite])
 
-  useEffect(()=>{
-    axios.post("api/v1/ev/coordinate",
-    axiosHeader, { params: {
-      longitude,
-      latitude
-    }})
-    .then(resp => {
-        console.log(resp.status);
+// }, [favorite, latitude, longitude])
+
+  // useEffect(()=>{
+  //   axios.post("api/v1/ev/coordinate",
+  //   axiosHeader, { params: {
+  //     longitude,
+  //     latitude
+  //   }})
+  //   .then(resp => {
+  //       console.log(resp.status);
         
-    })
-    .catch(err => {
-        console.log(err);
-    });
-  }, [latitude, longitude])
+  //   })
+  //   .catch(err => {
+  //       console.log(err);
+  //   });
+  // }, [latitude, longitude])
   
  
    

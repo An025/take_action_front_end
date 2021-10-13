@@ -25,11 +25,11 @@ export default function NavBar() {
       <div className="navbar">
         <div className="leftContainer">
         <div className={sidebar ? 'nav-bar active': 'nav-bar'}>
-            
+        {token !== null ?  
             <Link to="#" className={sidebar ? 'menu-bars': 'menu-bars active'}>
                 {sidebar? <TiArrowLeftOutline onClick={showSidebar}/> : <TiArrowRightOutline onClick={showSidebar}/> }
             </Link>
-            
+           : <></>} 
         </div>
         <nav className={sidebar ? 'nav-menu active': 'nav-menu'}>
             <ul className='nav-menu-items' onClick={showSidebar}>
@@ -54,7 +54,7 @@ export default function NavBar() {
               <h4 className="title">TakeAction</h4>
             </Link>
             <Link to="/video">
-              <h4 className="title"> Footprint</h4>
+              <h4 className="title"> Video</h4>
             </Link>
             <Link to="/about">
               <h4 className="title">About Us</h4>
