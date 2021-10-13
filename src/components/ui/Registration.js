@@ -39,6 +39,7 @@ const Registration = props => {
     let history = useHistory();
 
     const handleSubmit = (event) => {
+        console.log(event)
         history.push("/");
     }
 
@@ -60,7 +61,7 @@ const Registration = props => {
                     <input onChange={confirmPassword} type="password" name="password_again" id="password_again" required></input>
                     <p style={hiddenConfirmation}>The passwords have to match!</p>
 
-                    <button type={buttonType}>Submit</button>
+                    <button className="buttonStyle" type={buttonType}>Submit</button>
                 </form>
             </Card>
         </div>

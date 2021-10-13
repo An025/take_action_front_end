@@ -54,7 +54,7 @@ const Login = props => {
 
                     <label for="password">Enter your password: </label>
                     <input type="password" name="password" id="password" required></input>
-                    <button type="button" onClick={handleClick}>Submit</button>
+                    <button className="buttonStyle" type="button" onClick={handleClick}>Submit</button>
                 </form>
             </Card>
         </div>
