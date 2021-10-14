@@ -15,6 +15,7 @@ import Upload from './components/ui/Upload';
 import Login from './components/ui/Login';
 import Logout from './components/ui/Logout';
 import Registration from './components/ui/Registration';
+import ShowEV from './components/Energy/ShowEV';
 
 function App() {
   return (
@@ -51,7 +52,8 @@ function App() {
         <Route exact path="/ev">
           <div className="cont">
             {/* <SideBar/> */}
-            <EV/>
+            <ShowEV/>
+            {/* <EV/> */}
           </div>
         </Route>
 
