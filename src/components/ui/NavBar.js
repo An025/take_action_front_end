@@ -15,7 +15,6 @@ import AuthContext from '../../context/AuthContext';
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
   const context = useContext(AuthContext)
-  const token = localStorage.getItem("token");
 
   const showSidebar = () => setSidebar(!sidebar)
    return (

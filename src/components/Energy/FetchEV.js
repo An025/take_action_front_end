@@ -5,13 +5,10 @@ import  {Marker} from 'react-map-gl'
 import PopUpBox from './PopUpBox';
 
 
-const FetchEv = props =>{
+const FetchEv = () =>{
   const [ev, setEV] = useState([]);
   const {setSelectedStation} = useContext(EvContext);
   const {favorite, setFavorite} = useContext(EvContext);
-  // const [selectedStation, setSelectedStation] = useState(null);
-  // const [favorite, setFavorite] = useState()
-
     const axiosHeader = {
       headers: {
           'Content-type' : 'application/json',

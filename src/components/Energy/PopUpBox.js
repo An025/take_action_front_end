@@ -1,14 +1,13 @@
 import React, {useContext, useEffect} from "react";
 import  { Popup} from 'react-map-gl'
 import './EV.css';
-import axios from "axios";
 import FavoriteBorderIcon from '@material-ui/icons//FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import EvContext from "./context/EvContext";
 
 const PopUpBox = props =>{
     const {selectedStation, setSelectedStation} = useContext(EvContext);
-    const {favorite, setFavorite} = useContext(EvContext);
+    const {favorite} = useContext(EvContext);
     const context = useContext(EvContext);
 
 
@@ -24,7 +23,7 @@ const PopUpBox = props =>{
         return() =>{
           window.removeEventListener("keydown", listener);
         };
-      }, []);
+      }, [selectedStation, setSelectedStation]);
 
     return( <>
         {selectedStation ?(

@@ -9,7 +9,6 @@ import RecipeeDetails from './components/Food/RecipeeDetails';
 import GroundTransport from './components/Travel/GroundTransport';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
-import EV from './components/Energy/EV';
 import React from 'react';
 import Upload from './components/ui/Upload';
 import Login from './components/ui/Login';

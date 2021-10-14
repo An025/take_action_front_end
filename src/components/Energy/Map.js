@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useContext} from "react";
-import ReactMapGl, {Marker} from 'react-map-gl'
-import EvContext from "./context/EvContext";
+import React, {useState} from "react";
+import ReactMapGl from 'react-map-gl'
 import './EV.css';
 import FetchEv from './FetchEV';
 
