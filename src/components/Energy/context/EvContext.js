@@ -26,7 +26,6 @@ export const EvContextProvider = (props) =>{
 
           "evId" : selectedStation.evId,
           "favorite" : favorite,
-          "username": localStorage.getItem("username")
       };
 
       axios.post("api/v1/ev", body, axiosHeader )
@@ -38,6 +37,9 @@ export const EvContextProvider = (props) =>{
       });
     
     }
+
+ 
+  
 
     return <EvContext.Provider
       value={
