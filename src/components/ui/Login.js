@@ -1,21 +1,14 @@
 
 import axios from 'axios';
-import React from 'react';
+import React , {useContext} from 'react';
 import { useHistory } from "react-router-dom";
+import AuthContext from '../../context/AuthContext';
+import Card from './elements/Card';
+import  './SignInAndUp.scss'
 
 const Login = props => {
-
-    const formStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        width: '50vh',
-        margin: 'auto',
-        padding: '15px'
-    };
-
-
     let history = useHistory();
+    const context = useContext(AuthContext)
 
     const handleClick = (event) => {
         
@@ -26,12 +19,10 @@ const Login = props => {
             name: username,
             password: password
         }
-
         axios.post("api/v1/signin", body)
             .then(function (response) {
                 console.log(response);
-                localStorage.setItem("username", response.data.username);
-                localStorage.setItem("token", response.data.token);
+                context.onLogin(response.data.username,response.data.token)
             })
             .catch(function (error) {
                 console.log(error);
@@ -39,21 +30,27 @@ const Login = props => {
 
         history.push("/");
     }
+
     
     return (
-        <div>
-            <form action="api/v1/signin" method="post" id="login" style={formStyle}> 
-                <label for="username">Enter your username: </label>
-                <input type="text" name="name" id="name" required></input>
+        <div className="bgImg">
+            <div className="space"></div>
+            <Card title={'Login'} createStyle={"card"}>
+                {/* <form action="api/v1/signin" method="post" id="login" style={formStyle}>  */}
+                <form action="api/v1/signin" method="post" id="login" className="input"> 
 
-                <label for="password">Enter your password: </label>
-                <input type="password" name="password" id="password" required></input>
+                    <label htmlFor="username">Enter your username: </label>
+                    <input type="text" name="name" id="name" required></input>
 
-                <button type="button" onClick={handleClick}>Submit</button>
-            </form>
+                    <label htmlFor="password">Enter your password: </label>
+                    <input type="password" name="password" id="password" required></input>
+                    <button className="buttonStyle" type="button" onClick={handleClick}>Submit</button>
+                </form>
+            </Card>
         </div>
-    )
 
+        
+    )
 }
 
 export default Login;

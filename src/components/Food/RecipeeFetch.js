@@ -16,6 +16,13 @@ const RecipeeFetch = props => {
     let diet = props.diet;
     const url = "api/v1/recipes/" + cuisine + "/" + diet;
 
+    const axiosHeader = {
+        headers: {
+            'Content-type' : 'application/json',
+            'Authorization' : "Bearer " + localStorage.getItem("token")
+        }
+    };
+
     // Available filters with possible values (later to be moved into another file)
     // const excludeCuisine = [];
     // const intolerances = [];
@@ -30,7 +37,7 @@ const RecipeeFetch = props => {
     // const maxReadyTime = [];
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url, axiosHeader)
         // axios.get(url, {
         //     params: {
         //         apiKey: apiKey,

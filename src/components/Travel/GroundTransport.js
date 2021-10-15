@@ -12,6 +12,7 @@ import StaticStepper from '../ui/elements/StaticStepper';
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
+        'Authorization' : "Bearer " + localStorage.getItem("token")
         // "Authorization" : AuthStr
     }
 };
