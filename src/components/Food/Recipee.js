@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import axios from 'axios';
 
 const Recipee = props => {
 
@@ -40,7 +41,44 @@ const Recipee = props => {
         textDecoration: 'none'
     };
 
-    const linkTo = "/food/recipee-details"
+    const axiosHeader = {
+        headers: {
+            'Content-type' : 'application/json',
+            'Authorization' : "Bearer " + localStorage.getItem("token")
+        }
+    };
+
+    const handleClick = (event) => {
+        
+        // let username = event.target.parentNode.children[1].value;
+        
+        console.log("asd");
+
+        let body = {
+            'meal_id': props.recipee.id,
+        };
+  
+    
+
+        axios.post("api/v1/add-meal", body, axiosHeader)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        // history.push("/");
+    }
+
+    const elementStyle = {
+        // display: 'block',
+        // margin: '18px'
+    };
+
+
+
+    const linkTo = "food/recipee-details"
 
     return(
         <div style={recipeeCardStyle}>
@@ -48,6 +86,7 @@ const Recipee = props => {
             {/* <Link style={paragraphStyle} to={linkTo} state={{ from: 'occupation' }}> {props.recipee.title} </Link> */}
             <Link style={paragraphStyle} to={{ pathname: linkTo, state: {recipeeData: props} }}> {props.recipee.title} </Link>
             <img style={imageStyle} src={props.recipee.image} alt={props.recipee.title}></img>
+            <button style={elementStyle} type="button" onClick={handleClick}>Add this meal to your log</button>
         </div>
     )
 }
