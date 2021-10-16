@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom'
 import axios from 'axios';
 
@@ -6,8 +7,14 @@ const RecipeeDetails = props => {
     // location allows to get the data from where this component was linked (API call data)
     const location = useLocation()
     const { recipeeData } = location.state
-
     const steps = recipeeData.recipee.analyzedInstructions[0].steps;
+
+    const [consumptionDate, setConsumptionDate] = useState("2021-10-01");
+
+    useEffect(() => {
+        console.log("useEffect ran")
+        console.log(consumptionDate)
+      }, [consumptionDate]);
 
     const axiosHeader = {
         headers: {
@@ -45,7 +52,8 @@ const RecipeeDetails = props => {
 
             <label style={elementStyle} htmlFor="meal_date">Date of consumption:</label>
             <input style={elementStyle} type="date" id="meal_date" name="meal_date" 
-            value="2021-10-01" min="2021-01-01" max="2022-12-31"></input>
+            value={consumptionDate} min="2021-01-01" max="2022-12-31"
+            onChange={event => setConsumptionDate({consumptionDate: event.target.value.toString() })}></input>
             {/* value should be set from state, otherwise gets rerendered all the time... */}
 
             <button style={elementStyle} type="button" onClick={handleClick}>Add this meal to your log</button>
