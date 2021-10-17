@@ -8,21 +8,19 @@ const RecipeFetch = props => {
         recipeData: []
     })
 
-    // require('dotenv').config();
-    // const apiKey = process.env.REACT_APP_API_KEY_SPOONACULAR;
-    // const url = "https://api.spoonacular.com/recipes/complexSearch";
     let cuisine = props.cuisine;
     let diet = props.diet;
     const url = "api/v1/recipes/" + cuisine + "/" + diet;
 
-    const axiosHeader = {
-        headers: {
-            'Content-type' : 'application/json',
-            'Authorization' : "Bearer " + localStorage.getItem("token")
-        }
-    };
-
     useEffect(() => {
+
+        const axiosHeader = {
+            headers: {
+                'Content-type' : 'application/json',
+                'Authorization' : "Bearer " + localStorage.getItem("token")
+            }
+        };
+
         axios.get(url, axiosHeader)
             .then(response => {
                 // console.log(response.data.results);
