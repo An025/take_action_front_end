@@ -15,6 +15,7 @@ import Login from './components/ui/Login';
 import Logout from './components/ui/Logout';
 import Registration from './components/ui/Registration';
 import ShowEV from './components/Energy/ShowEV';
+import Summary from './components/Summary/Summary';
 
 function App() {
   return (
@@ -83,6 +84,10 @@ function App() {
 
         <Route path="/registration">
           <Registration/>
+        </Route>
+
+        <Route path="/summary">
+          <Summary/>
         </Route>
 
       </Switch>
