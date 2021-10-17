@@ -5,7 +5,7 @@ import Main from './components/ui/Main';
 // import CarbonEstimates from './components/CarbonEstimates';
 import FlightTransport from './components/Travel/FlightTransport';
 import FoodMainPage from './components/Food/FoodMainPage';
-import RecipeeDetails from './components/Food/RecipeeDetails';
+import RecipeDetails from './components/Food/RecipeDetails';
 import GroundTransport from './components/Travel/GroundTransport';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
@@ -37,7 +37,7 @@ function App() {
 
         <Route exact path="/food/recipee-details">
           <div className="cont">
-            <RecipeeDetails/>
+            <RecipeDetails/>
           </div>
           
         </Route>

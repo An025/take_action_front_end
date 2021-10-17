@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Recipee from "./Recipee";
+import Recipe from "./Recipe";
 
 const RecipeeFetch = props => {
 
@@ -43,7 +43,7 @@ const RecipeeFetch = props => {
 
     return(
         <div style={cardContainerStyle}>
-            {state.recipeData.map((recipee) => (<Recipee key={recipee.id} recipee={recipee}/>))}
+            {state.recipeData.map((recipee) => (<Recipe key={recipee.id} recipee={recipee}/>))}
 
         </div>
     )

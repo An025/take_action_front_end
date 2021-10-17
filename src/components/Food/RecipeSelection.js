@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 // import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import RecipeeFetch from './RecipeeFetch';
+import RecipeFetch from './RecipeFetch';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -75,7 +75,7 @@ export default function RecipeSelection() {
         </Select>
       </FormControl>
 
-      <RecipeeFetch diet={diet} cuisine={cuisine}/>
+      <RecipeFetch diet={diet} cuisine={cuisine}/>
     </div>
   );
 }
