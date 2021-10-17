@@ -98,15 +98,15 @@ const GroundTransport = props => {
                         <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input><br />
                         <label htmlFor="distance">Efficiency (kml): </label>
                         <input type="text" name="efficiency" placeholder="Average: 10 km/l"></input><br />
-                        <label htmlFor="travelDate">Date of travel:</label>
+                        <label htmlFor="travelDate">Date of travel:</label><br />
                         <input type="date" id="travelDate" name="travelDate"
                             value= { dateOfTravel }
-                            min="2015-01-01" max="2022-12-31" onChange= { setDate }></input>
+                            min="2015-01-01" max="2022-12-31" onChange= { setDate }></input><br />
                         <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/>
+                        <button type="button" onClick= { saveToDB } >Save to database</button>
                     </form>
                     <p>Your carbon consumption with this travel:</p>
                     <p id="finalCO2"> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>
-                    <button type="button" onClick= { saveToDB } >Save to database</button>
                 </fieldset>
             </div>
 
