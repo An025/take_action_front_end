@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation } from 'react-router-dom'
 import axios from 'axios';
 import DatePicker from "./DatePicker";
 
-const RecipeeDetails = props => {
+const RecipeDetails = props => {
 
     // location allows to get the data from where this component was linked (API call data)
     const location = useLocation()
@@ -16,11 +16,6 @@ const RecipeeDetails = props => {
         setConsumptionDate({data: childData})
     }
 
-    // useEffect(() => {
-    //     console.log("useEffect ran")
-    //     console.log(consumptionDate)
-    //   }, [consumptionDate]);
-
     const axiosHeader = {
         headers: {
             'Content-type' : 'application/json',
@@ -32,6 +27,7 @@ const RecipeeDetails = props => {
 
         let body = {
             'meal_id': recipeeData.recipee.id,
+            'consumption_date': consumptionDate.data
         };
 
         axios.post("/api/v1/add-meal", body, axiosHeader)
@@ -51,6 +47,7 @@ const RecipeeDetails = props => {
     return(
         <div>
             {/* {console.log(location)} */}
+            {console.log(consumptionDate)}
             <h2> {recipeeData.recipee.title} </h2>
             <h5 style={elementStyle}>Preparation steps:</h5>
             { steps.map((step) => (<p style={elementStyle}> {step.number} {" - "} {step.step} </p>)) }
@@ -66,4 +63,4 @@ const RecipeeDetails = props => {
     )
 }
 
-export default RecipeeDetails
+export default RecipeDetails

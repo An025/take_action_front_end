@@ -9,7 +9,7 @@ const RecipeeFetch = props => {
     })
 
     require('dotenv').config();
-    const apiKey = process.env.REACT_APP_API_KEY_SPOONACULAR;
+    // const apiKey = process.env.REACT_APP_API_KEY_SPOONACULAR;
     // const url = "https://api.spoonacular.com/recipes/complexSearch";
     let cuisine = props.cuisine;
     let diet = props.diet;

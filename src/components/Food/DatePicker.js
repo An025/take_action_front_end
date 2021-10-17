@@ -9,17 +9,16 @@ import "react-datepicker/dist/react-datepicker.css";
 const Example = (props) => {
 
   const onTrigger = (data) => {
-    console.log(data);
-    props.parentCallback("Data from child");
-    // event.preventDefault();
+    props.parentCallback(data);
   }
 
   const [startDate, setStartDate] = useState(new Date());
+
   return (
     <DatePicker selected={startDate} onChange={(date) => {
-      console.log("asd");
+      setStartDate(date);
       onTrigger(date);
-      setStartDate(date)}} />
+    }} />
   );
 };
 

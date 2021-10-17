@@ -33,13 +33,6 @@ const Recipee = props => {
         textDecoration: 'none'
     };
 
-    const axiosHeader = {
-        headers: {
-            'Content-type' : 'application/json',
-            'Authorization' : "Bearer " + localStorage.getItem("token")
-        }
-    };
-
     const linkTo = "food/recipee-details"
 
     return(
