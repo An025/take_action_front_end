@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-const Recipee = props => {
+const Recipe = props => {
 
     const recipeeCardStyle = {
         backgroundColor: '#05324F',
@@ -43,4 +43,4 @@ const Recipee = props => {
     )    
 }
 
-export default Recipee
+export default Recipe

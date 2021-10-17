@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Recipe from "./Recipe";
 
-const RecipeeFetch = props => {
+const RecipeFetch = props => {
 
     const [state, setRecipeData] = useState({
         recipeData: []
@@ -49,4 +49,4 @@ const RecipeeFetch = props => {
     )
 }
 
-export default RecipeeFetch
+export default RecipeFetch
