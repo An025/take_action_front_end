@@ -23,8 +23,7 @@ function Main(){
                         To have the best chance of avoiding a 2℃ rise in global temperatures, the average global carbon footprint per year needs to drop under 2 tons by 2050.</p>
                     <p>Lowering individual carbon footprints doesn’t happen overnight! By making small changes to our actions, we can start making a big difference.</p> 
                     <div className={ classes.sitetitlebuttons }>
-                        <Button link={"/video"} title="Next to Footprint" className={classes.button}/>
-                        <Button link={"/video"} title="Next to Footprint" className={classes.button}/>
+                        <Button link={"/video"} title="See my Footprint!" className={classes.button}/>
                     </div> 
                 </div>
             </div>

@@ -9,6 +9,7 @@ import StaticStepper from '../ui/elements/StaticStepper';
 const axiosHeader = {
     headers: {
         'Content-type' : 'application/json',
+        'Authorization' : "Bearer " + localStorage.getItem("token")
     }
 };
 
@@ -46,13 +47,6 @@ const GroundTransport = props => {
         });
     }, [ distanceTravelled, fuelEfficiency, chosenFuel ])
 
-
-    const handleSubmit = (event) => {
-        let distance = event.target.parentNode.children[1].value;
-        setDistanceTravelled(distance);
-
-        let fuel_efficiency = event.target.parentNode.children[4].value;
-    }
 
     const setDate = (event) => {
         let dateOfTravel = event.target.value;
@@ -99,17 +93,16 @@ const GroundTransport = props => {
                 <fieldset className="ground-transport-fieldset">
                     <legend>Ground Transport CO2 Calculator</legend>
                     <form className="ground-transport-form">
-                        
+                    
                         <label htmlFor="distance">Distance (km): </label>
-                        <input type="text" placeholder="Distance in km..." name="distance"></input><br />
+                        <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input><br />
                         <label htmlFor="distance">Efficiency (kml): </label>
                         <input type="text" name="efficiency" placeholder="Average: 10 km/l"></input><br />
                         <label htmlFor="travelDate">Date of travel:</label>
                         <input type="date" id="travelDate" name="travelDate"
                             value= { dateOfTravel }
                             min="2015-01-01" max="2022-12-31" onChange= { setDate }></input>
-                        <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/><br />
-                        <button type="button" onClick={ handleSubmit }>Calculate</button>
+                        <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/>
                     </form>
                     <p>Your carbon consumption with this travel:</p>
                     <p id="finalCO2"> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>

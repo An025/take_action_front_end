@@ -1,6 +1,5 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+
 //icons
 import EvStationIcon from '@material-ui/icons/EvStation';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -31,13 +30,13 @@ export const ToggleSidebar =[
     {
         title: 'Vehicle',
         path: '/vehicle',
-        icon : <FlightIcon />,
+        icon :  <CardTravelIcon />,
         cName: 'nav-text'
     },
     {
         title: 'Flight',
         path: '/flight',
-        icon : <CardTravelIcon />,
+        icon : <FlightIcon />,
         cName: 'nav-text'
     },
     {

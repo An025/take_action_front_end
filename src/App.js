@@ -9,9 +9,12 @@ import RecipeeDetails from './components/Food/RecipeeDetails';
 import GroundTransport from './components/Travel/GroundTransport';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
-import EV from './components/Energy/EV';
 import React from 'react';
 import Upload from './components/ui/Upload';
+import Login from './components/ui/Login';
+import Logout from './components/ui/Logout';
+import Registration from './components/ui/Registration';
+import ShowEV from './components/Energy/ShowEV';
 
 function App() {
   return (
@@ -48,7 +51,8 @@ function App() {
         <Route exact path="/ev">
           <div className="cont">
             {/* <SideBar/> */}
-            <EV/>
+            <ShowEV/>
+            {/* <EV/> */}
           </div>
         </Route>
 
@@ -67,6 +71,18 @@ function App() {
 
         <Route exact path="/">
           <Main />
+        </Route>
+
+        <Route path="/login">
+          <Login/>
+        </Route>
+
+        <Route path="/logout">
+          <Logout/>
+        </Route>
+
+        <Route path="/registration">
+          <Registration/>
         </Route>
 
       </Switch>

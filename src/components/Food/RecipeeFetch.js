@@ -11,7 +11,17 @@ const RecipeeFetch = props => {
 
     require('dotenv').config();
     const apiKey = process.env.REACT_APP_API_KEY_SPOONACULAR;
-    const url = "https://api.spoonacular.com/recipes/complexSearch";
+    // const url = "https://api.spoonacular.com/recipes/complexSearch";
+    let cuisine = props.cuisine;
+    let diet = props.diet;
+    const url = "api/v1/recipes/" + cuisine + "/" + diet;
+
+    const axiosHeader = {
+        headers: {
+            'Content-type' : 'application/json',
+            'Authorization' : "Bearer " + localStorage.getItem("token")
+        }
+    };
 
     // Available filters with possible values (later to be moved into another file)
     // const excludeCuisine = [];
@@ -27,15 +37,16 @@ const RecipeeFetch = props => {
     // const maxReadyTime = [];
 
     useEffect(() => {
-        axios.get(url, {
-            params: {
-                apiKey: apiKey,
-                cuisine: props.cuisine,
-                diet: props.diet,
-                instructionsRequired: "true",
-                addRecipeInformation: "true"
-            }
-        })
+        axios.get(url, axiosHeader)
+        // axios.get(url, {
+        //     params: {
+        //         apiKey: apiKey,
+        //         cuisine: props.cuisine,
+        //         diet: props.diet,
+        //         instructionsRequired: "true",
+        //         addRecipeInformation: "true"
+        //     }
+        // })
         .then(response => {
             
             console.log(response.data.results);

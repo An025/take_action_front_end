@@ -9,6 +9,15 @@
     text-align: center;
     font-style: italic;
   }
+  .popup button{
+    background-color: #75c8a4e1;
+    margin: 0 auto;
+
+  }
+  .favorite{
+    margin-top: 20px;
+    color: red;
+  }
   .mapboxgl-popup-content{
       background-color: #75c8a4e1 !important;
       border-radius: 10px !important;
