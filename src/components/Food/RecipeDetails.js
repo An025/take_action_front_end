@@ -10,7 +10,11 @@ const RecipeeDetails = props => {
     const { recipeeData } = location.state
     const steps = recipeeData.recipee.analyzedInstructions[0].steps;
 
-    const [consumptionDate, setConsumptionDate] = useState("2021-10-01");
+    const [consumptionDate, setConsumptionDate] = useState({data: null});
+
+    const handleCallback = (childData) =>{
+        setConsumptionDate({data: childData})
+    }
 
     // useEffect(() => {
     //     console.log("useEffect ran")
@@ -52,7 +56,7 @@ const RecipeeDetails = props => {
             { steps.map((step) => (<p style={elementStyle}> {step.number} {" - "} {step.step} </p>)) }
 
             <label style={elementStyle} htmlFor="meal_date">Date of consumption:</label>
-            <DatePicker/>
+            <DatePicker parentCallback = {handleCallback}/>
 
             <button style={elementStyle} type="button" onClick={handleClick}>Add this meal to your log</button>
 
