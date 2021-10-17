@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom'
 import axios from 'axios';
+import DatePicker from "./DatePicker";
 
 const RecipeeDetails = props => {
 
@@ -51,9 +52,11 @@ const RecipeeDetails = props => {
             { steps.map((step) => (<p style={elementStyle}> {step.number} {" - "} {step.step} </p>)) }
 
             <label style={elementStyle} htmlFor="meal_date">Date of consumption:</label>
-            <input style={elementStyle} type="date" id="meal_date" name="meal_date" 
+            <DatePicker/>
+            {/* <input style={elementStyle} type="date" id="meal_date" name="meal_date" 
             value={consumptionDate} min="2021-01-01" max="2022-12-31"
-            onChange={event => setConsumptionDate({consumptionDate: event.target.value.toString() })}></input>
+            onChange={event => setConsumptionDate({consumptionDate: event.target.value.toString() })}></input> */}
+            {/* onChange={event => setConsumptionDate({consumptionDate: "2021-10-31" })}></input> */}
             {/* value should be set from state, otherwise gets rerendered all the time... */}
 
             <button style={elementStyle} type="button" onClick={handleClick}>Add this meal to your log</button>
