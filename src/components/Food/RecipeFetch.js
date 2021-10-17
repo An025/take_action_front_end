@@ -29,7 +29,7 @@ const RecipeeFetch = props => {
                 setRecipeData({recipeData: response.data.results});
             })
         .catch(error => console.log(error))
-    }, [props])
+    }, [props, url])
 
     const cardContainerStyle = {
         width: '100%',
