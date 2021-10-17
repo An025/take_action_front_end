@@ -12,10 +12,10 @@ const RecipeeDetails = props => {
 
     const [consumptionDate, setConsumptionDate] = useState("2021-10-01");
 
-    useEffect(() => {
-        console.log("useEffect ran")
-        console.log(consumptionDate)
-      }, [consumptionDate]);
+    // useEffect(() => {
+    //     console.log("useEffect ran")
+    //     console.log(consumptionDate)
+    //   }, [consumptionDate]);
 
     const axiosHeader = {
         headers: {
@@ -53,11 +53,6 @@ const RecipeeDetails = props => {
 
             <label style={elementStyle} htmlFor="meal_date">Date of consumption:</label>
             <DatePicker/>
-            {/* <input style={elementStyle} type="date" id="meal_date" name="meal_date" 
-            value={consumptionDate} min="2021-01-01" max="2022-12-31"
-            onChange={event => setConsumptionDate({consumptionDate: event.target.value.toString() })}></input> */}
-            {/* onChange={event => setConsumptionDate({consumptionDate: "2021-10-31" })}></input> */}
-            {/* value should be set from state, otherwise gets rerendered all the time... */}
 
             <button style={elementStyle} type="button" onClick={handleClick}>Add this meal to your log</button>
 
