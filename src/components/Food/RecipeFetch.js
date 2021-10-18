@@ -8,11 +8,12 @@ const RecipeFetch = props => {
         recipeData: []
     })
 
-    let cuisine = props.cuisine;
-    let diet = props.diet;
-    const url = "api/v1/recipes/" + cuisine + "/" + diet;
-
     useEffect(() => {
+        
+        let cuisine = props.cuisine;
+        let diet = props.diet;
+
+        const url = "api/v1/recipes/" + cuisine + "/" + diet;
 
         const axiosHeader = {
             headers: {
@@ -27,7 +28,7 @@ const RecipeFetch = props => {
                 setRecipeData({recipeData: response.data.results});
             })
         .catch(error => console.log(error))
-    }, [props, url])
+    }, [props])
 
     const cardContainerStyle = {
         width: '100%',
