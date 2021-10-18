@@ -91,12 +91,12 @@ const GroundTransport = props => {
         
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
-                    <legend>Ground Transport CO2 Calculator</legend>
+                    {/* <legend>Ground Transport CO2 Calculator</legend> */}
                     <form className="ground-transport-form">
                     
-                        <label htmlFor="distance">Distance (km): </label>
+                        <label htmlFor="distance">Distance travelled (km): </label>
                         <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input><br />
-                        <label htmlFor="distance">Efficiency (kml): </label>
+                        <label htmlFor="distance">Fuel efficiency (kml): </label>
                         <input type="text" name="efficiency" placeholder="Average: 10 km/l"></input><br />
                         <label htmlFor="travelDate">Date of travel:</label><br />
                         <input type="date" id="travelDate" name="travelDate"
