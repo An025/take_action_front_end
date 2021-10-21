@@ -3,14 +3,20 @@ import axios from 'axios';
 
 const EvContext = React.createContext({
   toggleHeart : () =>{},
-  postChangeFavorite: () =>{}
+  postChangeFavorite: () =>{},
+  addOneLikedNumber: () => {},
+  isHeartClicked : false,
+  setHeartFalse : () => {}
 });
 
 
 export const EvContextProvider = (props) =>{
+    const [ev, setEV] = useState([]);
     const [selectedStation, setSelectedStation] = useState(null);
     const [favorite, setFavorite] = useState()
     const toggleHeart = () => {setFavorite(!favorite)}
+    
+    const [isHeartClicked, setIsHeartClicked] = useState();
 
     const axiosHeader = {
       headers: {
@@ -22,15 +28,15 @@ export const EvContextProvider = (props) =>{
 
     // Update Favorite
     const postChangeFavorite =() => {
+      setIsHeartClicked(true)
       let body = {
-
           "evId" : selectedStation.evId,
           "favorite" : favorite,
       };
 
       axios.post("api/v1/ev", body, axiosHeader )
       .then(resp => {
-          console.log(resp.data);
+          setEV(resp.data);
       })
       .catch(err => {
           console.log(err);
@@ -38,12 +44,15 @@ export const EvContextProvider = (props) =>{
     
     }
 
- 
-  
+    const setHeartFalse = () =>{
+      setIsHeartClicked(false)
+    }
+
+
 
     return <EvContext.Provider
       value={
-        {selectedStation, setSelectedStation, favorite, setFavorite, toggleHeart, postChangeFavorite}
+        {selectedStation, setSelectedStation, favorite, setFavorite, toggleHeart, postChangeFavorite, ev, setEV, isHeartClicked, setHeartFalse }
       
       }
       >
