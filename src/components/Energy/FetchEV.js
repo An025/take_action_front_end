@@ -25,9 +25,8 @@ const FetchEv = () =>{
       .catch(err => {
           console.log(err);
       });
-    }, [])
+    }, [setEV])
 
-    console.log(ev)
     return(<div>
            {(ev!==undefined)?
            ev.map((station)=>(

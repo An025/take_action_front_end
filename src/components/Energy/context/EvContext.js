@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 const EvContext = React.createContext({
@@ -14,6 +14,7 @@ export const EvContextProvider = (props) =>{
     const [ev, setEV] = useState([]);
     const [selectedStation, setSelectedStation] = useState(null);
     const [favorite, setFavorite] = useState()
+
     const toggleHeart = () => {setFavorite(!favorite)}
     
     const [isHeartClicked, setIsHeartClicked] = useState();
@@ -52,7 +53,8 @@ export const EvContextProvider = (props) =>{
 
     return <EvContext.Provider
       value={
-        {selectedStation, setSelectedStation, favorite, setFavorite, toggleHeart, postChangeFavorite, ev, setEV, isHeartClicked, setHeartFalse }
+        {selectedStation, setSelectedStation, favorite, setFavorite, toggleHeart, postChangeFavorite, ev, setEV, isHeartClicked,
+           setHeartFalse }
       
       }
       >

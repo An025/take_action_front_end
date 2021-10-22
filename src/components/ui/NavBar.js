@@ -59,6 +59,7 @@ export default function NavBar() {
             <Link to="/about">
               <h4 className="title">About Us</h4>
             </Link>
+            {context.isLoggedIn === true ? <Link to="/statistics"><h4 className="title">Statistics</h4></Link> : <></>}
           </div>
         </div>
         <div className="rightContainer">
