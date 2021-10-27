@@ -27,7 +27,8 @@ const RecipeDetails = props => {
 
         let body = {
             'meal_id': recipeeData.recipee.id,
-            'consumption_date': consumptionDate.data
+            'consumption_date': consumptionDate.data,
+            'consumption_date_formatted': consumptionDate.data.getDate() + "/" + consumptionDate.data.getMonth() + "/" + consumptionDate.data.getFullYear()
         };
 
         axios.post("/api/v1/add-meal", body, axiosHeader)
