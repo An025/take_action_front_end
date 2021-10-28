@@ -27,6 +27,7 @@ const RecipeDetails = props => {
 
         let body = {
             'meal_id': recipeeData.recipee.id,
+            'meal_name': recipeeData.recipee.title,
             'consumption_date': consumptionDate.data,
             'consumption_date_formatted': consumptionDate.data.getDate() + "/" + consumptionDate.data.getMonth() + "/" + consumptionDate.data.getFullYear()
         };
