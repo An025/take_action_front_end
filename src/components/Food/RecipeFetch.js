@@ -43,7 +43,6 @@ const RecipeFetch = props => {
     return(
         <div style={cardContainerStyle}>
             {state.recipeData.map((recipee) => (<Recipe key={recipee.id} recipee={recipee}/>))}
-
         </div>
     )
 }

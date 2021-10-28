@@ -26,10 +26,20 @@ const RecipeSummary = props => {
         .catch(error => console.log(error))
     }, [])
 
+    const meatEmissionValue = 21.0;
+    const vegaEmissionValue = 8.4;
 
     return(
         <div>
-            Hi there!
+            <h2>You ate the following "green-meals" recently:</h2>
+            <ul>
+                {state.userStatistics.map((meal) => (<li key={meal.id}> {meal.consumptionDate} </li>))}
+            </ul>
+
+            <p>Calculating with an average emission value for meat-based 
+                meals (21 CO2 kg) and for plant-based meals (8.4 CO2 kg), you saved the following amount of emissions:</p>
+            <p>{ state.userStatistics.length * (meatEmissionValue - vegaEmissionValue) } CO2 kg</p>
+
         </div>
     )
 }
