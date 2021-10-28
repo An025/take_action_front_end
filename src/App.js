@@ -6,6 +6,7 @@ import Main from './components/ui/Main';
 import FlightTransport from './components/Travel/FlightTransport';
 import FoodMainPage from './components/Food/FoodMainPage';
 import RecipeDetails from './components/Food/RecipeDetails';
+import RecipeSummary from './components/Food/RecipeSummary';
 import GroundTransport from './components/Travel/GroundTransport';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
@@ -40,7 +41,12 @@ function App() {
           <div className="cont">
             <RecipeDetails/>
           </div>
-          
+        </Route>
+
+        <Route exact path="/food/summary">
+          <div className="cont">
+            <RecipeSummary/>
+          </div>
         </Route>
 
         <Route exact path="/vehicle">
