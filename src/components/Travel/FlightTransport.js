@@ -91,7 +91,7 @@ const FlightTransport = props => {
     const saveToDB = (event) => {
 
         let body = {
-            "dateofTravel": dateOfTravel,
+            "dateOfTravel": dateOfTravel,
             "airports":[
                 visitedAirports[0],
                 visitedAirports[1],
