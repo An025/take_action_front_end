@@ -37,7 +37,7 @@ const RecipeFetch = props => {
         // justifyContent: 'left',
         flexWrap: 'wrap',
         gap: '10px 20px',
-        justifyContent: 'center'    
+        justifyContent: 'center'
     };
 
     return(
