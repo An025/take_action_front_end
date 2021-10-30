@@ -24,7 +24,11 @@ function App() {
       <NavBar />
 
       <Switch>
-
+      <Route exact path="/statistics">
+          <div className="cont">
+             <Summary/>
+          </div>
+        </Route>
         <Route exact path="/video">
           <div className="cont">
              <Video/>
