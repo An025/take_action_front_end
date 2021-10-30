@@ -23,7 +23,9 @@
         background-color: $black_bg_w_opacity;
     
         legend {
-            float:left;
+            // float:left;
+            background-color: $white_bg_w_opacity;
+            color: $black;
             left: 50%;
             width: fit-content;
             text-transform: uppercase;
