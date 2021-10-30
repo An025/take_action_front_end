@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 // import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import RecipeeFetch from './RecipeeFetch';
+import RecipeFetch from './RecipeFetch';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleSelect() {
+export default function RecipeSelection() {
   const classes = useStyles();
   const [diet, setDiet] = React.useState('vegetarian');
   const [cuisine, setCuisine] = React.useState('mediterranean');
@@ -32,7 +32,6 @@ export default function SimpleSelect() {
 
   return (
     <div>
-        {console.log(diet)}
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">Diet</InputLabel>
         <Select
@@ -76,26 +75,7 @@ export default function SimpleSelect() {
         </Select>
       </FormControl>
 
-
-      {/* <FormControl required className={classes.formControl}>
-        <InputLabel id="demo-simple-select-required-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-required-label"
-          id="demo-simple-select-required"
-          value={age}
-          onChange={handleChange}
-          className={classes.selectEmpty}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>Required</FormHelperText>
-      </FormControl> */}
-        <RecipeeFetch diet={diet} cuisine={cuisine}/>
+      <RecipeFetch diet={diet} cuisine={cuisine}/>
     </div>
   );
 }
