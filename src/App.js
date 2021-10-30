@@ -15,6 +15,7 @@ import Login from './components/ui/Login';
 import Logout from './components/ui/Logout';
 import Registration from './components/ui/Registration';
 import ShowEV from './components/Energy/ShowEV';
+import Summary from './components/Summary/Summary';
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
       <NavBar />
 
       <Switch>
-
+      <Route exact path="/statistics">
+          <div className="cont">
+             <Summary/>
+          </div>
+        </Route>
         <Route exact path="/video">
           <div className="cont">
              <Video/>

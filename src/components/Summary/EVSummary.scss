@@ -1,0 +1,61 @@
+
+.cont{
+    .username{
+        text-align: center;
+        margin-top: 50px;
+    }
+ 
+    .evButton{
+        background: linear-gradient(45deg, #255B80, #5BB2C0);
+        border: 0;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        color: white;
+        padding: 10px 30px;
+        text-align: center;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        margin-left: 20vw;
+        margin-top: 20px;
+    }
+
+    .evButton:hover {
+        box-shadow: 0px 10px 15px #255c8081;
+        color: #fff;
+        transform: translateY(-2px);
+        margin-left: 20vw;
+        margin-top: 20px;
+
+      }
+
+  
+    .evTable{
+        display: none;
+    }
+    .showEvTable {
+        margin-left: 20vw;
+        margin-bottom: 50px;
+    }
+    .center{
+        text-align: center;
+    }
+    
+    th{
+        letter-spacing: 1.1rem;
+        background-color: #05314fcb;
+        padding: 15px;
+        color: white
+    }
+    td{
+        padding: 15px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #18596650;
+      }
+    
+}
+
+
