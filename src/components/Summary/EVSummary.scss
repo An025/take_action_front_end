@@ -1,7 +1,5 @@
 
 .cont{
-    width: 100vh;
-    margin: 0 auto;
     .username{
         text-align: center;
         margin-top: 50px;
@@ -19,12 +17,17 @@
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease 0s;
         cursor: pointer;
+        margin-left: 20vw;
+        margin-top: 20px;
     }
 
     .evButton:hover {
         box-shadow: 0px 10px 15px #255c8081;
         color: #fff;
         transform: translateY(-2px);
+        margin-left: 20vw;
+        margin-top: 20px;
+
       }
 
   
@@ -32,7 +35,8 @@
         display: none;
     }
     .showEvTable {
-        display:block;
+        margin-left: 20vw;
+        margin-bottom: 50px;
     }
     .center{
         text-align: center;
