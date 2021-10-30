@@ -24,9 +24,11 @@ const card = {
 const TopInfo = () => {
     return(
         <div style={cardStyle}>
-            <div style={card}>Chicken: ... kg CO2 / kg</div>
-            <div style={card}>Beef: ... kg CO2 / kg</div>
-            <div style={card}>Pork: ... kg CO2 / kg</div>
+            <div style={card}>Lamb: 39 CO2 kg equivalent</div>
+            <div style={card}>Beef: 27 CO2 kg equivalent</div>
+            <div style={card}>Pork: 12 CO2 kg equivalent</div>
+            <div style={card}>Chicken: 7 CO2 kg equivalent</div>
+            {/* source of data: https://www.greeneatz.com/foods-carbon-footprint.html */}
         </div>
     )
 }

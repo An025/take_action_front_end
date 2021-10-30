@@ -9,6 +9,7 @@ const PopUpBox = props =>{
     const {selectedStation, setSelectedStation} = useContext(EvContext);
     const {favorite} = useContext(EvContext);
     const context = useContext(EvContext);
+    const {isHeartClicked} = useContext(EvContext);
 
 
 
@@ -25,6 +26,9 @@ const PopUpBox = props =>{
         };
       }, [selectedStation, setSelectedStation]);
 
+      
+  
+
     return( <>
         {selectedStation ?(
             <Popup
@@ -32,6 +36,8 @@ const PopUpBox = props =>{
               longitude={selectedStation.longitude}
               onClose={()=>{
                 setSelectedStation(null);
+                context.setHeartFalse()
+
               }}>
       
             <div className="popup">
@@ -44,6 +50,7 @@ const PopUpBox = props =>{
                 }} 
                 className="favorite"> 
                 {favorite?  <FavoriteIcon/>: <FavoriteBorderIcon/>}
+                {isHeartClicked? selectedStation.likedNumber + 1 : selectedStation.likedNumber}
               </p>
             </div>
           </Popup>

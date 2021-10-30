@@ -28,6 +28,7 @@ const FlightTransport = props => {
         {through: { city: 'Toronto', latitude: 43.8163, longitude: -79.4287 }},
         {landing: { city: 'N39', latitude: -7.138793513804092, longitude: 22.37131768752556 }},
     ]);
+    let [dateOfTravel, setDateOfTravel] = useState("2019-01-01");
 
     useEffect(()=>{
         axios.post(airportsURL,"", axiosHeader)
@@ -81,12 +82,37 @@ const FlightTransport = props => {
         setMyFlights(myFlightsCopy);
       };
 
+      const setDate = (event) => {
+        let dateOfTravel = event.target.value;
+        setDateOfTravel(dateOfTravel);
+    }
+
+
+    const saveToDB = (event) => {
+
+        let body = {
+            "dateOfTravel": dateOfTravel,
+            "airports":[
+                visitedAirports[0],
+                visitedAirports[1],
+                visitedAirports[2]
+            ]};
+
+        axios.post("api/v1/flight-transport/persist", body, axiosHeader )
+        .then(resp => {
+            console.log(resp.data);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
 
     return (
         <div>
             <div className="flight-transport-container">
                 <fieldset className="flight-transport-fieldset">
-                    <legend >Flight transport co2 calculator</legend>
+                    {/* <legend >Flight transport co2 calculator</legend> */}
                     <form className="flight-transport-form">
                         <label for="airportsFrom">Airport from:</label>
                         <select name="airportsFrom" id="from" onChange={ handleChangeOfAirport }>
@@ -120,12 +146,18 @@ const FlightTransport = props => {
                                data-city={ airport.municipality }> { airport.name} </option>
                             )}
                         </select>
+                        <label htmlFor="travelDate">Date of travel:</label><br />
+                        <input type="date" id="travelDate" name="travelDate"
+                            value= { dateOfTravel }
+                            min="2015-01-01" max="2022-12-31" onChange= { setDate }></input><br />
+                        <button type="button" onClick= { saveToDB } >Save to database</button>
                     </form>
-                    {/* <p>You flew { distanceFlew } km-s.</p> */}
-                    <p id="finalCO2">Your carbon consumption with this travel was { co2InKg } kg-s.</p>
+
                     <div className="flight-map-container">
                         <MyFlightsVisual myFlights={ myFlights }/>
                     </div>
+                    {/* <p>You flew { distanceFlew } km-s.</p> */}
+                    <p id="finalCO2">Your carbon consumption with this travel was { co2InKg } kg-s.</p>
                 </fieldset>
             </div>
   

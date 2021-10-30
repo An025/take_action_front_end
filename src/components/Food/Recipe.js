@@ -1,12 +1,9 @@
 import {Link} from "react-router-dom";
 
-const Recipee = props => {
+const Recipe = props => {
 
     const recipeeCardStyle = {
-        
-        // backgroundColor: '#212529',
         backgroundColor: '#05324F',
-        // display: 'flex',
         textAlign: 'center',
         height: '200px',
         width: '200px',
@@ -16,12 +13,8 @@ const Recipee = props => {
     const imageStyle = {
         width: '100%',
         height: '75%',
-        // maxHeight: '100%'
-        // width: '110px',
-        //height: '110px',
         padding: '4px',
         display: 'inline-block',
-
         objectFit: 'cover',
         opacity: '0.5'
 
@@ -40,16 +33,14 @@ const Recipee = props => {
         textDecoration: 'none'
     };
 
-    const linkTo = "/food/recipee-details"
+    const linkTo = "food/recipee-details"
 
     return(
         <div style={recipeeCardStyle}>
-            {/* <p style={paragraphStyle}>{props.recipee.title}</p> */}
-            {/* <Link style={paragraphStyle} to={linkTo} state={{ from: 'occupation' }}> {props.recipee.title} </Link> */}
             <Link style={paragraphStyle} to={{ pathname: linkTo, state: {recipeeData: props} }}> {props.recipee.title} </Link>
             <img style={imageStyle} src={props.recipee.image} alt={props.recipee.title}></img>
         </div>
-    )
+    )    
 }
 
-export default Recipee
+export default Recipe

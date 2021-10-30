@@ -6,21 +6,8 @@ import Accordion from "../ui/elements/Accordion";
 import StaticStepper from '../ui/elements/StaticStepper';
 
 
-// require('dotenv').config();
-// const apiKey = process.env.REACT_APP_API_KEY_CLOVERLY;
-// const AuthStr = "Bearer " + apiKey;
-const axiosHeader = {
-    headers: {
-        'Content-type' : 'application/json',
-        'Authorization' : "Bearer " + localStorage.getItem("token")
-        // "Authorization" : AuthStr
-    }
-};
 
-// const URL = 'https://api.cloverly.com/2019-03-beta/estimates/vehicle';
 const kml2mpgMultiplier = 2.35214583;
-
-
 
 
 const GroundTransport = props => {
@@ -29,6 +16,14 @@ const GroundTransport = props => {
     let [co2InKg , setCo2InKg] = useState(null);
     let [fuelEfficiency, setFuelEfficiency] = useState(10);
     let [chosenFuel, setChosenFuel] = useState('diesel');
+    const [dateOfTravel, setDateOfTravel] = useState("2019-01-01");
+
+    const axiosHeader = {
+        headers: {
+            'Content-type' : 'application/json',
+            'Authorization' : "Bearer " + localStorage.getItem("token")
+        }
+    };
 
     useEffect(() => {
         let body = {
@@ -41,8 +36,9 @@ const GroundTransport = props => {
                 "of": (chosenFuel ? chosenFuel : "diesel" )
             }
         };
-
-        axios.post("api/v1/ground-transport", body, axiosHeader )
+        console.log(axiosHeader);
+ 
+        axios.post("api/v1/ground-transport",body, axiosHeader )
         .then(resp => {
             setCo2InKg(resp.data);
         })
@@ -52,12 +48,41 @@ const GroundTransport = props => {
     }, [ distanceTravelled, fuelEfficiency, chosenFuel ])
 
 
+    const setDate = (event) => {
+        let dateOfTravel = event.target.value;
+        setDateOfTravel(dateOfTravel);
+    }
+
+
+    const saveToDB = (event) => {
+
+        let body = {
+            "dateOfTravel" : dateOfTravel,
+            "distance":{
+                "value" : distanceTravelled,
+                "units" : "km"},
+            "fuel_efficiency":{
+                "value": fuelEfficiency * kml2mpgMultiplier,
+                "units":"mpg",
+                "of": (chosenFuel ? chosenFuel : "diesel" )
+            }
+        };
+
+        axios.post("api/v1/ground-transport/persist", body, axiosHeader )
+        .then(resp => {
+            console.log(resp.data);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
     const handleChange = (event) => {
         let distance = event.target.parentNode.children[1].value;
         setDistanceTravelled(distance);
-        console.log("here i am")
         let fuel_efficiency = event.target.parentNode.children[4].value;
         fuel_efficiency = fuel_efficiency === "" ? 10 : fuel_efficiency;
+        console.log(fuel_efficiency);
         setFuelEfficiency(fuel_efficiency);
       };
 
@@ -67,13 +92,22 @@ const GroundTransport = props => {
         
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
-                    <legend>Ground Transport CO2 Calculator</legend>
+                    {/* <legend>Ground Transport CO2 Calculator</legend> */}
                     <form className="ground-transport-form">
-                        <label htmlFor="distance">Distance (km): </label>
-                        <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input><br />
-                        <label htmlFor="distance">Efficiency (kml): </label>
-                        <input type="text" name="efficiency" placeholder="Average: 10 km/l" onChange={ handleChange }></input><br />
+                        <label htmlFor="distance">Distance travelled (km): </label>
+                        <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input>
+                        <br />
+                        <label htmlFor="efficiency">Fuel efficiency (kml): </label>
+                        <input type="text" name="efficiency" placeholder="Average: 10 km/l" onChange={ handleChange }></input>
+                        <br />
+                        <label htmlFor="travelDate">Date of travel:</label>
+                        <br />
+                        <input type="date" id="travelDate" name="travelDate"
+                            value= { dateOfTravel }
+                            min="2015-01-01" max="2022-12-31" onChange= { setDate }></input>
+                        <br />
                         <ToggleSwitch id="fuel-toggle" name="fuel-toggle" checked={ chosenFuel } onChange={ setChosenFuel } optionLabels={ ['gasoline', 'diesel'] }/>
+                        <button type="button" onClick= { saveToDB } >Save to database</button>
                     </form>
                     <p>Your carbon consumption with this travel:</p>
                     <p id="finalCO2"> { (co2InKg ? co2InKg : 0 ) + " kg" } </p>

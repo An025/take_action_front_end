@@ -7,8 +7,10 @@ import {Link} from "react-router-dom";
 import { ToggleSidebar } from './ToggleSidebar';
 import './SideContent.css';
 import {IconContext} from 'react-icons';
-import {TiArrowRightOutline} from 'react-icons/ti';
-import {TiArrowLeftOutline} from 'react-icons/ti';
+/* import {TiArrowRightOutline} from 'react-icons/ti';
+import {TiArrowLeftOutline} from 'react-icons/ti'; */
+import {TiMediaPlay} from 'react-icons/ti';
+import {TiMediaPlayReverse} from 'react-icons/ti';
 import AuthContext from '../../context/AuthContext';
 
 
@@ -27,7 +29,7 @@ export default function NavBar() {
         <div className={sidebar ? 'nav-bar active': 'nav-bar'}>
         {context.isLoggedIn === true ?  
             <Link to="#" className={sidebar ? 'menu-bars': 'menu-bars active'}>
-                {sidebar? <TiArrowLeftOutline onClick={showSidebar}/> : <TiArrowRightOutline onClick={showSidebar}/> }
+                {sidebar? <TiMediaPlayReverse onClick={showSidebar}/> : <TiMediaPlay onClick={showSidebar}/> }
             </Link>
            : <></>} 
         </div>
@@ -59,6 +61,7 @@ export default function NavBar() {
             <Link to="/about">
               <h4 className="title">About Us</h4>
             </Link>
+            {context.isLoggedIn === true ? <Link to="/statistics"><h4 className="title">Statistics</h4></Link> : <></>}
           </div>
         </div>
         <div className="rightContainer">

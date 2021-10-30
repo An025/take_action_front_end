@@ -5,7 +5,8 @@ import Main from './components/ui/Main';
 // import CarbonEstimates from './components/CarbonEstimates';
 import FlightTransport from './components/Travel/FlightTransport';
 import FoodMainPage from './components/Food/FoodMainPage';
-import RecipeeDetails from './components/Food/RecipeeDetails';
+import RecipeDetails from './components/Food/RecipeDetails';
+import RecipeSummary from './components/Food/RecipeSummary';
 import GroundTransport from './components/Travel/GroundTransport';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Video from './components/ui/elements/Video';
@@ -23,7 +24,11 @@ function App() {
       <NavBar />
 
       <Switch>
-
+      <Route exact path="/statistics">
+          <div className="cont">
+             <Summary/>
+          </div>
+        </Route>
         <Route exact path="/video">
           <div className="cont">
              <Video/>
@@ -38,9 +43,14 @@ function App() {
 
         <Route exact path="/food/recipee-details">
           <div className="cont">
-            <RecipeeDetails/>
+            <RecipeDetails/>
           </div>
-          
+        </Route>
+
+        <Route exact path="/food/summary">
+          <div className="cont">
+            <RecipeSummary/>
+          </div>
         </Route>
 
         <Route exact path="/vehicle">
