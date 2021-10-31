@@ -5,6 +5,7 @@
     z-index: 1;
     height: 100vh;
     position: relative;
+    top: -10vh;
 }
 
 .banner1{

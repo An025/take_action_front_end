@@ -8,35 +8,29 @@ $black : rgb(0,0,0);
   height:10vh;
 }
 
+.active {
+  background: linear-gradient(90deg, #05324F, #7EC3D0);
+}
 .navbar {
   position: fixed;
   top: 0;
   margin:unset;
-  background: linear-gradient(90deg, #05324F, #7EC3D0);
-  // box-shadow: 0 4px 2px -2px #255C81;  
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-  // background: linear-gradient(90deg, #a02e08, #fff533);
-
+  // background: linear-gradient(90deg, #05324F, #7EC3D0);
+  // box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
   height: 10vh;
   z-index: 1100;
   width: 100%;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: flex-end;
   color: $black;
+  text-align: center;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: large;
 
-  &:hover + .dim-container {
+/*   &:hover + .dim-container {
       display: block;
-  }
-  
- 
-  // .menuItems{
-  //   display: flex;
-  //   justify-content: flex-end;
+  } */
+
   .leftContainer{
     display: flex;
     justify-content: flex-start;
@@ -56,6 +50,9 @@ $black : rgb(0,0,0);
       color: white;
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .rightContainer{
@@ -74,6 +71,9 @@ $black : rgb(0,0,0);
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
       cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 

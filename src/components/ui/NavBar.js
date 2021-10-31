@@ -1,7 +1,7 @@
 import './NavBar.scss';  
 // import logo from "../images/logo.gif"
 import logo from "../images/leaf_logo.png"
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 // import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom";
 import { ToggleSidebar } from './ToggleSidebar';
@@ -16,8 +16,24 @@ import AuthContext from '../../context/AuthContext';
 
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
+  const [navClassName, setnavClassName ]= useState("navbar")
   const context = useContext(AuthContext)
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, [navClassName])
+
+  let handleScroll=()=>{
+    if (window.pageYOffset > 50) {
+        if(navClassName !== "navbar active"){
+          setnavClassName("navbar active" );   
+        }
+    }else{
+        if(navClassName !== "navbar"){
+          setnavClassName("navbar" );
+        }
+    }
+  }
   const showSidebar = () => setSidebar(!sidebar)
    return (
     <IconContext.Provider value={{color:'#6094be'}}>
