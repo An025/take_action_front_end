@@ -1,0 +1,10 @@
+.footprint{
+    width: 100px;
+    animation: moveImage 9s linear infinite;
+}
+
+@keyframes moveImage {
+    100% {
+      transform: translateX(calc(100vw + 150px));
+    }
+}
