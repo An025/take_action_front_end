@@ -47,11 +47,11 @@ function App() {
           </div>
         </Route>
 
-        <Route exact path="/food/summary">
+        {/* <Route exact path="/food/summary">
           <div className="cont">
             <RecipeSummary/>
           </div>
-        </Route>
+        </Route> */}
 
         <Route exact path="/vehicle">
           <div className="cont">
