@@ -34,13 +34,14 @@ export default function NavBar() {
         }
     }
   }
+
   const showSidebar = () => setSidebar(!sidebar)
    return (
     <IconContext.Provider value={{color:'#6094be'}}>
 
     <div className="main-container">
 
-      <div className="navbar">
+      <div className={ navClassName }>
         <div className="leftContainer">
         <div className={sidebar ? 'nav-bar active': 'nav-bar'}>
         {context.isLoggedIn === true ?  
