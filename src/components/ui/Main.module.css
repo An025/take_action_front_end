@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
+
 
 .titlecontainer {
     z-index: 1;
@@ -29,6 +31,7 @@
     color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
+    font-weight: 600;
 }
 .sitetitle h1 {
     font-size: 7vh;
@@ -84,26 +87,25 @@
     background-repeat: no-repeat;
     background-position: center center;  
     background-attachment: fixed;
-    background-image: url('../images/banner3.jpg') ;
+    background-image: url('../images/worldfinal.jpg') ;
     z-index: 1;
     min-height: 100vh;
 }
 
 .banner2container{
-    max-width: 80%;
-    margin: 0 auto;
-    /* height: 70vh; */
+    max-width: 50%;
+    margin-left: 50vw;
+    margin-right: 10vw;
     position: relative;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 .banner2content {
     text-align: justify;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: black;
+    color: white;
     padding: 20px;
-    background: linear-gradient(0, #99DA8B, #4F71C0);
-    opacity: 0.7;
+    line-height: 1.5rem;
     border-radius: 20px;
 }
 .banner2content:hover{
@@ -122,43 +124,15 @@
     margin-bottom: 1vh;
 }
 
-.cardcontainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 3vh;
-}
-
-.card{
-    width: 40vh;
-    height: 45vh;
-    background: linear-gradient(0, #99DA8B, #4F71C0);
-    text-align: center;
-    /* background-color: #8DD6B3; */
-    opacity: 0.6;
-    /* margin-left: 50px; */
-    margin-top:50px;
-    border-radius: 20px;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-         box-shadow: 0 10px 6px -6px #777;
-}
-.card img {
-    max-height: 25vh;
-}
-
-.card:hover{
-    opacity: 0.9;
-}
-
-.card h2{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-}
 
 .section3{
     padding: 50px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+    background-image: url('../images/green.png') ;
+    z-index: 1;
+    min-height: 80vh;
 }
 
 .section3container {
@@ -169,9 +143,20 @@
     text-align: justify;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+
 }
 
+.section3container h1{
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
 
+.save{
+    position: absolute;
+    top: 400px;
+    right: 0;
+    z-index: 10;
+}
 /* .title{
     font-family: 'Montserrat', sans-serif; 
     letter-spacing: 5px;  
@@ -195,4 +180,87 @@
 .anchorFootprint img {
     height: 60px;
     opacity: 0.4;
+}
+
+/* How to reduce section */
+.section4{
+    font-family: 'Grechen Fuemen', cursive;
+    width: 70vw;
+    margin: 0 auto;
+    position: relative
+}
+.section4 h1{
+    font-family: 'Grechen Fuemen', cursive;
+    margin-top: 50px;
+    font-size: 3rem;
+
+}
+
+.section4 ul{
+    font-size: 2.4rem;
+}
+
+.section4 ol{
+    display: inline;
+    margin-bottom: 100px;
+}
+.lineImg{
+    position: absolute;
+    height: 45px;
+    width: 30vw;
+    right: 100px;
+}
+.reduceImg{
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+.circle{
+    background-color: #90C345;
+    padding: 0 10px;
+    border-radius: 50%;
+    color: white;
+}
+
+.reduceDetails{
+    margin: 10px 100px 100px 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.reduceDiv p{
+
+    margin-left:100px ;
+}
+.type{
+    margin-top: 40px;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin-right: 50px;
+}
+
+.ecar{
+    height: 200px;
+    margin-right: 20px;
+}
+.bike{
+    height: 200px;
+}
+
+.beef{
+
+    height: 200px;
+}
+
+.vegetables{
+    margin-right: 10px;
+    height: 200px;
+}
+.bottomline{
+    height: 45px;
+    margin-left: 15vw;
+    width: 40vw;
 }
