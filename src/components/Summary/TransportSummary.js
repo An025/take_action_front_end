@@ -8,11 +8,11 @@ import './TransportSummaryStyle.scss';
 
 
 const Summary = () => {
-    // const [statEv, setStatEv] = useState();
+    const [statMonthlyTravels, setStatMonthlyTravels] = useState();
     const [show, setShow] = useState(false);
 
 
-/*     useEffect(()=>{
+    useEffect(()=>{
         const axiosHeader = {
           headers: {
               'Content-type' : 'application/json',
@@ -20,15 +20,15 @@ const Summary = () => {
       
             }
         };
-        axios.get("api/v1/ev/statistics", axiosHeader)
+        axios.get("api/v1/transport/statistics", axiosHeader)
         .then(resp => {
             console.log(resp.data)
-            setStatEv(resp.data)
+            setStatMonthlyTravels(resp.data)
         })
         .catch(err => {
             console.log(err);
         });
-      }, []) */
+      }, [])
       
     
     const handleDisplay = ()=>{

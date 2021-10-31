@@ -8,8 +8,8 @@ const Summary = props =>{
 
 return(
     <div>
-        <TransportSummary />
         <EVSummary/>
+        <TransportSummary />
     </div>
     )
 }

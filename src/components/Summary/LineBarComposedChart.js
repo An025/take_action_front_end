@@ -51,7 +51,7 @@ const data = [
   },
 ];
 
-export default class Example extends PureComponent {
+export default class LineBarComposedChart extends PureComponent {
 
   render() {
     return (
