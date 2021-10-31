@@ -10,10 +10,8 @@ const Summary = props =>{
 
 return(
     <div>
-
-        <EVSummary/>
         <img className="footprint" src={ footprint } alt="footprint" ></img>
-
+        <EVSummary/>
     </div>
     )
 }
