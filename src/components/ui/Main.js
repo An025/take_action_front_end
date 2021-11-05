@@ -2,11 +2,15 @@ import React from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
 import Accordion from './elements/Accordion';
-import footprint1 from '../images/tourism_footprint.png';
-import footprint2 from '../images/eating_footprint.png';
-import footprint3 from '../images/videoGames_footprint.jpeg';
 import ImageSlider from "react-image-comparison-slider";
 import footprint from '../images/footprint.png'
+import reduce from '../images/reduce.jpg'
+import line from '../images/line.png'
+import bike from '../images/bike1.png'
+import ecar from '../images/ecar.png'
+import beef from '../images/beef.png'
+import vegetables from '../images/vegetables.png'
+import save from '../images/save.png'
 import earth1 from '../images/earth_clean.png';
 import earth2 from '../images/earth_polluted.png';
 
@@ -23,7 +27,7 @@ function Main(){
                         To have the best chance of avoiding a 2℃ rise in global temperatures, the average global carbon footprint per year needs to drop under 2 tons by 2050.</p>
                     <p>Lowering individual carbon footprints doesn’t happen overnight! By making small changes to our actions, we can start making a big difference.</p> 
                     <div className={ classes.sitetitlebuttons }>
-                        <Button link={"/video"} title="See my Footprint!" className={classes.button}/>
+                        {/* <Button link={"/video"} title="See my Footprint!" className={classes.button}/> */}
                     </div> 
                 </div>
             </div>
@@ -50,7 +54,6 @@ function Main(){
                 </div>
             </div>
 
-            {/* <div className={classes.line}></div> */}
 
             <div className={classes.banner2}>
                 <div className={classes.banner2container}>
@@ -71,25 +74,58 @@ function Main(){
                                 footprint based on the size of your household, the efficiency of your appliances, how much you drive or fly, what you eat, and how much you recycle.
                             </p>
                         </div>
+
                     </div>  
-                    <div className={classes.cardcontainer}>
-                        <a className={classes.card} href="/vehicle">
-                            <h2>Travel habits</h2>
-                            <img className={classes.footprints} src={ footprint1 } alt="footprint"></img>
-                        </a>
-                        <a className={classes.card} href="/food">
-                            <h2>Eating habits</h2>
-                            <img className={classes.footprints} src={ footprint2 } alt="footprint"></img>
-                        </a>
-                        <a className={classes.card} href="/ev">
-                            <h2>Energy consumption</h2>
-                            <img className={classes.footprints} src={ footprint3 } alt="footprint"></img>
-                        </a>
-                    </div>
                 </div>
             </div> 
+
+            <div className={classes.section4}>
+                <h1 className={classes.sectionTitle}>How to reduce your carbon footprint?</h1> 
+              
+                <img className={classes.reduceImg} src={ reduce } alt="how to reduce the carbon" ></img>
+                <ul>
+                    <div className={classes.reduceDiv}>
+                        <ol><span className={classes.circle}>1.</span> Transport:</ol>
+                        <img className={classes.lineImg} src={ line } alt="line" ></img>
+                        <p>Try one of the following ways to get to work or school</p>
+                        <div className={classes.reduceDetails}>
+                            <img className={classes.ecar} src={ ecar } alt="bike" ></img>
+                                <div className={classes.type}>
+                                    <p>Cycling</p>
+                                    <p>Walking</p>
+                                    <p>Public Transport</p>
+                                    <p>Electric Car</p>
+                                </div>
+                           
+                            <img className={classes.bike} src={ bike } alt="bike" ></img>
+                        </div>
+                    </div>
+
+                    <div>
+                        <ol><span className={classes.circle}>2.</span> Food:</ol>
+                        <img className={classes.lineImg} src={ line } alt="line" ></img>
+                        <div className={classes.reduceDetails}>
+                            <img className={classes.vegetables} src={ vegetables } alt="vegetables" ></img>
+                            <div className={classes.type}>
+                                <p>Reduce intake of animal products and</p>
+                                <p>Eat more vegetables</p>
+                                <p>Eat local and seasonal produce</p>
+                                <p>Try not to waste food</p>
+                                <p>Recycle organic waste</p>
+                            </div>
+                            <img className={classes.beef} src={ beef } alt="beef" ></img>
+                        </div>
+                    </div>
+                </ul>
+
+                <img className={classes.bottomline} src={ line } alt="line" ></img>
+            </div>
+
+      
             <div className={classes.section3}>
                 <div className={ classes.section3container }>
+                <img className={classes.save} src={ save } alt="save" ></img>
+
                     <h1 className={classes.section3Title}>Our motivations</h1>
                     <Accordion
                     panel1Heading="Global climate change"
@@ -107,7 +143,6 @@ function Main(){
                     panel3Text="You can make a difference! You can plant trees, or support environmentally friendly movements
                     like a family business focusing on recycling or eating vegan food once or twice. Its your choice."
                     />   
-                    <Button link={"/video"} title="Next to Footprint" className={classes.button}/>
                 </div>
             </div>
             
