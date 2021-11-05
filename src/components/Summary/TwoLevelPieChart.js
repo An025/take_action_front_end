@@ -19,9 +19,10 @@ const data02 = [
   { name: 'flightsCO2', value: 2100 },
 ];
 
-export default class TwoLevelPieChart extends PureComponent {
 
-  render() {
+
+ const TwoLevelPieChart = props => {
+
     return (
         <div className="piechartcontainer">
             <p className="animate__animated animate__rubberBand">Your CO2 production in kg through different stats</p>
@@ -33,5 +34,6 @@ export default class TwoLevelPieChart extends PureComponent {
             </ResponsiveContainer>
       </div>
     );
-  }
 }
+
+export default TwoLevelPieChart;

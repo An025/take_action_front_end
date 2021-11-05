@@ -22,7 +22,7 @@ const Summary = () => {
         };
         axios.get("api/v1/transport/statistics", axiosHeader)
         .then(resp => {
-            console.log(resp.data)
+          console.log(resp.data);
             setStatMonthlyTravels(resp.data)
         })
         .catch(err => {
@@ -41,7 +41,7 @@ const Summary = () => {
             <button className="travelButton" onClick={handleDisplay}>Produced CO2 via traveling</button>
             <div className={  show ? " transportchartscontainer displayed" : "transportchartscontainer" }>
                 <TwoLevelPieChart />
-                <LineBarComposedChart/>
+                <LineBarComposedChart data={ statMonthlyTravels }/>
             </div>
         </div>
     )

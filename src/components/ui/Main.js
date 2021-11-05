@@ -132,7 +132,7 @@ function Main(){
                     panel2Heading="Greenhouse gases" 
                     panel3Heading="Carbon offseting"
                     panel1Subheading="It's hard to be an iceberg these days." 
-                    panel2Subheading="Beyond the cow fart..."
+                    panel2Subheading="Those filthy gases..."
                     panel3Subheading="Earth is not alone. Do you back her up?"
                     panel1Text="The effects of human-caused global warming are happening now, are irreversible on the 
                     timescale of people alive today, and will worsen in the decades to come. Glaciers have shrunk, 
