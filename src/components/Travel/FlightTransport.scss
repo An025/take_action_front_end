@@ -1,14 +1,15 @@
 @import '../ui/elements/TemplateColors.scss';
 
 
-
+.cont {
+    display: unset;
+}
 
 .flight-transport-container {
     position: relative;
     top: -10vh;
-    margin: unset;
-    padding: unset;
-    margin-bottom:10vh;
+    width: 100%;
+    // margin-bottom:10vh;
     padding: 15vh 0;
     text-align: center;
     background-image: url('../images/plane.jpg');
