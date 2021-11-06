@@ -4,8 +4,12 @@
 
 
 .ground-transport-container {
+    position: relative;
+    top: -10vh;
+    padding-top: 15vh;
+    padding-bottom: 10vh;
     margin-bottom:10vh;
-    padding: 5vh 0;
+    // padding: 5vh 0;
     text-align: center;
     background-image: url('../images/swiss_alps.jpg');
     background-size: cover;

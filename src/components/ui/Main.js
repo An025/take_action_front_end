@@ -124,7 +124,7 @@ function Main(){
       
             <div className={classes.section3}>
                 <div className={ classes.section3container }>
-                <img className={classes.save} src={ save } alt="save" ></img>
+                {/* <img className={classes.save} src={ save } alt="save" ></img> */}
 
                     <h1 className={classes.section3Title}>Our motivations</h1>
                     <Accordion

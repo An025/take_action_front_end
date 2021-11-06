@@ -8,6 +8,13 @@ $footerTextColor: $white;
     width: 100%;
     background-color: $headerDarkBlue;
     color: $footerTextColor;
+    position: relative;
+
+    .save {
+        position: absolute;
+        top: -10vh;
+        right: 10vh;
+    }
 
     .copyright{
         margin: 0 auto;
