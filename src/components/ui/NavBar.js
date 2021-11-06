@@ -1,14 +1,10 @@
 import './NavBar.scss';  
-// import logo from "../images/logo.gif"
 import logo from "../images/leaf_logo.png"
 import React, {useState, useContext, useEffect} from 'react';
-// import Button from '@material-ui/core/Button';
 import {Link} from "react-router-dom";
 import { ToggleSidebar } from './ToggleSidebar';
 import './SideContent.css';
 import {IconContext} from 'react-icons';
-/* import {TiArrowRightOutline} from 'react-icons/ti';
-import {TiArrowLeftOutline} from 'react-icons/ti'; */
 import {TiMediaPlay} from 'react-icons/ti';
 import {TiMediaPlayReverse} from 'react-icons/ti';
 import AuthContext from '../../context/AuthContext';

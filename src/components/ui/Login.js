@@ -2,7 +2,6 @@ import axios from 'axios';
 import React , {useContext} from 'react';
 import { useHistory } from "react-router-dom";
 import AuthContext from '../../context/AuthContext';
-import Card from './elements/Card';
 import  './SignInAndUp.scss';
 import logo from "../images/leaf_logo.png";
 

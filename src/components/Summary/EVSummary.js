@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import  './EVSummary.scss';
-import { ToggleButton } from 'react-bootstrap';
 
 const Summary = () => {
     const [statEv, setStatEv] = useState();

@@ -1,6 +1,5 @@
 import React, {useContext, useEffect} from 'react';
 import classes from './Main.module.css';
-import Button from './elements/Button';
 import Accordion from './elements/Accordion';
 import ImageSlider from "react-image-comparison-slider";
 import footprint from '../images/footprint.png'
