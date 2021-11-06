@@ -22,7 +22,7 @@ import 'animate.css';
 
     return (
         <div className="barchartcontainer">
-            <p className="animate__animated animate__rubberBand">Your CO2 production in kg vs the average production</p>
+            <p className="animate__animated animate__rubberBand">Your monthly CO2 production in kg vs the average production</p>
             <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart
 /*                 width={500}
