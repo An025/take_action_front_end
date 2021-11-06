@@ -54,10 +54,12 @@ const RecipeSummary = props => {
 
                 </thead>
                 <tbody>
-                    <tr>
-                        {state.userStatistics.map((meal) => (<td key={meal.id}> {meal.name} </td>))}
-                        {state.userStatistics.map((meal) => (<td key={meal.id}> {meal.consumptionDate} </td>))}
-                    </tr>
+                        {state.userStatistics.map((meal) => (
+                        <tr>
+                            <td key={meal.id}> {meal.name} </td>
+                            <td key={meal.id}> {meal.consumptionDate} </td>
+                        </tr>
+                        ))}
                     <tr>
                         <td colspan="2">
                             <p style={headerStyle}>Calculating with an average emission value for meat-based meals (21 CO2 kg) and for plant-based meals (8.4 CO2 kg), you saved the following amount of emissions:</p>
