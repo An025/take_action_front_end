@@ -3,6 +3,7 @@ import EVSummary from './EVSummary';
 import TransportSummary from './TransportSummary';
 import footprint from '../images/footprint.gif'
 import  './Footprint.scss';
+import RecipeSummary from './RecipeSummary';
 
 
 
@@ -12,6 +13,7 @@ return(
     <div>
         <img className="footprint" src={ footprint } alt="footprint" ></img>
         <EVSummary/>
+        <RecipeSummary/>
         <TransportSummary />
     </div>
     )

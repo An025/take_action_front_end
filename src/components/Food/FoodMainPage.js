@@ -19,7 +19,7 @@ const FoodMainPage = props => {
             <h1 style={headerStyle}>Eat less meat with these wonderful recipees:</h1>
             <RecipeSelection/>
             <h1 style={headerStyle}>Check your "green-meal" history:</h1>
-            <Link to="food/summary">See statistics!</Link>
+            {/* <Link to="food/summary">See statistics!</Link> */}
         </div>
     )
 }
