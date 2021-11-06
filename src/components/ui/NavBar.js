@@ -12,27 +12,34 @@ import {TiArrowLeftOutline} from 'react-icons/ti'; */
 import {TiMediaPlay} from 'react-icons/ti';
 import {TiMediaPlayReverse} from 'react-icons/ti';
 import AuthContext from '../../context/AuthContext';
+import PaginationContext from '../../context/PaginationContext';
 
 
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
-  const [navClassName, setnavClassName ]= useState("navbar")
+  const [navClassName, setnavClassName ]= useState("navbar active")
   const context = useContext(AuthContext)
+  const contextVisibility = useContext(PaginationContext)
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, [navClassName])
 
+
   let handleScroll=()=>{
-    if (window.pageYOffset > 50) {
+    if (!contextVisibility.isNavbarBGVisible) {
+      if (window.pageYOffset > 50) {
         if(navClassName !== "navbar active"){
           setnavClassName("navbar active" );   
         }
-    }else{
+      }else{
         if(navClassName !== "navbar"){
           setnavClassName("navbar" );
         }
+      }
     }
+    
   }
 
   const showSidebar = () => setSidebar(!sidebar)

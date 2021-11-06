@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import classes from './Main.module.css';
 import Button from './elements/Button';
 import Accordion from './elements/Accordion';
@@ -10,12 +10,22 @@ import bike from '../images/bike1.png'
 import ecar from '../images/ecar.png'
 import beef from '../images/beef.png'
 import vegetables from '../images/vegetables.png'
-import save from '../images/save.png'
+// import save from '../images/save.png'
 import earth1 from '../images/earth_clean.png';
 import earth2 from '../images/earth_polluted.png';
+import PaginationContext from '../../context/PaginationContext';
 
 
 function Main(){
+
+    const contextVisibility = useContext(PaginationContext);
+
+    useEffect(() => {
+        contextVisibility.changeVisibility();
+        console.log(contextVisibility.isNavbarBGVisible);
+    }, [contextVisibility])
+
+
     return(
         <div>
             
