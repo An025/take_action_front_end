@@ -55,6 +55,8 @@ h1{
   text-align: center;
 } */
 .bgImg{
+  position: relative;
+  top: -10vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
@@ -63,7 +65,8 @@ h1{
   background-color: rgb(2, 3, 70);
   /* opacity: 0.7; */
   min-height: 85vh;
-  padding: 10vh;
+  padding-top: 10vh;
+  padding-bottom: 20vh;
 }
 
 
@@ -71,7 +74,7 @@ h1{
 
 
 // Dimensions
-$prism-height: 70vh;
+$prism-height: 80vh;
 $prism-length: 40vh;
 $prism-depth: $prism-length;
 $spacing: 20px;
@@ -99,7 +102,6 @@ $green: #07ad90;
   text-align: left;
   font-family: Tahoma,Verdana,Segoe,sans-serif; 
   font-size: 14px;
-  // background: #f6fffd;
 }
 
 .signin-title {

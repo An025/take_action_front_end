@@ -26,7 +26,7 @@
 
 .sitetitle {
     position: absolute;
-    top: 12vh;
+    top: 25vh;
     margin: 0 40vh;
     z-index: 2;
     color: rgb(255, 255, 255);
@@ -154,7 +154,7 @@
 
 .save{
     position: absolute;
-    top: 400px;
+    bottom: -35vh;
     right: 0;
     z-index: 10;
 }

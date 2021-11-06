@@ -21,7 +21,6 @@ const Login = props => {
             name: username,
             password: password
         }
-        console.log(body);
         axios.post("api/v1/signin", body)
             .then(function (response) {
                 context.onLogin(response.data.username,response.data.token)
@@ -33,22 +32,47 @@ const Login = props => {
         history.push("/");
     }
 
-    let prism = document.querySelector(".rec-prism");
+    const handleSignUp = (event) => {
+        
+        let username = event.target.parentNode.parentNode.children[0].children[0].value;
+        let email = event.target.parentNode.parentNode.children[1].children[0].value;
+        let password = event.target.parentNode.parentNode.children[2].children[0].value;
+
+        let body = {
+            'name': username,
+            'email': email,
+            'password': password
+        };
+        axios.post("api/v1/registration",body)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        history.push("/");
+    }
+
 
     const showSignup = (event) => {
+        let prism = event.target.parentNode.parentNode.parentNode.parentNode;
         prism.style.transform = "translateZ(-100px) rotateY( -90deg)";
     }
 
     const showLogin = (event) => {
+        let prism = event.target.parentNode.parentNode.parentNode.parentNode;
         prism.style.transform = "translateZ(-100px)";
     }
 
     const showForgotPassword = (event) => {
+        let prism = event.target.parentNode.parentNode.parentNode.parentNode;
         prism.style.transform = "translateZ(-100px) rotateY( -180deg)";
     }
 
     const showThankYou = (event) => {
         event.preventDefault();
+        let prism = event.target.parentNode.parentNode.parentNode.parentNode;
         prism.style.transform = "translateZ(-100px) rotateX( 90deg)";
     }
 
@@ -79,7 +103,7 @@ const Login = props => {
                                 <h2>Sign in</h2>
                             </div>
                             
-                            <form>
+                            <form method="post">
                                 <div className="field-wrapper">
                                     <input type="text" name="username" placeholder="username"></input>
                                     <label>username</label>
@@ -103,15 +127,16 @@ const Login = props => {
                                 <img className="logo" src={ logo } alt="logo"/>
                                 <h2>Forgot your password?</h2>
                             </div>
-                            <small>Enter your email so we can send you a reset link for your password</small>
-                            <form onSubmit={ showThankYou }>
+                            <small>Then you won't see our awesome page but you can 
+                                still type in your email</small>
+                            <form onSubmit={ showThankYou } method="post">
                                 <div className="field-wrapper">
                                     <input type="text" name="email" placeholder="email"></input>
                                     <label>e-mail</label>
                                 </div>
-                                <div className="field-wrapper">
+                                {/* <div className="field-wrapper">
                                     <input type="submit"></input>
-                                </div>
+                                </div> */}
                                 <span className="psw" onClick={ showLogin }>Try Again</span>
                             </form>
                         </div>
@@ -124,23 +149,27 @@ const Login = props => {
                                 <h2>Sign up</h2>
                             </div>
                             
-                            <form onSubmit={ showThankYou }>
-                            <div className="field-wrapper">
-                                <input type="text" name="email" placeholder="email"></input>
-                                <label>e-mail</label>
-                            </div>
-                            <div className="field-wrapper">
-                                <input type="password" name="password" placeholder="password" autocomplete="new-password"></input>
-                                <label>password</label>
-                            </div>
-                            <div className="field-wrapper">
-                                <input type="password" name="password2" placeholder="password" autocomplete="new-password"></input>
-                                <label>re-enter password</label>
-                            </div>
-                            <div className="field-wrapper">
-                                <input type="submit"></input>
-                            </div>
-                            <span className="singin" onClick={ showLogin }>Already a user?  Sign in</span>
+                            <form method="post">
+                                <div className="field-wrapper">
+                                    <input type="text" name="username" placeholder="username"></input>
+                                    <label>username</label>
+                                </div>
+                                <div className="field-wrapper">
+                                    <input type="text" name="email" placeholder="email"></input>
+                                    <label>email</label>
+                                </div>
+                                <div className="field-wrapper">
+                                    <input type="password" name="password" placeholder="password" autocomplete="new-password"></input>
+                                    <label>password</label>
+                                </div>
+                                <div className="field-wrapper">
+                                    <input type="password" name="password2" placeholder="password" autocomplete="new-password"></input>
+                                    <label>re-enter password</label>
+                                </div>
+                                <div className="field-wrapper">
+                                    <input type="submit" onClick={ handleSignUp }></input>
+                                </div>
+                                <span className="singin" onClick={ showLogin }>Already a user?  Sign in</span>
                             </form>
                         </div>
                     </div>
