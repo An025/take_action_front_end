@@ -86,8 +86,8 @@ export default function NavBar() {
         </div>
         <div className="rightContainer">
           {context.isLoggedIn === false ? <Link to="/login"><h4 className="title">Login</h4></Link> : 
-          <h4 className="title" onClick={context.onLogout}>Logout</h4>}
-          {/* {context.isLoggedIn === false ? <Link to="/registration"><h4 className="title">Registration</h4></Link> : <></>} */}
+          <Link to="/" ><h4 className="title" onClick={context.onLogout}>Logout</h4></Link>
+          /* {context.isLoggedIn === false ? <Link to="/registration"><h4 className="title">Registration</h4></Link> : <></>} */}
         </div>
       </div>
 
