@@ -11,7 +11,7 @@
 .nav-header{
     display: flex;
 }
-.nav-header.active{
+.nav-header.focus{
     padding-left: -200px !important;
 }
 

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+
 const PaginationContext = React.createContext({
     isNavbarBGVisible: true,
     changeVisibility: () =>{},

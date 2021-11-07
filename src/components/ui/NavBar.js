@@ -13,7 +13,7 @@ import PaginationContext from '../../context/PaginationContext';
 
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
-  const [navClassName, setnavClassName ]= useState("navbar active")
+  const [navClassName, setnavClassName ]= useState("navbar")
   const context = useContext(AuthContext)
   const contextVisibility = useContext(PaginationContext)
 
@@ -70,7 +70,7 @@ export default function NavBar() {
                 })}
             </ul>
         </nav>
-          <div className={sidebar ? 'nav-header active': 'nav-header'}>         
+          <div className={sidebar && navClassName=="navbar active" ? 'nav-header focus': 'nav-header'}>         
             <img className="logo" src={ logo } alt="logo"/>
             <Link to="/">
               <h4 className="title">TakeAction</h4>
