@@ -16,7 +16,7 @@ const GroundTransport = props => {
     let [co2InKg , setCo2InKg] = useState(null);
     let [fuelEfficiency, setFuelEfficiency] = useState(10);
     let [chosenFuel, setChosenFuel] = useState('diesel');
-    const [dateOfTravel, setDateOfTravel] = useState("2019-01-01");
+    const [dateOfTravel, setDateOfTravel] = useState("2021-11-01");
 
     const axiosHeader = {
         headers: {
@@ -36,7 +36,6 @@ const GroundTransport = props => {
                 "of": (chosenFuel ? chosenFuel : "diesel" )
             }
         };
-        console.log(axiosHeader);
  
         axios.post("api/v1/ground-transport",body, axiosHeader )
         .then(resp => {
@@ -45,7 +44,7 @@ const GroundTransport = props => {
         .catch(err => {
             console.log(err);
         });
-    }, [ distanceTravelled, fuelEfficiency, chosenFuel ])
+    }, [distanceTravelled, fuelEfficiency, chosenFuel, axiosHeader])
 
 
     const setDate = (event) => {
@@ -68,9 +67,11 @@ const GroundTransport = props => {
             }
         };
 
+
+
         axios.post("api/v1/ground-transport/persist", body, axiosHeader )
         .then(resp => {
-            console.log(resp.data);
+            console.log("Data sent for persisting!");
         })
         .catch(err => {
             console.log(err);
@@ -82,7 +83,6 @@ const GroundTransport = props => {
         setDistanceTravelled(distance);
         let fuel_efficiency = event.target.parentNode.children[4].value;
         fuel_efficiency = fuel_efficiency === "" ? 10 : fuel_efficiency;
-        console.log(fuel_efficiency);
         setFuelEfficiency(fuel_efficiency);
       };
 
@@ -92,7 +92,6 @@ const GroundTransport = props => {
         
             <div className="ground-transport-container">
                 <fieldset className="ground-transport-fieldset">
-                    {/* <legend>Ground Transport CO2 Calculator</legend> */}
                     <form className="ground-transport-form">
                         <label htmlFor="distance">Distance travelled (km): </label>
                         <input type="text" placeholder="Distance in km..." name="distance" onChange={ handleChange }></input>

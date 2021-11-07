@@ -2,7 +2,6 @@ import axios from 'axios';
 import React , {useContext} from 'react';
 import { useHistory } from "react-router-dom";
 import AuthContext from '../../context/AuthContext';
-import Card from './elements/Card';
 import  './SignInAndUp.scss';
 import logo from "../images/leaf_logo.png";
 
@@ -12,8 +11,6 @@ const Login = props => {
     const context = useContext(AuthContext)
 
     const handleSignIn = (event) => {
-/*         let username = event.target.parentNode.children[1].value;
-        let password = event.target.parentNode.children[3].value; */
         let username = event.target.parentNode.parentNode.children[0].children[0].value;
         let password = event.target.parentNode.parentNode.children[1].children[0].value;
 
@@ -79,19 +76,6 @@ const Login = props => {
     
     return (
         <div className="bgImg">
-{/*             <div className="space"></div>
-            <Card title={'Login'} createStyle={"card"}>
-                <form action="api/v1/signin" method="post" id="login" className="input"> 
-
-                    <label htmlFor="username">Enter your username: </label>
-                    <input type="text" name="name" id="name" required></input>
-
-                    <label htmlFor="password">Enter your password: </label>
-                    <input type="password" name="password" id="password" required></input>
-                    <button className="buttonStyle" type="button" onClick={handleClick}>Submit</button>
-                </form>
-            </Card>
- */}
 
             <div className="wrapper">
                 <div className="rec-prism">

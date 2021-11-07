@@ -23,24 +23,25 @@ export default function NavBar() {
 
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, [navClassName])
 
-
-  let handleScroll=()=>{
-    if (!contextVisibility.isNavbarBGVisible) {
-      if (window.pageYOffset > 50) {
-        if(navClassName !== "navbar active"){
-          setnavClassName("navbar active" );   
-        }
-      }else{
-        if(navClassName !== "navbar"){
-          setnavClassName("navbar" );
+    let handleScroll=()=>{
+      if (!contextVisibility.isVisible) {
+        if (window.pageYOffset > 50) {
+          if(navClassName !== "navbar active"){
+            setnavClassName("navbar active" );   
+          }
+        }else{
+          if(navClassName !== "navbar"){
+            setnavClassName("navbar" );
+          }
         }
       }
     }
-    
-  }
+  
+    window.addEventListener("scroll", handleScroll);
+  }, [contextVisibility, navClassName])
+
+
 
   const showSidebar = () => setSidebar(!sidebar)
    return (

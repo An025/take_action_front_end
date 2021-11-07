@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { Fragment } from 'react';
 import "./FlightTransport.scss"
 import "@immfly/flights-map";
 import FlightMap from "./FlightMap";
