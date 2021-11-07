@@ -109,7 +109,7 @@ const Login = props => {
                                     <label>username</label>
                                 </div>
                                 <div className="field-wrapper">
-                                    <input type="password" name="password" placeholder="password" autocomplete="new-password"></input>
+                                    <input type="password" name="password" placeholder="password" autoComplete="new-password"></input>
                                     <label>password</label>
                                 </div>
                                 <div className="field-wrapper">
@@ -159,11 +159,11 @@ const Login = props => {
                                     <label>email</label>
                                 </div>
                                 <div className="field-wrapper">
-                                    <input type="password" name="password" placeholder="password" autocomplete="new-password"></input>
+                                    <input type="password" name="password" placeholder="password" autoComplete="new-password"></input>
                                     <label>password</label>
                                 </div>
                                 <div className="field-wrapper">
-                                    <input type="password" name="password2" placeholder="password" autocomplete="new-password"></input>
+                                    <input type="password" name="password2" placeholder="password" autoComplete="new-password"></input>
                                     <label>re-enter password</label>
                                 </div>
                                 <div className="field-wrapper">

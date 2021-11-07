@@ -1,31 +1,27 @@
-import React, {useState, useEffect} from 'react';
-const PaginationContext = React.createContext({
-    isNavbarBGVisible: true,
+import React, {useState, createContext} from 'react';
+const PaginationContext = createContext({
+    isVisible: true,
     changeVisibility: () =>{},
 });
 
 export const PaginationContextProvider = (props) =>{
-    const [isVisible, setIsVisible] = useState();
+    const [isVisible, setisVisible] = useState();
 
-/*     useEffect(() => {
-        console.log("re-rendering context");
-    }, [isVisible]) */
 
-    const changeNavbarVisibility =  () =>{
-        console.log(isVisible);
-        setIsVisible(false);
+    const changeVisibility =  () =>{
+        console.log("hello");
+        setisVisible(false);
     }
 
 
     return <PaginationContext.Provider
         value={
             {
-                isNavbarBGVisible: isVisible,
-                changeVisibility: changeNavbarVisibility,
+                isVisible: isVisible,
+                changeVisibility: changeVisibility,
             }
         }>
         {props.children}
     </PaginationContext.Provider>
 }
-
 export default PaginationContext;

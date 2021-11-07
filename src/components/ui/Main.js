@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import classes from './Main.module.css';
-import Button from './elements/Button';
+// import Button from './elements/Button';
 import Accordion from './elements/Accordion';
 import ImageSlider from "react-image-comparison-slider";
 import footprint from '../images/footprint.png'
@@ -18,17 +18,16 @@ import PaginationContext from '../../context/PaginationContext';
 
 function Main(){
 
-    const contextVisibility = useContext(PaginationContext);
+    const context = useContext(PaginationContext);
 
     useEffect(() => {
-        contextVisibility.changeVisibility();
-        console.log(contextVisibility.isNavbarBGVisible);
-    }, [contextVisibility])
+        context.changeVisibility();
+        console.log("main visibility: " + context.isVisible);
+    }, [context])
 
 
     return(
         <div>
-            
             <div className={classes.titlecontainer}>
                 <div className={classes.banner1}></div>
                 <div className={classes.sitetitle}>
