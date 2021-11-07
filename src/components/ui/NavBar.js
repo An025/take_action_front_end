@@ -35,7 +35,7 @@ export default function NavBar() {
     }
   
     window.addEventListener("scroll", handleScroll);
-  }, [contextVisibility, navClassName])
+  }, [contextVisibility, navClassName, setnavClassName])
 
 
 
@@ -73,7 +73,7 @@ export default function NavBar() {
                 })}
             </ul>
         </nav>
-          <div className={sidebar && navClassName=="navbar active" ? 'nav-header focus': 'nav-header'}>         
+          <div className={sidebar && navClassName === "navbar active" ? 'nav-header focus': 'nav-header'}>         
             <img className="logo" src={ logo } alt="logo"/>
             <Link to="/">
               <h4 className="title">TakeAction</h4>

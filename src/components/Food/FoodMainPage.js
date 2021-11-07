@@ -1,7 +1,6 @@
 import React from "react";
 import TopInfo from './TopInfo';
 import RecipeSelection from './RecipeSelection';
-import {Link} from "react-router-dom";
 
 // Can I change 'props' to '()'?
 const FoodMainPage = props => {

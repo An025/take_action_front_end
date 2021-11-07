@@ -18,14 +18,15 @@ const GroundTransport = props => {
     let [chosenFuel, setChosenFuel] = useState('diesel');
     const [dateOfTravel, setDateOfTravel] = useState("2021-11-01");
 
-    const axiosHeader = {
-        headers: {
-            'Content-type' : 'application/json',
-            'Authorization' : "Bearer " + localStorage.getItem("token")
-        }
-    };
+
 
     useEffect(() => {
+        const axiosHeader = {
+            headers: {
+                'Content-type' : 'application/json',
+                'Authorization' : "Bearer " + localStorage.getItem("token")
+            }
+        };
         let body = {
             "distance":{
                 "value" : distanceTravelled,
@@ -44,7 +45,7 @@ const GroundTransport = props => {
         .catch(err => {
             console.log(err);
         });
-    }, [distanceTravelled, fuelEfficiency, chosenFuel, axiosHeader])
+    }, [distanceTravelled, fuelEfficiency, chosenFuel])
 
 
     const setDate = (event) => {
@@ -54,7 +55,12 @@ const GroundTransport = props => {
 
 
     const saveToDB = (event) => {
-
+        const axiosHeader = {
+            headers: {
+                'Content-type' : 'application/json',
+                'Authorization' : "Bearer " + localStorage.getItem("token")
+            }
+        };
         let body = {
             "dateOfTravel" : dateOfTravel,
             "distance":{
