@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import { ToggleButton } from 'react-bootstrap';
 import TwoLevelPieChart from './TwoLevelPieChart';
 import LineBarComposedChart from './LineBarComposedChart';
 import './TransportSummaryStyle.scss';

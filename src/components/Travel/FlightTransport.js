@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "./FlightTransport.scss"
-/* import "@immfly/flights-map";
-import FlightMap from "./FlightMap"; */
 import MyFlightsVisual from './MyFlightsVisual';
 
 
@@ -19,7 +17,6 @@ const apiURL = "api/v1/flight-transport";
 
 const FlightTransport = props => {
 
-    // let [distanceFlew, setDistanceFlew] = useState(0);
     let [co2InKg , setCo2InKg] = useState(0);
     let [airports,setAirports] = useState([]);
     let [visitedAirports, setVisitedAirports] = useState([null,null,null]);
@@ -28,14 +25,14 @@ const FlightTransport = props => {
         {through: { city: 'Toronto', latitude: 43.8163, longitude: -79.4287 }},
         {landing: { city: 'N39', latitude: -7.138793513804092, longitude: 22.37131768752556 }},
     ]);
-    let [dateOfTravel, setDateOfTravel] = useState("2019-01-01");
+    let [dateOfTravel, setDateOfTravel] = useState("2021-11-01");
 
     useEffect(()=>{
         axios.post(airportsURL,"", axiosHeader)
         .then(response => {
             setAirports(response.data)
         })
-    }, [ airportsURL ])
+    })
 
     useEffect(() => {
         let body = {
@@ -46,7 +43,6 @@ const FlightTransport = props => {
             ]};
         axios.post(apiURL, body, axiosHeader )
         .then(resp => {
-            // setDistanceFlew(resp.data.distance_in_miles * 1.6)
             setCo2InKg(resp.data)
         })
         .catch(err => {
@@ -112,9 +108,8 @@ const FlightTransport = props => {
         <div>
             <div className="flight-transport-container">
                 <fieldset className="flight-transport-fieldset">
-                    {/* <legend >Flight transport co2 calculator</legend> */}
                     <form className="flight-transport-form">
-                        <label for="airportsFrom">Airport from:</label>
+                        <label htmlFor="airportsFrom">Airport from:</label>
                         <select name="airportsFrom" id="from" onChange={ handleChangeOfAirport }>
                             { airports.map((airport) => 
                                 <option key={ airport.id } 
@@ -125,7 +120,7 @@ const FlightTransport = props => {
                             )}
                         </select>
 
-                        <label for="airportsThrough">Airport through:</label>
+                        <label htmlFor="airportsThrough">Airport through:</label>
                         <select name="airportsThrough" id="through" onChange={ handleChangeOfAirport }>
                             { airports.map((airport) => 
                                 <option key={ airport.id } 
@@ -136,7 +131,7 @@ const FlightTransport = props => {
                             )}
                         </select>
 
-                        <label for="airportsTo">Airport to:</label>
+                        <label htmlFor="airportsTo">Airport to:</label>
                         <select name="airportsTo" id="to" onChange={ handleChangeOfAirport }>
                             { airports.map((airport) => 
                                <option key={ airport.id } 
@@ -156,7 +151,6 @@ const FlightTransport = props => {
                     <div className="flight-map-container">
                         <MyFlightsVisual myFlights={ myFlights }/>
                     </div>
-                    {/* <p>You flew { distanceFlew } km-s.</p> */}
                     <p id="finalCO2">Your carbon consumption with this travel was { co2InKg } kg-s.</p>
                 </fieldset>
             </div>

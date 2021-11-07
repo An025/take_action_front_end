@@ -46,7 +46,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.secondaryHeading}>{ props.panel1Subheading }</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className={ classes.text }>
+          <Typography className={ classes.text } component={'article'}>
                 { props.panel1Text }
           </Typography>
         </AccordionDetails>
@@ -63,7 +63,7 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className={ classes.text }>
+          <Typography className={ classes.text } component={'article'}>
                 { props.panel2Text }
           </Typography>
         </AccordionDetails>
@@ -80,7 +80,7 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className={ classes.text }>
+          <Typography className={ classes.text } component={'article'}>
                 { props.panel3Text }
           </Typography>
         </AccordionDetails>
