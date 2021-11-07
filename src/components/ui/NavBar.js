@@ -13,10 +13,10 @@ import PaginationContext from '../../context/PaginationContext';
 
 export default function NavBar() {
   const [sidebar, setSidebar] = useState(false)
-  const [navClassName, setnavClassName ]= useState("navbar")
+  // const [navClassName, setnavClassName ]= useState("navbar")
   const context = useContext(AuthContext)
   const contextVisibility = useContext(PaginationContext)
-
+  const {navClassName, setnavClassName} = useContext(PaginationContext);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -43,8 +43,9 @@ export default function NavBar() {
     <IconContext.Provider value={{color:'#6094be'}}>
 
     <div className="main-container">
+        <div className={ navClassName }>
 
-      <div className={ navClassName }>
+      {/* <div className={ contextVisibility.isNavbarBGVisible === false ?  navClassName : "navbar active" }> */}
         <div className="leftContainer">
         <div className={sidebar ? 'nav-bar active': 'nav-bar'}>
         {context.isLoggedIn === true ?  
@@ -61,7 +62,8 @@ export default function NavBar() {
                 {ToggleSidebar.map((item, index) => {
                     return (
                         <li key={index} className={item.cName}>
-                            <Link to={item.path}>
+                            {console.log(item.path)}
+                            <Link to={item.path}  onClick={item.path === "/food" || item.path === "/ev" || item.path==="/video" ? contextVisibility.changeNavbarClassNameActive : contextVisibility.changeNavbarClassName}>
                             {item.icon}
                             <span>{item.title}</span>
                             </Link>
@@ -75,13 +77,13 @@ export default function NavBar() {
             <Link to="/">
               <h4 className="title">TakeAction</h4>
             </Link>
-            <Link to="/video">
+            <Link to="/video"  onClick={contextVisibility.changeNavbarClassNameActive}>
               <h4 className="title"> Video</h4>
             </Link>
-            <Link to="/about">
+            <Link to="/about" onClick={contextVisibility.changeNavbarClassNameActive}>
               <h4 className="title">About Us</h4>
             </Link>
-            {context.isLoggedIn === true ? <Link to="/statistics"><h4 className="title">Statistics</h4></Link> : <></>}
+            {context.isLoggedIn === true ? <Link to="/statistics" onClick={contextVisibility.changeNavbarClassNameActive}><h4 className="title">Statistics</h4></Link> : <></>}
           </div>
         </div>
         <div className="rightContainer">

@@ -3,18 +3,24 @@ import React, {useState, useEffect} from 'react';
 const PaginationContext = React.createContext({
     isNavbarBGVisible: true,
     changeVisibility: () =>{},
+    changeNavbarClassNameActive: () =>{},
+    changeNavbarClassName: () =>{},
 });
 
 export const PaginationContextProvider = (props) =>{
     const [isVisible, setIsVisible] = useState();
+    const [navClassName, setnavClassName ]= useState("navbar")
 
-/*     useEffect(() => {
-        console.log("re-rendering context");
-    }, [isVisible]) */
 
     const changeNavbarVisibility =  () =>{
         console.log(isVisible);
         setIsVisible(false);
+    }
+    const changeNavbarClassNameActive =() =>{
+        setnavClassName("navbar active")
+    }
+    const changeNavbarClassName =() =>{
+        setnavClassName("navbar")
     }
 
 
@@ -23,6 +29,10 @@ export const PaginationContextProvider = (props) =>{
             {
                 isNavbarBGVisible: isVisible,
                 changeVisibility: changeNavbarVisibility,
+                navClassName,
+                setnavClassName,
+                changeNavbarClassNameActive,
+                changeNavbarClassName,
             }
         }>
         {props.children}
