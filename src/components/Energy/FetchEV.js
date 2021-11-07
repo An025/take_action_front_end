@@ -1,6 +1,6 @@
 import React, {useEffect, useContext} from 'react';
 import axios from 'axios';
-import EvContext from './context/EvContext';
+import EvContext from '../../context/EvContext';
 import  {Marker} from 'react-map-gl'
 import PopUpBox from './PopUpBox';
 

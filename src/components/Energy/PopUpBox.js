@@ -3,7 +3,7 @@ import  { Popup} from 'react-map-gl'
 import './EV.css';
 import FavoriteBorderIcon from '@material-ui/icons//FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import EvContext from "./context/EvContext";
+import EvContext from '../../context/EvContext';
 
 const PopUpBox = props =>{
     const {selectedStation, setSelectedStation} = useContext(EvContext);
