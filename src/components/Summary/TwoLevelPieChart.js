@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import './ChartStyles.scss';
 import 'animate.css';
 
+// TODO:
 // Elmúlt 6 hónapra az utazások által termelt CO2
 const data01 = [
   { name: 'Group Jan', value: 400 },
@@ -13,6 +14,7 @@ const data01 = [
   { name: 'Group June', value: 200 },
 ];
 
+// TODO:
 // Összes utazás bontása földi és légi utazásokra
 const data02 = [
   { name: 'vehicleCO2', value: 600 },

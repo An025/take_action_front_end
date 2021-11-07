@@ -9,7 +9,6 @@ import bike from '../images/bike1.png'
 import ecar from '../images/ecar.png'
 import beef from '../images/beef.png'
 import vegetables from '../images/vegetables.png'
-// import save from '../images/save.png'
 import earth1 from '../images/earth_clean.png';
 import earth2 from '../images/earth_polluted.png';
 import PaginationContext from '../../context/PaginationContext';
@@ -17,17 +16,16 @@ import PaginationContext from '../../context/PaginationContext';
 
 function Main(){
 
-    const contextVisibility = useContext(PaginationContext);
+    const context = useContext(PaginationContext);
 
     useEffect(() => {
-        contextVisibility.changeVisibility();
-        console.log(contextVisibility.isNavbarBGVisible);
-    }, [contextVisibility])
+        context.changeVisibility();
+        console.log("main visibility: " + context.isVisible);
+    }, [context])
 
 
     return(
         <div>
-            
             <div className={classes.titlecontainer}>
                 <div className={classes.banner1}></div>
                 <div className={classes.sitetitle}>
@@ -36,7 +34,6 @@ function Main(){
                         To have the best chance of avoiding a 2℃ rise in global temperatures, the average global carbon footprint per year needs to drop under 2 tons by 2050.</p>
                     <p>Lowering individual carbon footprints doesn’t happen overnight! By making small changes to our actions, we can start making a big difference.</p> 
                     <div className={ classes.sitetitlebuttons }>
-                        {/* <Button link={"/video"} title="See my Footprint!" className={classes.button}/> */}
                     </div> 
                 </div>
             </div>

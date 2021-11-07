@@ -1,16 +1,12 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   ComposedChart,
-  Label,
   Line,
-  Area,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-  Scatter,
   ResponsiveContainer,
 } from 'recharts';
 import './ChartStyles.scss';
