@@ -17,7 +17,6 @@ export default function NavBar() {
   const context = useContext(AuthContext)
   const contextVisibility = useContext(PaginationContext)
   const {navClassName, setnavClassName} = useContext(PaginationContext);
-
   useEffect(() => {
 
     let handleScroll=()=>{
@@ -41,6 +40,12 @@ export default function NavBar() {
   useEffect(() =>{
     if(localStorage.getItem("token") !== null){
       context.onLoad()
+    }
+  }, [context])
+
+  useEffect(() =>{
+    if(!context.isLoggedIn){
+      setSidebar(false)
     }
   }, [context])
 
