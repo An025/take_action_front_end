@@ -4,14 +4,15 @@ import './EV.css';
 import FetchEv from './FetchEV';
 
 const Map = props =>{
-  const [latitude, setLatitude] = useState(47.497913);
-  const [longitude, setLongitude] = useState(19.040236);
+  const budapestCoord = {latitude: 47.497913, longitude: 19.040236}
+  const [latitude, setLatitude] = useState(budapestCoord.latitude);
+  const [longitude, setLongitude] = useState(budapestCoord.longitude);
   const [viewport, setViewport] = useState({
     latitude: latitude,
     longitude: longitude,
     width: '100vw',
     height: '89vh',
-    zoom: 14,
+    zoom: 10.5,
     scrollZoom:true,
   });
  
