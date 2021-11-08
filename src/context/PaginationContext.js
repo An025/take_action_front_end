@@ -13,7 +13,6 @@ export const PaginationContextProvider = (props) =>{
 
 
     const changeNavbarVisibility =  () =>{
-        console.log(isVisible);
         setIsVisible(false);
     }
     const changeNavbarClassNameActive =() =>{

@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 const AuthContext = React.createContext({
     isLoggedIn: false,
     onLogout: () =>{},
-    onLogin: () =>{}
+    onLogin: () =>{},
+    onLoad : () =>{},
 });
 
 export const AuthContextProvider = (props) =>{
@@ -26,13 +27,18 @@ export const AuthContextProvider = (props) =>{
         setIsLoggedIn(true);
     }
 
+    const pageReload = () =>{
+        setIsLoggedIn(true);
+    }
+
 
     return <AuthContext.Provider
         value={
             {
                 isLoggedIn: isLoggedIn,
                 onLogout: logoutHandler,
-                onLogin: loginHandler
+                onLogin: loginHandler,
+                onLoad : pageReload,
             }
         }>
         {props.children}

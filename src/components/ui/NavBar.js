@@ -38,6 +38,11 @@ export default function NavBar() {
   }, [contextVisibility, navClassName, setnavClassName])
 
 
+  useEffect(() =>{
+    if(localStorage.getItem("token") !== null){
+      context.onLoad()
+    }
+  }, [context])
 
   const showSidebar = () => setSidebar(!sidebar)
    return (
@@ -63,7 +68,6 @@ export default function NavBar() {
                 {ToggleSidebar.map((item, index) => {
                     return (
                         <li key={index} className={item.cName}>
-                            {console.log(item.path)}
                             <Link to={item.path}  onClick={item.path === "/food" || item.path === "/ev" || item.path==="/video" ? contextVisibility.changeNavbarClassNameActive : contextVisibility.changeNavbarClassName}>
                             {item.icon}
                             <span>{item.title}</span>
