@@ -8,8 +8,12 @@ export default function Upload(){
     const imgStyle = {
         height: '90%',
     };
+
+    const uploadContainer ={
+        height: '50vh',
+    }
     return(
-        <div>
+        <div style={uploadContainer}>
             
             <img style={imgStyle} src={ upload } alt="upload"/>
         </div>

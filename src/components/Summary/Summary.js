@@ -8,9 +8,14 @@ import RecipeSummary from './RecipeSummary';
 
 
 const Summary = props =>{
+    const aboutContainer = {
+        width: '80vw',
+        marginBottom: '150px'
+    }
+    
 
 return(
-    <div>
+    <div style={aboutContainer}>
         <img className="footprint" src={ footprint } alt="footprint" ></img>
         <EVSummary/>
         <RecipeSummary/>
