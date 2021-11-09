@@ -41,13 +41,12 @@ export default function NavBar() {
     if(localStorage.getItem("token") !== null){
       context.onLoad()
     }
-  }, [context])
-
-  useEffect(() =>{
     if(!context.isLoggedIn){
       setSidebar(false)
     }
-  }, [context])
+  }, [context, setSidebar])
+
+
 
   const showSidebar = () => setSidebar(!sidebar)
    return (
@@ -59,6 +58,7 @@ export default function NavBar() {
       {/* <div className={ contextVisibility.isNavbarBGVisible === false ?  navClassName : "navbar active" }> */}
         <div className="leftContainer">
         <div className={sidebar ? 'nav-bar active': 'nav-bar'}>
+        {console.log("sidebar " + sidebar)}
         {context.isLoggedIn === true ?  
             <Link to="#" className={sidebar ? 'menu-bars': 'menu-bars active'}>
                 {sidebar? <TiMediaPlayReverse onClick={showSidebar}/> : <TiMediaPlay onClick={showSidebar}/> }
@@ -71,6 +71,7 @@ export default function NavBar() {
 
                 </li>
                 {ToggleSidebar.map((item, index) => {
+                    // {item.path ==="/food" ? setSidebar(false): setSidebar(sidebar) }
                     return (
                         <li key={index} className={item.cName}>
                             <Link to={item.path}  onClick={item.path === "/food" || item.path === "/ev" || item.path==="/video" ? contextVisibility.changeNavbarClassNameActive : contextVisibility.changeNavbarClassName}>
